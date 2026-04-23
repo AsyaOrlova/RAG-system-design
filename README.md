@@ -16,8 +16,8 @@
 # - config/: Configuration files
 # - notebooks/: Jupyter notebooks for EDA
 # - tests/: Unit tests
-#
-# ## Usage:
-# 1. Place data in data/ directory
-# 2. Run src/main.py to execute the full pipeline
-# 3. Check results/ for outputs
+
+## Usage:
+1. Place data in data/ directory
+2. Run src/main.py to execute the full pipeline
+3. Check results/ for outputs

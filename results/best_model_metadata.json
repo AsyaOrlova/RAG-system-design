@@ -1,0 +1,51 @@
+{
+  "best_model": "HistGradientBoosting",
+  "selection_metric": "lowest mean test RMSE",
+  "best_model_path": "C:\\Users\\computer\\Documents\\GitHub\\RAG-system-design\\models\\best_model.pkl",
+  "metrics_path": "C:\\Users\\computer\\Documents\\GitHub\\RAG-system-design\\results\\model_selection_metrics.csv",
+  "metrics": {
+    "model": "HistGradientBoosting",
+    "rmse": 0.031188704697142633,
+    "mae": 0.023535011687156795,
+    "r2": 0.8703579859628493,
+    "rmse_per_target": {
+      "bert_score_recall": 0.019718438726612428,
+      "cosine_similarity": 0.030762747024118776,
+      "golden_doi_mrr": 0.021098871324866885,
+      "golden_doi_recall": 0.02478345957153179,
+      "numeric_recall": 0.06291667845905952,
+      "rouge_l_recall": 0.045766204349939346,
+      "scientific_fact_recall": 0.05312104232996949,
+      "source_support_hit": 0.015869331043837837,
+      "source_support_max_similarity": 0.01006997532347706,
+      "token_f1": 0.009320880172169296,
+      "token_recall": 0.04964812334298643
+    },
+    "mae_per_target": {
+      "bert_score_recall": 0.014816957030662162,
+      "cosine_similarity": 0.02156662213150977,
+      "golden_doi_mrr": 0.016612543180975915,
+      "golden_doi_recall": 0.018765036721414077,
+      "numeric_recall": 0.04895710586340593,
+      "rouge_l_recall": 0.03556737968756584,
+      "scientific_fact_recall": 0.038598574892509854,
+      "source_support_hit": 0.011765351618756546,
+      "source_support_max_similarity": 0.006835580516936506,
+      "token_f1": 0.006957035122599508,
+      "token_recall": 0.038442941792388656
+    },
+    "r2_per_target": {
+      "bert_score_recall": 0.835468614510517,
+      "cosine_similarity": 0.8823637393162356,
+      "golden_doi_mrr": 0.9277506663130427,
+      "golden_doi_recall": 0.966803745984575,
+      "numeric_recall": 0.7061056043908119,
+      "rouge_l_recall": 0.8680448252866924,
+      "scientific_fact_recall": 0.922870675835022,
+      "source_support_hit": 0.8823721098208953,
+      "source_support_max_similarity": 0.9196448937538111,
+      "token_f1": 0.786676187823419,
+      "token_recall": 0.8758367825563207
+    }
+  }
+}

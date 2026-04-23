@@ -1,0 +1,27 @@
+{
+  "method": "optuna",
+  "optuna_early_stopping": "MedianPruner plus patience callback",
+  "model": "CatBoost",
+  "tuned_models": [
+    "CatBoost",
+    "HistGradientBoosting",
+    "LightGBM"
+  ],
+  "selection_metric": "lowest tuned test RMSE among top baseline models",
+  "best_params": {
+    "iterations": 700,
+    "learning_rate": 0.03873726872236866,
+    "depth": 5,
+    "l2_leaf_reg": 6.9185959951511435
+  },
+  "best_cv_rmse": 0.03760707055554875,
+  "test_metrics": {
+    "rmse": 0.030526085940338798,
+    "mae": 0.023357477330060713,
+    "r2": 0.8769071230670555
+  },
+  "tuned_model_path": "C:\\Users\\computer\\Documents\\GitHub\\RAG-system-design\\models\\best_tuned_model.pkl",
+  "metrics_path": "C:\\Users\\computer\\Documents\\GitHub\\RAG-system-design\\results\\best_tuned_model_metrics.csv",
+  "all_tuned_models_metrics_path": "C:\\Users\\computer\\Documents\\GitHub\\RAG-system-design\\results\\top_3_tuned_models_metrics.csv",
+  "all_tuned_target_metrics_path": "C:\\Users\\computer\\Documents\\GitHub\\RAG-system-design\\results\\top_3_tuned_target_metrics.csv"
+}

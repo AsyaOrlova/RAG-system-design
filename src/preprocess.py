@@ -5,7 +5,7 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_PATH = PROJECT_ROOT / "data" / "oxazo_results.csv"
-DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "data" / "processed"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "data" / "processed" / "oxazo"
 
 DROP_COLUMNS = [
     "corpus",
@@ -165,14 +165,9 @@ def preprocess_data(data, test_size=0.2, random_state=42):
 
 
 def save_processed_data(x_train, x_test, y_train, y_test, output_dir=DEFAULT_OUTPUT_DIR):
-    """Save processed feature/target splits and combined train/test files."""
+    """Save processed train/test files with features and targets together."""
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-
-    x_train.to_csv(output_dir / "X_train.csv", index=False)
-    x_test.to_csv(output_dir / "X_test.csv", index=False)
-    y_train.to_csv(output_dir / "y_train.csv", index=False)
-    y_test.to_csv(output_dir / "y_test.csv", index=False)
 
     train = pd.concat(
         [x_train.reset_index(drop=True), y_train.reset_index(drop=True)], axis=1
