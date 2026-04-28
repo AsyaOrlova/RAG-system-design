@@ -1,4 +1,0 @@
-method,model,best_cv_rmse,test_rmse,test_mae,test_r2,best_params
-optuna,CatBoost,0.03760707055554875,0.030526085940338798,0.023357477330060713,0.8769071230670555,"{""iterations"": 700, ""learning_rate"": 0.03873726872236866, ""depth"": 5, ""l2_leaf_reg"": 6.9185959951511435}"
-optuna,HistGradientBoosting,0.03887735792279338,0.031015770628386664,0.02317963980590546,0.8723792288402344,"{""estimator__max_iter"": 450, ""estimator__learning_rate"": 0.033888599108739266, ""estimator__max_leaf_nodes"": 24, ""estimator__min_samples_leaf"": 15, ""estimator__l2_regularization"": 0.08886811867134946}"
-optuna,LightGBM,0.038492727397850264,0.03125582628016873,0.02338556039943984,0.8707073282949781,"{""estimator__n_estimators"": 600, ""estimator__learning_rate"": 0.049185176149649436, ""estimator__num_leaves"": 15, ""estimator__min_child_samples"": 17, ""estimator__subsample"": 0.9340651407866519}"

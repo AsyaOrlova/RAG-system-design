@@ -34,4 +34,5 @@ desktop.ini
 
 # Custom
 data/db/*/*.csv
-catboost_info/*
+data/processed/*/*.csv
+!data/processed/.gitkeep

@@ -15,10 +15,14 @@ dependencies = [
     "catboost (>=1.2.0,<2.0.0)",
     "matplotlib (>=3.9.0,<4.0.0)",
     "optuna (>=4.0.0,<5.0.0)",
-    "shap (>=0.46.0,<1.0.0)"
+    "shap (>=0.46.0,<1.0.0)",
+    "shapiq (>=1.4.0,<2.0.0)"
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^7.2.0"

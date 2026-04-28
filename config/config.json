@@ -1,6 +1,0 @@
-# TODO: Configuration file for hyperparameters, model settings, etc.
-# Example:
-# {
-#     "models": ["GradientBoostingRegressor", "XGBRegressor", "LGBMRegressor", "CatBoostRegressor"],
-#     "hyperparams": {...}
-# }
