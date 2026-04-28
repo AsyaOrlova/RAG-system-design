@@ -34,5 +34,9 @@ desktop.ini
 
 # Custom
 data/db/*/*.csv
-data/processed/*/*.csv
+data/processed/*
 !data/processed/.gitkeep
+
+results/*
+!results/.gitkeep
+
