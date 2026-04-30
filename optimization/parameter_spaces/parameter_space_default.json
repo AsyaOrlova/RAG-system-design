@@ -1,0 +1,32 @@
+{
+  "chunk_size": {
+    "values": [300, 500, 800, 1200],
+    "default": 800,
+    "sampling_weight": 1.0
+  },
+  "dense_k": {
+    "values": [5, 10, 20],
+    "default": 10,
+    "sampling_weight": 1.0
+  },
+  "sparse_k": {
+    "values": [5, 10, 20],
+    "default": 10,
+    "sampling_weight": 1.0
+  },
+  "search_mode": {
+    "values": ["dense-only", "hybrid", "sparse-only"],
+    "default": "hybrid",
+    "sampling_weight": 1.0
+  },
+  "reranker": {
+    "values": ["jina-reranker-m0", "none", "zerank-1"],
+    "default": "jina-reranker-m0",
+    "sampling_weight": 1.0
+  },
+  "llm_model": {
+    "values": ["gpt-oss-20b", "mistral-small3.2", "qwen-3-8b"],
+    "default": "gpt-oss-20b",
+    "sampling_weight": 1.0
+  }
+}

@@ -40,3 +40,6 @@ data/processed/*
 results/*
 !results/.gitkeep
 
+optimization/experiments/*
+optimization/README.md
+
