@@ -5,6 +5,7 @@ from datetime import datetime
 from pathlib import Path
 
 import optuna
+from optuna.trial import TrialState
 
 try:
     from .surrogate import (
@@ -25,6 +26,13 @@ DEFAULT_SUMMARY_PATH = PROJECT_ROOT / "data" / "db" / "summary.csv"
 DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "optimization" / "experiments"
 PARAMETER_SPACES_DIR = Path(__file__).resolve().parent / "parameter_spaces"
 DEFAULT_OBJECTIVE_METRICS = ["golden_doi_recall", "scientific_fact_recall"]
+DEFAULT_BEST_METRIC_FILTERS = {
+    "bert_score_recall": 0.3660774008,
+    "cosine_similarity": 0.4597832906,
+    "golden_doi_mrr": 0.5782741853,
+    "rouge_l_recall": 0.5914758181,
+}
+TOP_CONFIGS_LIMIT = 10
 CHUNK_OVERLAP_RATIO = 0.25
 
 
@@ -100,6 +108,14 @@ def validate_objective_metrics(metrics, target_columns):
         )
 
 
+def validate_metric_filters(metric_filters, target_columns):
+    unknown_metrics = sorted(set(metric_filters) - set(target_columns))
+    if unknown_metrics:
+        raise ValueError(
+            f"Filter metrics are not present in target columns: {unknown_metrics}"
+        )
+
+
 def normalize_weights(metrics, weights=None):
     if weights is None:
         return {metric: 1.0 for metric in metrics}
@@ -135,19 +151,45 @@ def should_vary_parameter(parameter_name, trial_number, seed, sampling_weight):
     return draw < sampling_weight
 
 
+def suggest_parameter(trial, parameter_name, config, seed):
+    if should_vary_parameter(
+        parameter_name=parameter_name,
+        trial_number=trial.number,
+        seed=seed,
+        sampling_weight=config["sampling_weight"],
+    ):
+        return trial.suggest_categorical(parameter_name, config["values"])
+
+    return config["default"]
+
+
 def suggest_parameters(trial, parameter_space, seed):
     params = {}
 
-    for name, config in parameter_space.items():
-        if should_vary_parameter(
-            parameter_name=name,
-            trial_number=trial.number,
+    if "search_mode" in parameter_space:
+        params["search_mode"] = suggest_parameter(
+            trial=trial,
+            parameter_name="search_mode",
+            config=parameter_space["search_mode"],
             seed=seed,
-            sampling_weight=config["sampling_weight"],
-        ):
-            params[name] = trial.suggest_categorical(name, config["values"])
-        else:
-            params[name] = config["default"]
+        )
+
+    for name, config in parameter_space.items():
+        if name in params:
+            continue
+        if name == "dense_k" and params.get("search_mode") == "sparse-only":
+            params[name] = 0
+            continue
+        if name == "sparse_k" and params.get("search_mode") == "dense-only":
+            params[name] = 0
+            continue
+
+        params[name] = suggest_parameter(
+            trial=trial,
+            parameter_name=name,
+            config=config,
+            seed=seed,
+        )
 
     if "chunk_size" in params and "chunk_overlap" not in params:
         params["chunk_overlap"] = int(round(params["chunk_size"] * CHUNK_OVERLAP_RATIO))
@@ -196,11 +238,104 @@ def optimize_parameters(
     return study
 
 
+def passes_metric_filters(trial, metric_filters):
+    return all(
+        trial.user_attrs.get(metric_name, float("-inf")) >= threshold
+        for metric_name, threshold in metric_filters.items()
+    )
+
+
+def get_matching_trials(study, metric_filters=None):
+    matching_trials = [
+        trial
+        for trial in study.trials
+        if trial.state == TrialState.COMPLETE
+        and trial.value is not None
+    ]
+
+    if metric_filters:
+        matching_trials = [
+            trial for trial in matching_trials
+            if passes_metric_filters(trial, metric_filters)
+        ]
+
+    return matching_trials
+
+
+def select_best_trial(study, metric_filters=None):
+    if not metric_filters:
+        return study.best_trial
+
+    matching_trials = get_matching_trials(study, metric_filters=metric_filters)
+    if matching_trials:
+        return max(matching_trials, key=lambda trial: trial.value)
+
+    raise ValueError(
+        "No completed Optuna trials passed the metric filters: "
+        + ", ".join(
+            f"{metric}>={threshold}" for metric, threshold in metric_filters.items()
+        )
+    )
+
+
+def get_trial_params(trial):
+    return {
+        key.removeprefix("param_"): value
+        for key, value in trial.user_attrs.items()
+        if key.startswith("param_")
+    }
+
+
+def get_trial_metrics(trial):
+    return {
+        key: value
+        for key, value in trial.user_attrs.items()
+        if not key.startswith("param_") and isinstance(value, (int, float))
+    }
+
+
+def make_trial_payload(trial, rank=None):
+    payload = {
+        "objective_value": float(trial.value),
+        "params": get_trial_params(trial),
+        "optuna_sampled_params": trial.params,
+        "predicted_metrics": get_trial_metrics(trial),
+        "trial_number": trial.number,
+    }
+    if rank is not None:
+        payload = {"rank": rank, **payload}
+
+    return payload
+
+
+def select_top_trials(study, metric_filters=None, limit=TOP_CONFIGS_LIMIT):
+    ranked_trials = sorted(
+        get_matching_trials(study, metric_filters=metric_filters),
+        key=lambda trial: trial.value,
+        reverse=True,
+    )
+    selected_trials = []
+    seen_configs = set()
+
+    for trial in ranked_trials:
+        config_key = json.dumps(get_trial_params(trial), sort_keys=True)
+        if config_key in seen_configs:
+            continue
+
+        seen_configs.add(config_key)
+        selected_trials.append(trial)
+        if len(selected_trials) >= limit:
+            break
+
+    return selected_trials
+
+
 def save_optimization_results(
     study,
     output_dir,
     objective_metrics,
     metric_weights,
+    metric_filters=None,
     model_path=None,
     target_dataset=None,
 ):
@@ -209,36 +344,42 @@ def save_optimization_results(
 
     trials_path = output_dir / "optimization_trials.csv"
     best_params_path = output_dir / "best_parameters.json"
+    top_params_path = output_dir / "top_10_parameters.json"
 
     trials = study.trials_dataframe(attrs=("number", "value", "params", "user_attrs", "state"))
     trials.to_csv(trials_path, index=False)
 
-    best_trial = study.best_trial
-    best_metrics = {
-        key: value
-        for key, value in best_trial.user_attrs.items()
-        if not key.startswith("param_") and isinstance(value, (int, float))
-    }
-    best_params = {
-        key.removeprefix("param_"): value
-        for key, value in best_trial.user_attrs.items()
-        if key.startswith("param_")
-    }
+    best_trial = select_best_trial(study, metric_filters=metric_filters)
     best_payload = {
-        "objective_value": float(best_trial.value),
+        **make_trial_payload(best_trial),
         "objective_metrics": list(objective_metrics),
         "metric_weights": metric_weights,
+        "metric_filters": metric_filters or {},
         "model_path": str(model_path) if model_path else None,
         "target_dataset": target_dataset,
-        "params": best_params,
-        "optuna_sampled_params": best_trial.params,
-        "predicted_metrics": best_metrics,
+    }
+    top_payload = {
+        "objective_metrics": list(objective_metrics),
+        "metric_weights": metric_weights,
+        "metric_filters": metric_filters or {},
+        "model_path": str(model_path) if model_path else None,
+        "target_dataset": target_dataset,
+        "configs": [
+            make_trial_payload(trial, rank=index)
+            for index, trial in enumerate(
+                select_top_trials(study, metric_filters=metric_filters),
+                start=1,
+            )
+        ],
     }
 
     with best_params_path.open("w", encoding="utf-8") as result_file:
         json.dump(best_payload, result_file, indent=2, ensure_ascii=False)
 
-    return trials_path, best_params_path
+    with top_params_path.open("w", encoding="utf-8") as result_file:
+        json.dump(top_payload, result_file, indent=2, ensure_ascii=False)
+
+    return trials_path, best_params_path, best_trial, top_params_path
 
 
 def infer_source_dataset_from_model_path(model_path):
@@ -329,6 +470,15 @@ def parse_args():
         help="Optional weights for objective metrics.",
     )
     parser.add_argument(
+        "--filter-best-metrics",
+        action="store_true",
+        help=(
+            "Select the final best configuration only among trials whose predicted "
+            "bert_score_recall, cosine_similarity, golden_doi_mrr, and "
+            "rouge_l_recall meet the configured default thresholds."
+        ),
+    )
+    parser.add_argument(
         "--target-columns",
         nargs="+",
         default=DEFAULT_TARGET_COLUMNS,
@@ -393,6 +543,9 @@ def main():
         target_columns=args.target_columns,
         extra_features=extra_features,
     )
+    metric_filters = DEFAULT_BEST_METRIC_FILTERS if args.filter_best_metrics else None
+    if metric_filters:
+        validate_metric_filters(metric_filters, predictor.target_columns)
     study = optimize_parameters(
         predictor=predictor,
         parameter_space=parameter_space,
@@ -410,23 +563,32 @@ def main():
         target_dataset=args.target_dataset,
         metrics=args.metrics,
     )
-    trials_path, best_params_path = save_optimization_results(
+    (
+        trials_path,
+        best_params_path,
+        best_trial,
+        top_params_path,
+    ) = save_optimization_results(
         study=study,
         output_dir=experiment_dir,
         objective_metrics=args.metrics,
         metric_weights=metric_weights,
+        metric_filters=metric_filters,
         model_path=args.model_path,
         target_dataset=args.target_dataset,
     )
 
-    print("Best objective value:", f"{study.best_value:.6f}")
+    print("Best objective value:", f"{best_trial.value:.6f}")
     print("Best parameters:")
     best_params = {
         key.removeprefix("param_"): value
-        for key, value in study.best_trial.user_attrs.items()
+        for key, value in best_trial.user_attrs.items()
         if key.startswith("param_")
     }
     print(json.dumps(best_params, indent=2, ensure_ascii=False))
+    if metric_filters:
+        print("Applied best-trial metric filters:")
+        print(json.dumps(metric_filters, indent=2, ensure_ascii=False))
     if args.target_dataset:
         print(f"Optimized for target dataset: {args.target_dataset}")
     print(f"Loaded surrogate model from {args.model_path}")
@@ -434,6 +596,7 @@ def main():
     print(f"Experiment directory: {experiment_dir}")
     print(f"Saved trials to {trials_path}")
     print(f"Saved best parameters to {best_params_path}")
+    print(f"Saved top-10 parameters to {top_params_path}")
 
 
 if __name__ == "__main__":
