@@ -105,10 +105,16 @@ def train_test_split_data(features, targets, test_size=0.2, random_state=42):
     )
 
 
-def preprocess_data(data, dataset_name=None, test_size=0.2, random_state=42):
+def preprocess_data(
+    data,
+    dataset_name=None,
+    test_size=0.2,
+    random_state=42,
+    include_summary_features=True,
+):
     """Run the full preprocessing pipeline and return split datasets."""
     cleaned = clean_data(data)
-    if dataset_name:
+    if include_summary_features and dataset_name:
         summary_features = load_summary_features(dataset_name)
         cleaned = add_summary_features(cleaned, summary_features)
 
@@ -140,9 +146,12 @@ def save_processed_data(x_train, x_test, y_train, y_test, output_dir=None):
     test.to_csv(output_dir / "test.csv", index=False)
 
 
-def get_output_dir(input_path):
+def get_output_dir(input_path, summary_features):
     """Build output directory from input dataset name."""
-    return PREPROCESS_RESULTS_DIR / get_dataset_name(input_path)
+    if summary_features:
+        return PREPROCESS_RESULTS_DIR / get_dataset_name(input_path)
+    else:
+        return PREPROCESS_RESULTS_DIR / f"{get_dataset_name(input_path)}_no_summary"
 
 
 def parse_args():
@@ -160,6 +169,15 @@ def parse_args():
         type=Path,
         help=f"Path to the input dataset CSV.",
     )
+    parser.add_argument(
+        "--summary-features",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help=(
+            "Add dataset-level summary features from summary.csv. "
+            "Use --no-summary-features to skip them."
+        ),
+    )
     args = parser.parse_args()
     args.input_path = args.input_path_option or args.input_path
     if args.input_path is None:
@@ -173,8 +191,12 @@ def main():
     args = parse_args()
     data = load_data(args.input_path)
     dataset_name = get_dataset_name(args.input_path)
-    x_train, x_test, y_train, y_test = preprocess_data(data, dataset_name=dataset_name)
-    output_dir = get_output_dir(args.input_path)
+    x_train, x_test, y_train, y_test = preprocess_data(
+        data,
+        dataset_name=dataset_name,
+        include_summary_features=args.summary_features,
+    )
+    output_dir = get_output_dir(args.input_path, args.summary_features)
     save_processed_data(x_train, x_test, y_train, y_test, output_dir)
     print(f"Processed {args.input_path} and saved data to {output_dir}")
 

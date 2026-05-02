@@ -26,6 +26,7 @@ from ml.train_models import (
 
 from ml.constants import TRAIN_MODELS_RANDOM_STATE
 
+
 class OptunaSearchResult:
     """Small adapter with the same fields used from GridSearchCV."""
 
@@ -57,6 +58,15 @@ def parse_args():
         type=int,
         default=3,
         help="Number of top baseline models to tune.",
+    )
+    parser.add_argument(
+        "--n-final-runs",
+        type=int,
+        default=5,
+        help=(
+            "Number of final refits for the best tuned model with different "
+            "random_state values."
+        ),
     )
     parser.add_argument(
         "-r",
@@ -217,6 +227,8 @@ def build_estimator(
                 random_state=random_state,
                 n_jobs=-1,
                 verbosity=-1,
+                subsample=0.5,
+                subsample_freq=1,
             )
         )
     elif model_name == "ExtraTrees":
@@ -244,36 +256,34 @@ def get_param_grid(model_name):
     """Return a compact GridSearchCV hyperparameter grid."""
     param_grids = {
         "CatBoost": {
-            "model__iterations": [250, 400],
+            "model__iterations": [250, 400, 600],
             "model__learning_rate": [0.03, 0.06],
-            "model__depth": [3, 4, 6],
-            "model__l2_leaf_reg": [1, 3, 5],
+            "model__depth": [3, 4, 6, 8],
+            "model__l2_leaf_reg": [1, 3],
         },
         "XGBoost": {
-            "model__estimator__n_estimators": [250, 400],
+            "model__estimator__n_estimators": [250, 400, 600],
             "model__estimator__learning_rate": [0.03, 0.06],
-            "model__estimator__max_depth": [2, 3, 4],
+            "model__estimator__max_depth": [2, 3, 4, 6],
             "model__estimator__subsample": [0.85, 1.0],
-            "model__estimator__colsample_bytree": [0.85, 1.0],
         },
         "LightGBM": {
-            "model__estimator__n_estimators": [250, 400],
+            "model__estimator__n_estimators": [250, 400, 600],
             "model__estimator__learning_rate": [0.03, 0.06],
-            "model__estimator__num_leaves": [7, 15, 31],
+            "model__estimator__num_leaves": [7, 15, 31, 63],
             "model__estimator__min_child_samples": [10, 20],
-            "model__estimator__subsample": [0.85, 1.0],
         },
         "ExtraTrees": {
             "model__n_estimators": [300, 500, 800],
-            "model__max_depth": [None, 8, 16],
-            "model__min_samples_leaf": [1, 2, 4],
-            "model__max_features": ["sqrt", 0.75, 1.0],
+            "model__max_depth": [None, 8, 16, 24],
+            "model__min_samples_leaf": [1, 2],
+            "model__max_features": ["sqrt", 1.0],
         },
         "RandomForest": {
             "model__n_estimators": [300, 500, 800],
-            "model__max_depth": [None, 8, 16],
-            "model__min_samples_leaf": [1, 2, 4],
-            "model__max_features": ["sqrt", 0.75, 1.0],
+            "model__max_depth": [None, 8, 16, 24],
+            "model__min_samples_leaf": [1, 2],
+            "model__max_features": ["sqrt", 1.0],
         },
     }
 
@@ -287,67 +297,83 @@ def suggest_optuna_params(trial, model_name):
     """Suggest hyperparameters for one Optuna trial."""
     if model_name == "CatBoost":
         return {
-            "model__iterations": trial.suggest_int("model__iterations", 200, 700, step=100),
-            "model__learning_rate": trial.suggest_float("model__learning_rate", 0.01, 0.12, log=True),
-            "model__depth": trial.suggest_int("model__depth", 3, 8),
-            "model__l2_leaf_reg": trial.suggest_float("model__l2_leaf_reg", 1.0, 10.0),
+            "model__iterations": trial.suggest_int(
+                "model__iterations", 250, 600, step=50
+            ),
+            "model__learning_rate": trial.suggest_float(
+                "model__learning_rate", 0.02, 0.08, log=True
+            ),
+            "model__depth": trial.suggest_categorical(
+                "model__depth", [3, 4, 6, 8]
+            ),
+            "model__l2_leaf_reg": trial.suggest_float(
+                "model__l2_leaf_reg", 1.0, 3.0
+            ),
         }
 
     if model_name == "XGBoost":
         return {
             "model__estimator__n_estimators": trial.suggest_int(
-                "model__estimator__n_estimators", 200, 700, step=100
+                "model__estimator__n_estimators", 250, 600, step=50
             ),
             "model__estimator__learning_rate": trial.suggest_float(
-                "model__estimator__learning_rate", 0.01, 0.12, log=True
+                "model__estimator__learning_rate", 0.02, 0.08, log=True
             ),
-            "model__estimator__max_depth": trial.suggest_int("model__estimator__max_depth", 2, 6),
+            "model__estimator__max_depth": trial.suggest_categorical(
+                "model__estimator__max_depth", [2, 3, 4, 6]
+            ),
             "model__estimator__subsample": trial.suggest_float(
-                "model__estimator__subsample", 0.7, 1.0
-            ),
-            "model__estimator__colsample_bytree": trial.suggest_float(
-                "model__estimator__colsample_bytree", 0.7, 1.0
+                "model__estimator__subsample", 0.85, 1.0
             ),
         }
 
     if model_name == "LightGBM":
         return {
             "model__estimator__n_estimators": trial.suggest_int(
-                "model__estimator__n_estimators", 200, 700, step=100
+                "model__estimator__n_estimators", 250, 600, step=50
             ),
             "model__estimator__learning_rate": trial.suggest_float(
-                "model__estimator__learning_rate", 0.01, 0.12, log=True
+                "model__estimator__learning_rate", 0.02, 0.08, log=True
             ),
-            "model__estimator__num_leaves": trial.suggest_int(
-                "model__estimator__num_leaves", 7, 63
+            "model__estimator__num_leaves": trial.suggest_categorical(
+                "model__estimator__num_leaves", [7, 15, 31, 63]
             ),
             "model__estimator__min_child_samples": trial.suggest_int(
-                "model__estimator__min_child_samples", 5, 35
-            ),
-            "model__estimator__subsample": trial.suggest_float(
-                "model__estimator__subsample", 0.7, 1.0
+                "model__estimator__min_child_samples", 10, 20
             ),
         }
 
     if model_name == "ExtraTrees":
-        max_depth = trial.suggest_categorical("model__max_depth", [None, 8, 12, 16, 24])
+        max_depth = trial.suggest_categorical(
+            "model__max_depth", [None, 8, 16, 24]
+        )
         return {
-            "model__n_estimators": trial.suggest_int("model__n_estimators", 300, 900, step=100),
+            "model__n_estimators": trial.suggest_int(
+                "model__n_estimators", 300, 800, step=100
+            ),
             "model__max_depth": max_depth,
-            "model__min_samples_leaf": trial.suggest_int("model__min_samples_leaf", 1, 5),
+            "model__min_samples_leaf": trial.suggest_int(
+                "model__min_samples_leaf", 1, 2
+            ),
             "model__max_features": trial.suggest_categorical(
-                "model__max_features", ["sqrt", 0.75, 1.0]
+                "model__max_features", ["sqrt", 1.0]
             ),
         }
 
     if model_name == "RandomForest":
-        max_depth = trial.suggest_categorical("model__max_depth", [None, 8, 12, 16, 24])
+        max_depth = trial.suggest_categorical(
+            "model__max_depth", [None, 8, 16, 24]
+        )
         return {
-            "model__n_estimators": trial.suggest_int("model__n_estimators", 300, 900, step=100),
+            "model__n_estimators": trial.suggest_int(
+                "model__n_estimators", 300, 800, step=100
+            ),
             "model__max_depth": max_depth,
-            "model__min_samples_leaf": trial.suggest_int("model__min_samples_leaf", 1, 5),
+            "model__min_samples_leaf": trial.suggest_int(
+                "model__min_samples_leaf", 1, 2
+            ),
             "model__max_features": trial.suggest_categorical(
-                "model__max_features", ["sqrt", 0.75, 1.0]
+                "model__max_features", ["sqrt", 1.0]
             ),
         }
 
@@ -460,7 +486,7 @@ def tune_model(
             categorical_features,
         )
         param_grid = get_param_grid(model_name)
-        return  (estimator, param_grid, x_train, y_train)
+        return tune_model_grid(estimator, param_grid, x_train, y_train)
 
     if method == "optuna":
         return tune_model_optuna(
@@ -492,10 +518,143 @@ def metrics_by_target(metrics):
     return pd.DataFrame(rows)
 
 
+def summarize_repeated_metrics(repeated_metrics_df):
+    """Summarize train/test metrics as mean +- std across final model runs."""
+    metrics_long = repeated_metrics_df.melt(
+        id_vars=["run", "random_state", "split"],
+        value_vars=["rmse", "mae", "r2"],
+        var_name="metric",
+        value_name="value",
+    )
+    summary = (
+        metrics_long.groupby(["split", "metric"])["value"]
+        .agg(["mean", "std"])
+        .reset_index()
+    )
+    summary["std"] = summary["std"].fillna(0.0)
+    summary["mean_std"] = summary.apply(
+        lambda row: f"{row['mean']:.6f} +- {row['std']:.6f}",
+        axis=1,
+    )
+    return summary
+
+
+def summarize_repeated_target_metrics(repeated_target_metrics_df):
+    """Summarize per-target metrics across final model runs."""
+    metric_order = ["r2", "rmse", "mae"]
+    metrics_long = repeated_target_metrics_df.melt(
+        id_vars=["run", "random_state", "split", "target"],
+        value_vars=["rmse", "mae", "r2"],
+        var_name="metric",
+        value_name="value",
+    )
+    summary = (
+        metrics_long.groupby(["split", "target", "metric"])["value"]
+        .agg(["mean", "std"])
+        .reset_index()
+    )
+    summary["std"] = summary["std"].fillna(0.0)
+    summary["mean_std"] = summary.apply(
+        lambda row: f"{row['mean']:.6f} +- {row['std']:.6f}",
+        axis=1,
+    )
+    summary["metric"] = pd.Categorical(
+        summary["metric"],
+        categories=metric_order,
+        ordered=True,
+    )
+    summary = summary.sort_values(["metric", "split", "target"]).reset_index(drop=True)
+    summary["metric"] = summary["metric"].astype(str)
+    return summary[["metric", "split", "target", "mean_std"]]
+
+
+def refit_best_model_repeated(
+    best_result,
+    x_train,
+    x_test,
+    y_train,
+    y_test,
+    numeric_features,
+    categorical_features,
+    n_runs,
+):
+    """Refit the best tuned model several times and collect train/test metrics."""
+    if n_runs < 1:
+        raise ValueError("--n-final-runs must be at least 1")
+
+    repeated_metric_rows = []
+    repeated_target_metric_frames = []
+    final_models = []
+
+    for run_index in range(n_runs):
+        random_state = TRAIN_MODELS_RANDOM_STATE + run_index
+        print(
+            "Final refit "
+            f"{run_index + 1}/{n_runs} for {best_result['model']} "
+            f"(random_state={random_state})"
+        )
+        estimator = build_estimator(
+            best_result["model"],
+            numeric_features,
+            categorical_features,
+            random_state=random_state,
+            params=best_result["search"].best_params_,
+        )
+        estimator.fit(x_train, y_train)
+        final_models.append(
+            {
+                "run": run_index + 1,
+                "random_state": random_state,
+                "model": estimator,
+            }
+        )
+
+        for split, features, targets in [
+            ("train", x_train, y_train),
+            ("test", x_test, y_test),
+        ]:
+            metrics = evaluate_model(estimator, features, targets)
+            repeated_metric_rows.append(
+                {
+                    "run": run_index + 1,
+                    "random_state": random_state,
+                    "split": split,
+                    "rmse": metrics["rmse"],
+                    "mae": metrics["mae"],
+                    "r2": metrics["r2"],
+                }
+            )
+
+            target_metrics = metrics_by_target(metrics)
+            target_metrics.insert(0, "split", split)
+            target_metrics.insert(0, "random_state", random_state)
+            target_metrics.insert(0, "run", run_index + 1)
+            repeated_target_metric_frames.append(target_metrics)
+
+    repeated_metrics_df = pd.DataFrame(repeated_metric_rows)
+    repeated_target_metrics_df = pd.concat(
+        repeated_target_metric_frames,
+        ignore_index=True,
+    )
+    repeated_metrics_summary_df = summarize_repeated_metrics(repeated_metrics_df)
+    repeated_target_metrics_summary_df = summarize_repeated_target_metrics(
+        repeated_target_metrics_df
+    )
+
+    return (
+        final_models,
+        repeated_metrics_df,
+        repeated_metrics_summary_df,
+        repeated_target_metrics_df,
+        repeated_target_metrics_summary_df,
+    )
+
+
 def save_tuning_results(
     best_result,
     summary_df,
     target_metrics_df,
+    repeated_target_metrics_summary_df,
     output_dir,
     preprocessing_metadata=None,
 ):
@@ -504,19 +663,60 @@ def save_tuning_results(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     tuned_model_path = output_dir / "best_tuned_model.pkl"
+    final_models_dir = output_dir / "best_tuned_model_runs"
+    final_models_dir.mkdir(parents=True, exist_ok=True)
     model_bundle = {
-        "model": best_result["search"].best_estimator_,
+        "model": best_result["final_models"][0]["model"],
+        "run": best_result["final_models"][0]["run"],
+        "random_state": best_result["final_models"][0]["random_state"],
         "preprocessing": preprocessing_metadata or {},
     }
     with tuned_model_path.open("wb") as model_file:
         pickle.dump(model_bundle, model_file)
 
+    final_model_paths = []
+    for final_model in best_result["final_models"]:
+        final_model_path = (
+            final_models_dir / f"best_tuned_model_run_{final_model['run']}.pkl"
+        )
+        final_model_bundle = {
+            "model": final_model["model"],
+            "run": final_model["run"],
+            "random_state": final_model["random_state"],
+            "preprocessing": preprocessing_metadata or {},
+        }
+        with final_model_path.open("wb") as model_file:
+            pickle.dump(final_model_bundle, model_file)
+        final_model_paths.append(final_model_path)
+
     all_models_metrics_path = output_dir / "top_3_tuned_models_metrics.csv"
     all_target_metrics_path = output_dir / "top_3_tuned_target_metrics.csv"
+    repeated_target_metrics_summary_path = (
+        output_dir / "best_tuned_model_repeated_target_metrics_summary.csv"
+    )
+    stale_repeated_paths = [
+        output_dir / "best_tuned_model_repeated_metrics.csv",
+        output_dir / "best_tuned_model_repeated_metrics_summary.csv",
+        output_dir / "best_tuned_model_repeated_target_metrics.csv",
+    ]
+    for stale_path in stale_repeated_paths:
+        if stale_path.exists():
+            stale_path.unlink()
+
     summary_df.to_csv(all_models_metrics_path, index=False)
     target_metrics_df.to_csv(all_target_metrics_path, index=False)
+    repeated_target_metrics_summary_df.to_csv(
+        repeated_target_metrics_summary_path,
+        index=False,
+    )
 
-    return tuned_model_path, all_models_metrics_path, all_target_metrics_path
+    return (
+        tuned_model_path,
+        all_models_metrics_path,
+        all_target_metrics_path,
+        repeated_target_metrics_summary_path,
+        final_model_paths,
+    )
 
 
 def main():
@@ -583,7 +783,7 @@ def main():
             y_train=y_train,
             numeric_features=numeric_features,
             categorical_features=categorical_features,
-            n_trials=args.n_trials
+            n_trials=args.n_trials,
         )
         train_metrics = evaluate_model(search.best_estimator_, x_train, y_train)
         test_metrics = evaluate_model(search.best_estimator_, x_test, y_test)
@@ -633,14 +833,39 @@ def main():
     ).sort_values("best_cv_rmse", ascending=True)
     target_metrics = pd.concat(target_metrics_frames, ignore_index=True)
 
+    print(
+        "\nRefitting the best tuned model "
+        f"{args.n_final_runs} time(s) with different random_state values..."
+    )
+    (
+        final_models,
+        repeated_metrics,
+        repeated_metrics_summary,
+        repeated_target_metrics,
+        repeated_target_metrics_summary,
+    ) = refit_best_model_repeated(
+        best_result,
+        x_train,
+        x_test,
+        y_train,
+        y_test,
+        numeric_features,
+        categorical_features,
+        args.n_final_runs,
+    )
+    best_result["final_models"] = final_models
+
     (
         tuned_model_path,
         all_models_metrics_path,
         all_target_metrics_path,
+        repeated_target_metrics_summary_path,
+        final_model_paths,
     ) = save_tuning_results(
         best_result,
         summary_df,
         target_metrics,
+        repeated_target_metrics_summary,
         output_dir,
         preprocessing_metadata,
     )
@@ -670,11 +895,23 @@ def main():
         f"MAE={best_result['test_metrics']['mae']:.6f}, "
         f"R2={best_result['test_metrics']['r2']:.6f}"
     )
+    print(
+        "\nBest tuned model repeated train/test metrics "
+        f"({args.n_final_runs} final refits):"
+    )
+    print(repeated_metrics_summary.to_string(index=False))
     print(f"\nSaved tuned model to {tuned_model_path}")
     print(f"Loaded model selection metrics from {metrics_path}")
     print(loaded_data_message)
     print(f"Saved all tuned model metrics to {all_models_metrics_path}")
     print(f"Saved all tuned target metrics to {all_target_metrics_path}")
+    print(
+        "Saved repeated target metrics summary to "
+        f"{repeated_target_metrics_summary_path}"
+    )
+    print("Saved final model runs:")
+    for final_model_path in final_model_paths:
+        print(f"  {final_model_path}")
 
 
 if __name__ == "__main__":

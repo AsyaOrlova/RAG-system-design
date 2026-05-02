@@ -170,7 +170,7 @@ def build_preprocessor(numeric_features, categorical_features):
             ("num", StandardScaler(), numeric_features),
             (
                 "cat",
-                OneHotEncoder(handle_unknown="ignore", sparse_output=False),
+                OneHotEncoder(sparse_output=False),
                 categorical_features,
             ),
         ]

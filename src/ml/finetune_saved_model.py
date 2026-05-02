@@ -1,23 +1,28 @@
 import argparse
 import copy
 import pickle
+import sys
 from pathlib import Path
 
 import pandas as pd
 from sklearn.multioutput import MultiOutputRegressor
+from sklearn.pipeline import Pipeline
 
-from test_saved_model import (
-    add_required_summary_features,
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+from ml.evaluate import (
     align_features,
-    apply_summary_standardization,
     get_expected_feature_names,
     load_model,
     load_train_test_data,
     metrics_by_target,
 )
-from ML.train_models import PROCESSED_DATA_DIR, RESULTS_DIR, evaluate_model, split_features_targets
+from ml.constants import ML_RESULTS_DIR, PREPROCESS_RESULTS_DIR
+from ml.train_models import evaluate_model, split_features_targets
 
 
+PROCESSED_DATA_DIR = PREPROCESS_RESULTS_DIR / "complexes"
+RESULTS_DIR = ML_RESULTS_DIR
 DEFAULT_MODEL_PATH = RESULTS_DIR / PROCESSED_DATA_DIR.name / "hp_tuning" / "best_tuned_model.pkl"
 
 
@@ -156,6 +161,15 @@ def continue_fit_single_target_model(model, x_train, y_train, extra_iterations, 
         model.fit(x_train, y_train)
         return model
 
+    if model_name == "ExtraTreesRegressor":
+        current_estimators = model.get_params().get("n_estimators", 0)
+        model.set_params(
+            warm_start=True,
+            n_estimators=current_estimators + extra_estimators,
+        )
+        model.fit(x_train, y_train)
+        return model
+
     raise ValueError(f"Continued training is not implemented for {model_name}")
 
 
@@ -183,6 +197,46 @@ def continue_fit_model(model, x_train, y_train, extra_iterations, extra_estimato
         return adapted_model
 
     return continue_fit_single_target_model(
+        model,
+        x_train,
+        y_train,
+        extra_iterations,
+        extra_estimators,
+    )
+
+
+def continue_fit_pipeline(pipeline, x_train, y_train, extra_iterations, extra_estimators):
+    adapted_pipeline = copy.deepcopy(pipeline)
+    final_step_name, final_estimator = adapted_pipeline.steps[-1]
+
+    if len(adapted_pipeline.steps) > 1:
+        transformed_train = adapted_pipeline[:-1].transform(x_train)
+    else:
+        transformed_train = x_train
+
+    adapted_estimator = continue_fit_model(
+        final_estimator,
+        transformed_train,
+        y_train,
+        extra_iterations,
+        extra_estimators,
+    )
+    adapted_pipeline.steps[-1] = (final_step_name, adapted_estimator)
+
+    return adapted_pipeline
+
+
+def continue_fit_saved_model(model, x_train, y_train, extra_iterations, extra_estimators):
+    if isinstance(model, Pipeline):
+        return continue_fit_pipeline(
+            model,
+            x_train,
+            y_train,
+            extra_iterations,
+            extra_estimators,
+        )
+
+    return continue_fit_model(
         model,
         x_train,
         y_train,
@@ -240,10 +294,8 @@ def main():
     model, preprocessing = load_model(args.model_path)
     data = load_train_test_data(args.data_dir)
     features, targets = split_features_targets(data)
-    features = add_required_summary_features(features, args.data_dir, preprocessing)
     expected_feature_names = get_expected_feature_names(model, preprocessing)
     features = align_features(features, expected_feature_names)
-    features = apply_summary_standardization(features, preprocessing)
 
     x_finetune, x_test, y_finetune, y_test = split_finetune_test(
         features,
@@ -251,7 +303,7 @@ def main():
         finetune_size=args.finetune_size,
         random_state=args.random_state,
     )
-    finetuned_model = continue_fit_model(
+    finetuned_model = continue_fit_saved_model(
         model,
         x_finetune,
         y_finetune,
