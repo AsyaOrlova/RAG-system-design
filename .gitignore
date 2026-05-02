@@ -37,8 +37,7 @@ data/db/*/*.csv
 data/processed/*
 !data/processed/.gitkeep
 
-results/*
-!results/.gitkeep
+
 
 optimization/experiments/*
 optimization/README.md
