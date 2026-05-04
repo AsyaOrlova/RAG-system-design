@@ -61,6 +61,32 @@ BEST_METRIC_FILTERS_BY_TARGET_DATASET = {
         "rouge_l_recall": 0.6153255168,
     },
 }
+TOP10_METRIC_FILTERS_BY_TARGET_DATASET = {
+    "nano": {
+        "bert_score_recall": 0.437436934,
+        "cosine_similarity": 0.4597832906,
+        "golden_doi_mrr": 0.5782741853,
+        "rouge_l_recall": 0.6850525277,
+    },
+    "nanozymes": {
+        "bert_score_recall": 0.437436934,
+        "cosine_similarity": 0.4597832906,
+        "golden_doi_mrr": 0.5782741853,
+        "rouge_l_recall": 0.6850525277,
+    },
+    "oxazo": {
+        "bert_score_recall": 0.3660774008,
+        "cosine_similarity": 0.4877119864,
+        "golden_doi_mrr": 0.5811471901,
+        "rouge_l_recall": 0.6046754656,
+    },
+    "complexes": {
+        "bert_score_recall": 0.3879239623,
+        "cosine_similarity": 0.515907508,
+        "golden_doi_mrr": 0.5817711655,
+        "rouge_l_recall": 0.5914758181,
+    },
+}
 CHUNK_OVERLAP_RATIO = 0.25
 OBJECTIVE_TIE_ABS_TOL = 1e-12
 CHEAP_NUMERIC_PARAMS = ("chunk_size", "dense_k", "sparse_k")
@@ -152,6 +178,16 @@ def resolve_best_metric_filters(target_dataset=None):
         return DEFAULT_BEST_METRIC_FILTERS
 
     return BEST_METRIC_FILTERS_BY_TARGET_DATASET.get(
+        target_dataset,
+        DEFAULT_BEST_METRIC_FILTERS,
+    )
+
+
+def resolve_top10_metric_filters(target_dataset=None):
+    if not target_dataset:
+        return DEFAULT_BEST_METRIC_FILTERS
+
+    return TOP10_METRIC_FILTERS_BY_TARGET_DATASET.get(
         target_dataset,
         DEFAULT_BEST_METRIC_FILTERS,
     )
@@ -998,6 +1034,16 @@ def parse_args():
         ),
     )
     parser.add_argument(
+        "--filter-top10-best-metrics",
+        action="store_true",
+        help=(
+            "Select the final best configuration only among trials whose predicted "
+            "bert_score_recall, cosine_similarity, golden_doi_mrr, and "
+            "rouge_l_recall meet the top-10 thresholds configured for "
+            "--target-dataset."
+        ),
+    )
+    parser.add_argument(
         "--target-columns",
         nargs="+",
         default=DEFAULT_TARGET_COLUMNS,
@@ -1062,14 +1108,21 @@ def main():
         target_columns=args.target_columns,
         extra_features=extra_features,
     )
-    if args.filter_best_metrics and args.filter_default_best_metrics:
+    filter_modes = [
+        args.filter_best_metrics,
+        args.filter_default_best_metrics,
+        args.filter_top10_best_metrics,
+    ]
+    if sum(filter_modes) > 1:
         raise ValueError(
-            "Use only one filter mode: --filter-best-metrics or "
-            "--filter-default-best-metrics"
+            "Use only one filter mode: --filter-best-metrics, "
+            "--filter-default-best-metrics, or --filter-top10-best-metrics"
         )
 
     if args.filter_default_best_metrics:
         metric_filters = DEFAULT_BEST_METRIC_FILTERS
+    elif args.filter_top10_best_metrics:
+        metric_filters = resolve_top10_metric_filters(args.target_dataset)
     elif args.filter_best_metrics:
         metric_filters = resolve_best_metric_filters(args.target_dataset)
     else:
