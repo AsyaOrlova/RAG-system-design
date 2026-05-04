@@ -1,32 +1,32 @@
 {
   "chunk_size": {
-    "values": [300, 500, 800, 1200],
+    "values": [300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600],
     "default": 800,
-    "sampling_weight": 1.0
+    "sampling_weight": 0.55
   },
   "dense_k": {
-    "values": [5, 10, 20],
-    "default": 10,
-    "sampling_weight": 1.0
+    "values": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+    "default": 20,
+    "sampling_weight": 1.5
   },
   "sparse_k": {
-    "values": [5, 10, 20],
-    "default": 10,
-    "sampling_weight": 0.7
+    "values": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+    "default": 20,
+    "sampling_weight": 0.82
   },
   "search_mode": {
     "values": ["dense-only", "hybrid", "sparse-only"],
     "default": "hybrid",
-    "sampling_weight": 1.0
+    "sampling_weight": 0.74
   },
   "reranker": {
     "values": ["jina-reranker-m0", "none", "zerank-1"],
     "default": "jina-reranker-m0",
-    "sampling_weight": 0.5
+    "sampling_weight": 0.99
   },
   "llm_model": {
     "values": ["gpt-oss-20b", "mistral-small3.2", "qwen-3-8b"],
     "default": "gpt-oss-20b",
-    "sampling_weight": 0.4
+    "sampling_weight": 1.4
   }
 }
