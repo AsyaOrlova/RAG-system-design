@@ -1,0 +1,1648 @@
+[
+  {
+    "session_id": "Complexes_s1_session_1",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q1",
+        "question": "What is the characteristic alpha-particle energy emitted by 99mTc during routine diagnostic imaging procedures?",
+        "golden_answer": "I don't know (99mTc doesn’t emit alpha particles)",
+        "evidence": [
+          {
+            "doi": null,
+            "sources": [],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_2",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q2",
+        "question": "In human serum at 37 °C, for how long can a 205/206Bi–3p-C-DEPA radiocomplex remain intact with no measurable dissociated activity?",
+        "golden_answer": "72 hours",
+        "evidence": [
+          {
+            "doi": "10.3390/pharmaceutics17121508",
+            "sources": [
+              "“The complex remained intact in human serum (37 °C) up to 72 h with no measurable dissociated activity.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_3",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q3",
+        "question": "What eluent (including concentration) is used to develop the iTLC method for monitoring Zirconium-89 radiolabeling and stability, considering the techniques from the EJNMMI Radiopharmacy and Chemistry journal?",
+        "golden_answer": "50 mM EDTA solution",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00263-1",
+            "sources": [
+              "“using a 50 mM solution of EDTA as eluent”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ],
+              "negative": [
+                "conflicting"
+              ]
+            },
+            "contrast_doi": [
+              "10.1371/journal.pone.0178767"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_4",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q4",
+        "question": "Which combination of factors drives instability of the [89Zr]Zr–DFO complex during extended in vivo circulation of antibody conjugates?",
+        "golden_answer": "Unsaturated Zr–DFO coordination, compounded by serum-protein perturbation",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules23030638",
+            "sources": [
+              "“unsaturated coordination sphere of [89Zr]Zr-DFO in combination with perturbation by endogenous serum proteins”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_5",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q5",
+        "question": "In the Tc(V)–oxo somatostatin analogue 99mTc-Depreotide, which structural element of the original octreotide motif is removed to avoid reduction during formation of the (Tc≡O)3+ core?",
+        "golden_answer": "The disulphide bridge",
+        "evidence": [
+          {
+            "doi": "10.3390/app9122526",
+            "sources": [
+              "“...octreotide structure has been modified to eliminate the disulphide bridge, which would be reduced...”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_6",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q6",
+        "question": "What TSPO binding affinity (Ki) is reported for the non-metalated ligand CB256 in rat C6 glioma cell membranes, according to the article “Synthesis and Evaluation of Tricarbonyl 99mTc-Labeled 2-(4-Chloro)phenyl-imidazo[1,2-a]pyridine Analogs as Novel SPECT Imaging Radiotracer for TSPO-Rich Cancer”?",
+        "golden_answer": "148.2 ± 11.3 nM",
+        "evidence": [
+          {
+            "doi": "10.3390/ijms17071085",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_7",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q7",
+        "question": "Under serum-mimicking conditions (pH 7.4, 37 °C), how does Gd3+ release rank across approved GBCA classes (non-ionic linear, ionic linear, macrocyclic)?",
+        "golden_answer": "non-ionic linear > ionic linear > macrocyclic",
+        "evidence": [
+          {
+            "doi": "10.1038/s41467-019-09342-3",
+            "sources": [
+              "“Gd3+ release … followed the order: non-ionic linear >ionic linear >macrocyclic”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_8",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q8",
+        "question": "In the DFT minimum-energy structure of Gd–KEMPPr(3,4-HP)3, how many inner-sphere water molecules can be accommodated?",
+        "golden_answer": "1 water molecule",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules30061295",
+            "sources": [
+              "“minimum energy complex structure only allowed the extra-coordination of one water molecule to Gd.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_9",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q9",
+        "question": "Under normal function, which hepatocyte uptake transporters mediate uptake of gadoxetate disodium (Gd-EOB-DTPA)?",
+        "golden_answer": "OATP1B1, OATP1B3, and NTCP",
+        "evidence": [
+          {
+            "doi": "10.3390/ph12030137",
+            "sources": [
+              "“the uptake is mediated through the organic anion transporters (OATP) OATP1B1 and OATP1B3 as well as via Na+/taurocholate co-transporting polypeptide (NTCP)”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s1_session_10",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Complexes_s1_q10",
+        "question": "In the study published in 2024, in the radio-HPLC radiochemical-yield determination for [89Zr]Zr-DFO-TOC prepared using 0.05 nmol DFO-TOC and 100 μCi [89Zr]Zr-oxalate (pH 7.4), what approximate radiochemical-yield range (%) is observed at this DFO-TOC amount?",
+        "golden_answer": "56–62%",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00320-9",
+            "sources": [
+              "Figure 3"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_1",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q1",
+        "question": "What percentage of transchelation after 7 days in 50 mM DTPA was observed for the zirconium-89 complex of the chelator that is clinically developed as an Fe3+ chelator for the treatment of iron overload in patients with β-thalassemia?",
+        "golden_answer": "0.59",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00263-1",
+            "sources": [
+              "“Desferrioxamine (DFO) … clinically developed as Fe3+ chelator for the treatment of iron overload in patients with β-thalassemia …”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1371/journal.pone.0178767",
+            "sources": [
+              "\"89Zr-DFO displayed stability similar to 89Zr-2 under these conditions, with 45% and 59% transchelation after 1 and 7 days, respectivel\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_2",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q2",
+        "question": "What oxidation state is accessed and stabilized in the [M(CO)3(OH2)3]+ precursor of the radionuclide obtained from a 188W/188M generator system?",
+        "golden_answer": "Oxidation state +1",
+        "evidence": [
+          {
+            "doi": "10.1021/acsomega.4c05699",
+            "sources": [
+              "“188Re is readily available from an 188W/188Re radionuclide generator system.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1590/S0103-50532006000800004",
+            "sources": [
+              "“The +1 oxidation state of these metals can be accessed and stabilized through the synthesis of a [M(CO)3(OH2)3]+ precursor (M = 99mTc, natRe, 186Re, and 188Re).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_3",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q3",
+        "question": "What cold mass corresponds to a 185-MBq patient dose of the peptide conjugate derived from the chelator that bound all added 68Ga3+ at pH 3.5 but only 60–80% at pH 6.5 in competition studies?",
+        "golden_answer": "0.11 μg",
+        "evidence": [
+          {
+            "doi": "10.1039/c7ra09076e",
+            "sources": [
+              "“At pH 3.5, all 68Ga3+ was bound to the TRAP chelator, whereas at pH 6.5, only 60–80% of added 68Ga3+ was bound to TRAP...”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/2191-219X-2-28",
+            "sources": [
+              "“...equivalent to 0.11 μg of cold mass for a 185-MBq patient dose...”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_4",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q4",
+        "question": "Which organs, according to the Theranostics review (2014), showed uptake in 37 patients for the radiopharmaceutical approved for PSMA-positive lesions in prostate cancer and associated metastases?",
+        "golden_answer": "kidneys, salivary glands, lacrimal glands, liver, spleen, and bowel",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules28010203",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.7150/thno.7447",
+            "sources": [
+              "\"The biodistribution in 37 patients demonstrated uptake in kidneys, salivary glands, lacrimal glands, liver, spleen, and bowel\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source",
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_5",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q5",
+        "question": "What is the one-day human-serum Gd3+ release percentage for the chelator used in the comparator agent of the prospective head-to-head neuroendocrine tumor PET study against 64Cu-DOTATATE in the study by Pfeifer et al.?",
+        "golden_answer": "0.24",
+        "evidence": [
+          {
+            "doi": "10.3390/ijms24119154",
+            "sources": [
+              "“64Cu-DOTATATE PET for neuroendocrine tumors: A prospective head-to-head comparison with 111In-DTPA-octreotide in 112 patients."
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/s41598-018-22511-6",
+            "sources": [
+              "“release 24% of its Gd3+ payload after only a single day in human serum”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_6",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q6",
+        "question": "What is the inhibition constant for binding to the 18-kDa translocator protein, reported by Choi et al., for the rhenium complex whose metal-binding unit is the same tridentate chelator formed by two pyridines and one tertiary amine as in the positively charged flutamide derivatives?",
+        "golden_answer": "159.3 ± 8.7 nM",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules28020820",
+            "sources": [
+              "“Ligands 3 and 4 contain essentially the same tridentate N3 chelator formed by two pyridines and one tertiary amine, resulting in positively charged compounds.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/ijms17071085",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_7",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q7",
+        "question": "What coordination geometry is formed by the 99mTc renal imaging radiopharmaceutical that has an adult injected activity of 58 MBq and an estimated effective dose of 0.4 mSv?",
+        "golden_answer": "A five-coordinate, distorted square pyramidal complex",
+        "evidence": [
+          {
+            "doi": "10.3389/fchem.2022.926258",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3389/fchbi.2025.1729615",
+            "sources": [
+              "“provide a N3S tetradentate chelator that coordinates a [99mTcVO]3+ motif, to furnish a five-coordinate, distorted square pyramidal complex”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_8",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q8",
+        "question": "What is the log P value of the CP04 complex of the radionuclide whose NOTA complex is reported in post-2020 literature to reach >95% radiochemical yield at room temperature, at pH 3, within 10 min?",
+        "golden_answer": "−2.68 ± 0.03",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27103062",
+            "sources": [
+              "“the radiochemical yield of the 68Ga-NOTA complex reached more than 95% at room temperature and pH 3 within 10 min.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ],
+              "negative": [
+                "conflicting"
+              ]
+            },
+            "contrast_doi": [
+              "10.1186/s13550-015-0131-1"
+            ]
+          },
+          {
+            "doi": "10.5603/NMR.2015.0014",
+            "sources": [
+              "“it was −2.68 ± 0.03 for 68Ga-CP04”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_9",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q9",
+        "question": "What is the characteristic alpha-particle energy emitted during PET-MRI by the tracer that consists of a Glu-Urea-Lys inhibitor motif linked via an aminohexanoic spacer to HBED-CC?",
+        "golden_answer": "I don’t know (PET is explicitly positron emission tomography)",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27092617",
+            "sources": [
+              "“It consists of a Glu-Urea-Lys inhibitor motif conjugated via an aminohexanoic (Ahx) spacer to the high Ga-specific acyclic chelator … (HBED-CC).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s40644-022-00489-9",
+            "sources": [
+              "“Fifty-three patients with biochemically recurrent PCa underwent whole-body [68Ga]PSMA-11 PET-CT 1 hour post-injection (p.i.) followed by [68Ga]PSMA-11 PET-MRI 2.5 hours p.i.”"
+            ],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s2_session_10",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Complexes_s2_q10",
+        "question": "What is the 4–5 h SUVmax for [64Cu]Cu-14 in the organ that shows the second-highest uptake at 4 h, at just above 10 %ID/g, in the biodistribution profile of [64Cu][Cu(DO2A2S)] according to results published by Tosato et al.?",
+        "golden_answer": "0.72 ± 0.24",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27134158",
+            "sources": [
+              "Figure 8"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s41181-024-00243-5",
+            "sources": [
+              "“The low accumulation in kidneys (SUVmax = 0.72 ± 0.24) and liver (SUVmax = 1.54 ± 0.19) at the 4–5 h timepoint indicates a fast clearance of the compound within the first two hours.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_1",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q1",
+        "question": "What chelator, clinically developed as an Fe3+ chelator for the treatment of iron overload in patients with β-thalassemia, formed a zirconium-89 complex that showed 59% transchelation after 7 days in 50 mM DTPA?",
+        "golden_answer": "Desferrioxamine (DFO)",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00263-1",
+            "sources": [
+              "“Desferrioxamine (DFO) … clinically developed as Fe3+ chelator for the treatment of iron overload in patients with β-thalassemia …”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1371/journal.pone.0178767",
+            "sources": [
+              "\"89Zr-DFO displayed stability similar to 89Zr-2 under these conditions, with 45% and 59% transchelation after 1 and 7 days, respectivel\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_2",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q2",
+        "question": "What radionuclide, readily available from a 188W/188M radionuclide generator system, accesses and stabilizes the +1 oxidation state in the [M(CO)3(OH2)3]+ precursor?",
+        "golden_answer": "188Re",
+        "evidence": [
+          {
+            "doi": "10.1021/acsomega.4c05699",
+            "sources": [
+              "“188Re is readily available from an 188W/188Re radionuclide generator system.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1590/S0103-50532006000800004",
+            "sources": [
+              "“The +1 oxidation state of these metals can be accessed and stabilized through the synthesis of a [M(CO)3(OH2)3]+ precursor (M = 99mTc, natRe, 186Re, and 188Re).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_3",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q3",
+        "question": "What chelator bound all added 68Ga3+ at pH 3.5 but only 60–80% at pH 6.5 in competition studies, and whose peptide conjugates correspond to 0.11 μg of cold mass for a 185-MBq patient dose?",
+        "golden_answer": "TRAP",
+        "evidence": [
+          {
+            "doi": "10.1039/c7ra09076e",
+            "sources": [
+              "“At pH 3.5, all 68Ga3+ was bound to the TRAP chelator, whereas at pH 6.5, only 60–80% of added 68Ga3+ was bound to TRAP...”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/2191-219X-2-28",
+            "sources": [
+              "“...equivalent to 0.11 μg of cold mass for a 185-MBq patient dose of a 3-kDa conjugate. The TRAP-peptide could be 68Ga-labeled...”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_4",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q4",
+        "question": "Which radiopharmaceutical, approved for the treatment of PSMA-positive lesions in prostate cancer and associated metastases, was reported in a 2014 Theranostics review to show uptake in the kidneys, salivary glands, lacrimal glands, liver, spleen, and bowel in 37 patients?",
+        "golden_answer": "[68Ga]Ga‐HBED‐CC‐PSMA",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules28010203",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.7150/thno.7447",
+            "sources": [
+              "“[68Ga]Ga-HBED-CC-Lys-NH-CO-NH-Glu was taken further to the clinical study and compared with [18F]FECH [145]. Prostate carcinoma relapses could be clearly visualized only by 68Ga-agent. The biodistribution in 37 patients demonstrated uptake in kidneys, salivary glands, lacrimal glands, liver, spleen, and bowel”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source",
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_5",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q5",
+        "question": "What chelator, present in the comparator agent 111In-DTPA-octreotide in the prospective head-to-head neuroendocrine tumor PET study against 64Cu-DOTATATE by Pfeifer et al., was reported to release 24% of its Gd3+ payload after one day in human serum?",
+        "golden_answer": "DTPA",
+        "evidence": [
+          {
+            "doi": "10.3390/ijms24119154",
+            "sources": [
+              "“64Cu-DOTATATE PET for neuroendocrine tumors: A prospective head-to-head comparison with 111In-DTPA-octreotide in 112 patients."
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/s41598-018-22511-6",
+            "sources": [
+              "“linear contrast agent Gadodiamide (Omniscan), a derivative of the diethylenetriaminepentaacetic acid (DTPA) chelator currently in use as a metal decorporation agent, was found to release 24% of its Gd3+ payload after only a single day in human serum”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_6",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q6",
+        "question": "Which imidazopyridine-based TSPO ligand contains the same tridentate N3 chelating fragment, formed by two pyridines and one tertiary amine, as the positively charged flutamide derivatives and, when complexed with rhenium, shows an inhibition constant of 159.3 ± 8.7 nM?",
+        "golden_answer": "CB256",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules28020820",
+            "sources": [
+              "“Ligands 3 and 4 contain essentially the same tridentate N3 chelator formed by two pyridines and one tertiary amine, resulting in positively charged compounds.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/ijms17071085",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_7",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q7",
+        "question": "Which 99mTc renal imaging radiopharmaceutical is administered at 58 MBq in adults, has an estimated effective dose of 0.4 mSv, and forms the five-coordinate, distorted square-pyramidal complex?",
+        "golden_answer": "99mTc-MAG3",
+        "evidence": [
+          {
+            "doi": "10.3389/fchem.2022.926258",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3389/fchbi.2025.1729615",
+            "sources": [
+              "“The “MAG3” (mercaptoacetyl-triglycine) chelator consists ofa mercapto function attached to three glycine amino acids. Thedeprotonated amide groups in combination with the thiol donorgroup provide a N3S tetradentate chelator that coordinates a[99mTcVO]3+ motif, to furnish a five-coordinate, distortedsquare pyramidal complex”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_8",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q8",
+        "question": "What radionuclide, whose NOTA complex was reported in post-2020 literature to reach >95% radiochemical yield at room temperature, pH 3, within 10 min, forms a CP04 complex with log P = −2.68 ± 0.03?",
+        "golden_answer": "68Ga",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27103062",
+            "sources": [
+              "“the radiochemical yield of the 68Ga-NOTA complex reached more than 95% at room temperature and pH 3 within 10 min.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ],
+              "negative": [
+                "conflicting"
+              ]
+            },
+            "contrast_doi": [
+              "10.1186/s13550-015-0131-1"
+            ]
+          },
+          {
+            "doi": "10.5603/NMR.2015.0014",
+            "sources": [
+              "“it was −2.68 ± 0.03 for 68Ga-CP04”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_9",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q9",
+        "question": "Which tracer both consists of a Glu–Urea–Lys inhibitor motif linked via an aminohexanoic spacer to HBED-CC and allows measurement of a characteristic alpha-particle energy during PET-MRI?",
+        "golden_answer": "I don’t know (PET is explicitly positron emission tomography)",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27092617",
+            "sources": [
+              "“It consists of a Glu-Urea-Lys inhibitor motif conjugated via an aminohexanoic (Ahx) spacer to the high Ga-specific acyclic chelator … (HBED-CC).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s40644-022-00489-9",
+            "sources": [
+              "“Fifty-three patients with biochemically recurrent PCa underwent whole-body [68Ga]PSMA-11 PET-CT 1 hour post-injection (p.i.) followed by [68Ga]PSMA-11 PET-MRI 2.5 hours p.i.”"
+            ],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s3_session_10",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Complexes_s3_q10",
+        "question": "What organ, which showed the second-highest uptake at 4 h at just above 10 %ID/g in the biodistribution profile of [64Cu][Cu(DO2A2S)] according to Tosato et al., had an SUVmax of 0.72 ± 0.24 for [64Cu]Cu-14 at 4–5 h?",
+        "golden_answer": "kidneys",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27134158",
+            "sources": [
+              "Figure 8"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s41181-024-00243-5",
+            "sources": [
+              "“The low accumulation in kidneys (SUVmax = 0.72 ± 0.24) and liver (SUVmax = 1.54 ± 0.19) at the 4–5 h timepoint indicates a fast clearance of the compound within the first two hours.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_1",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q1",
+        "question": "How did changing the chelator from DOTA to NOTA affect kidney uptake for the A1-His and Ec1 tracers?",
+        "golden_answer": "The direction of the effect was opposite in the two systems. For A1-His, changing from DOTA to NOTA increased kidney uptake from 29.10 ± 2.24 to 50.42 ± 8.02 %ID/g, so DOTA gave lower kidney retention. For Ec1, changing from DOTA to NOTA decreased kidney uptake from 233 ± 27 to 174 ± 17 %ID/g, so NOTA gave lower kidney retention.",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-025-00380-5",
+            "sources": [
+              "“the kidney retention of [68Ga]Ga-DOTA-A1-His was found to be 40% lower than [68Ga]Ga-NOTA-A1-His (29.10 ± 2.24 vs 50.42 ± 8.02%ID/g, p < 0.01).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s41181-025-00347-6",
+            "sources": [
+              "Table 4"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_2",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q2",
+        "question": "Which gives the higher radiochemical yield: 68Ga-NODAGA-RGD labeled for 5 min at 95 °C and pH 3.2 using 6 nmol precursor, or 68Ga-NOTA labeled for 10 min at 25 °C and pH 3.5 using 5 μM chelator?",
+        "golden_answer": "68Ga-NODAGA-RGD is slightly higher. It gives 94.7 ± 1.1%, while 68Ga-NOTA gives 93 ± 2.0% under the stated conditions.",
+        "evidence": [
+          {
+            "doi": "10.1186/2191-219X-2-28",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/C7RA09076E",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_3",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q3",
+        "question": "How did replacing DOTA with THP in the TATE system compare with replacing DOTA with DATA in the TOC system in terms of tumour-to-liver contrast?",
+        "golden_answer": "The directions were opposite: THP lowered tumour-to-liver contrast from 27.2 ± 3.9 for [68Ga(DOTATATE)] to 10.5 ± 2.0 for [68Ga(THP-TATE)], while DATA raised it from 3.1 for [68Ga]Ga-DOTA-TOC to 5.2 for [68Ga]Ga-DATA-TOC.",
+        "evidence": [
+          {
+            "doi": "10.1186/s13550-015-0131-1",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s13550-019-0516-7",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_4",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q4",
+        "question": "In standard-seawater speciation modeling, which scenario leaves a larger fraction of DTPA still complexed with Gd: no Mg/Ca competition or mononuclear Mg/Ca competition?",
+        "golden_answer": "No Mg/Ca competition leaves the larger fraction of DTPA complexed with Gd: 100.0% remains bound without Mg/Ca competition, compared with 93.4% when mononuclear Mg/Ca competition is included.",
+        "evidence": [
+          {
+            "doi": "10.3389/fmars.2018.00111",
+            "sources": [
+              "“Speciation of Gd in (B) does not account for DTPA complexation with Mg and Ca; 100% of DTPA is complexed with Gd”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3389/fmars.2018.00111",
+            "sources": [
+              "“As shown in Figure 5C, only 93.4% of DTPA is now complexed with Gd, meaning that nearly 7% has dissociated due to competition from Mg and Ca.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_5",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q5",
+        "question": "According to Dias et al., which occurs at lower pH: the onset of Gd(III) complexation in the Gd(III)/KEMPPr(3,4-HP)3 1:1 system, or the start of the pH range where neutral H3L predominates for free KEMPPr(3,4-HP)3?",
+        "golden_answer": "The onset of Gd(III) complexation occurs at lower pH (2 vs 3.4).",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules30061295",
+            "sources": [
+              "Figure 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules30061295",
+            "sources": [
+              "Figure 3"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_6",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q6",
+        "question": "According to the article published in 2025, which synthetic transformation required the longer reaction time: formation of (3-phthalimidylpropyl)triphenylphosphonium from bromopropyl phthalimide and triphenylphosphine, or hydrolysis of the triphenylphosphonium-containing ethyl ester to the corresponding Boc-protected acid intermediate in the dual-targeted route?",
+        "golden_answer": "Formation of (3-phthalimidylpropyl)triphenylphosphonium required the longer reaction time, 24 h versus 2 h for hydrolysis of the triphenylphosphonium-containing ethyl ester to the Boc-protected acid intermediate.",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules26020441",
+            "sources": [
+              "“A mixture containing bromopropyl phtalamide (6.33 g, 0.024 mol) and triphenylphosphine (6.11 g, 0.024 mol) in acetonitrile (70 mL) was refluxed for 24 h.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules26020441",
+            "sources": [
+              "“The progress of the reaction was monitored by HPLC and was complete after 2 h.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_7",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q7",
+        "question": "Which system better tolerates a competing metal ion: the tetra-glutamate N-methylhydroxamate tetrapeptide in its metal-challenge experiments, or Zr-DFO in the presence of excess yttrium?",
+        "golden_answer": "Zr-DFO tolerates the competing metal ion better, because excess yttrium did not inhibit its complexation, while the tetra-glutamate N-methylhydroxamate tetrapeptide did not show high stability in metal-challenge experiments.",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00263-1",
+            "sources": [
+              "“Unfortunately, in challenge reactions, when competing with an excess of metals, the complexes did not exhibit high stability.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules26164977",
+            "sources": [
+              "“The competition titration of Zr vs Y to DFO eliminated the concern about Y, as even excess amounts of Y (even Y/Zr ≥ 10^4 or Y/DFO ≥ 10^2) did not inhibit the complexation of Zr-DFO.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_8",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q8",
+        "question": "Which chelator coordinates zirconium-89 more strongly through sulfur donor atoms, deferoxamine B or the polyethylene glycol-spaced N-methylhydroxamate pseudopeptide scaffold?",
+        "golden_answer": "I don’t know (both chelation systems discussed here are oxygen-donor systems, not sulfur-donor zirconium chelators)",
+        "evidence": [
+          {
+            "doi": null,
+            "sources": [],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": null,
+            "sources": [],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_9",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q9",
+        "question": "Which zirconium-89 stock solution is associated with greater resistance to hydrolysis, according to Wuensche et al. for [89Zr]Zr-oxalate in 1 M oxalic acid and according to Larenkov et al. for [89Zr]ZrCl4 in dilute hydrochloric acid as the pH is increased?",
+        "golden_answer": "[89Zr]Zr-oxalate in 1 M oxalic acid is described as more resistant to hydrolysis, because it is explicitly preferred over [89Zr]ZrCl4 for its higher stability toward hydrolysis, while dilute hydrochloric acid solutions are described as having a significant hydrolysis drawback.",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00258-y",
+            "sources": [
+              "“It is important to note that the preparation of zirconium-89 in dilute hydrochloric acid solutions has a significant drawback... with increasing pH, the depth of the hydrolysis of zirconium-89 in such solutions will increase.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules24081534",
+            "sources": [
+              "“Radiolabeling of hydroxamate chelators is preferably performed with [89Zr]Zr-oxalate in 1 M oxalic acid instead of [89Zr]ZrCl4 due to the higher stability towards hydrolysis.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s4_session_10",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Complexes_s4_q10",
+        "question": "Which gadolinium complex has the larger inner-sphere hydration number, Gd-HOPO or the Gd(III) complex of H3-tacn-3,2-hopo?",
+        "golden_answer": "The Gd(III) complex of H3-tacn-3,2-hopo has the larger hydration number: 3 versus 0 for Gd-HOPO, which is described as having no first-sphere water molecules.",
+        "evidence": [
+          {
+            "doi": "10.1038/s41467-019-09342-3",
+            "sources": [
+              "“we anticipate Gd-HOPO to be an ineffective MRI contrast agent, since all coordination sites of Gd3+ should be occupied and no water molecules are expected within the first coordination sphere”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/s41598-018-22511-6",
+            "sources": [
+              "“the hexadentate ligand results in a complex hydration state of 3”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_1",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q1",
+        "question": "Which core physical or practical properties can be considered as reasons for the dominant diagnostic role of 99mTc?",
+        "golden_answer": "Among the key properties are:\n(A) short half-life (~6 hours),\n(B) gamma radiation of approximately 140–141 keV,\n(C) availability from 99Mo/99mTc generator systems,\n(D) kit-based, often in-house preparation,\n(E) rich/versatile coordination chemistry,\n(F) high-quality SPECT images,\n(G) cost-efficient availability/use in routine nuclear medicine.",
+        "evidence": [
+          {
+            "doi": "10.1590/S0103-50532006000800004",
+            "sources": [
+              "“half-life time of 6 h”",
+              "“γ-energy of 140 keV”",
+              "“permanent availability of Na99mTcO4 solutions at clinical sites”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano11113022",
+            "sources": [
+              "“distinguished nuclear properties include a suitable half-life (6.0 h), isomeric decay to a ground state, monochromatic gamma-ray emission (140.5 keV, 98.5%), highly stable coordination chemistry, and high-quality SPECT images”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/ijms17071085",
+            "sources": [
+              "“99mTc is desirable due to its ideal physical properties (γ-emission of 141 keV, t1/2 = 6 h)”",
+              "“readily obtained by daily elution from 99Mo/99mTc-generator”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules27041188",
+            "sources": [
+              "“The favorable nuclear properties in combination with the rich coordination chemistry make technetium-99m the radioisotope of choice”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3389/fchem.2022.926258",
+            "sources": [
+              "\"The 99m Tc labeled radiopharmaceuticals are prepared mostly in-house by using kit formulations. 99m Tc is conveniently derived from 99Mo/ 99m Tc generator systems\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_2",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q2",
+        "question": "Which chelator system offers the highest specific activity and the lowest cold-mass burden in the compared 68Ga labeling studies published in the literature before 2020?",
+        "golden_answer": "TRAP(RGD)3. It routinely reaches about 5,000 GBq/μmol, can exceed 10,000 GBq/μmol, and corresponds to only 0.11 μg cold mass for a 185 MBq dose.",
+        "evidence": [
+          {
+            "doi": "10.1186/2191-219X-2-28",
+            "sources": [
+              "“Compared to NOTA- and DOTA-peptides, achievable specific activity (AS) for TRAP-peptide is approximately 10 and 20 times higher, respectively. AS values in the range of 5,000 GBq/μmol were routinely obtained using 1 GBq of 68Ga, equivalent to 0.11 μg of cold mass for a 185-MBq patient dose of a 3-kDa conjugate.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/2191-219X-2-28",
+            "sources": [
+              "“The use of even lower amounts of TRAP(RGD)3 (17 pmol) frequently resulted in preparations with extremely high AS of >10,000 GBq/μmol”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_3",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q3",
+        "question": "What structural and stability-related limitations of the standard hydroxamate-based zirconium-89 chelator motivate the search for alternative octadentate ligands, and what biological consequence is associated with those limitations?",
+        "golden_answer": "The limitations are an incompletely saturated coordination environment around Zr(IV), because three hydroxamate groups do not fully occupy the preferred eight-coordinate sphere; completion of coordination by water molecules or other weakly bound donors; and consequently limited in vivo stability. The biological consequence explicitly linked to these limitations is release of zirconium-89 followed by elevated accumulation or retention in bone.",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00263-1",
+            "sources": [
+              "“The two water molecules are probably responsible for the limited in vivo stability of the [89Zr]Zr-DFO complex.”",
+              "“In fact, high stability of 89Zr-based radiotracers is crucial to prevent the accumulation of the radionuclide in bone to ensure high-resolution PET images.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1371/journal.pone.0178767",
+            "sources": [
+              "“Although DFO contains three hydroxamate groups, which seem to provide effective chelation for 89Zr in vitro, this leaves 2 empty coordination sites for the 8-coordinate 89Zr and published reports described elevated bone retention in murine models receiving injections of 89Zr-DFO-labeled agents.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_4",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q4",
+        "question": "Which tissues or organs remain above 1% of the administered dose 1 day after contamination for untreated 153Gd, and 24 hours post-injection for 67Ga-KEMPPr(3,4-HP)3?",
+        "golden_answer": "After 1 day, untreated 153Gd remains above 1% in the skeleton, soft and abdominal tissues, liver, and kidneys, whereas  67Ga–KEMPPr(3,4-HP)3 remains above 1% only in the kidneys.",
+        "evidence": [
+          {
+            "doi": "10.1038/s41598-018-22511-6",
+            "sources": [
+              "“skeleton (41% RD), soft and abdominal tissues (4% RD), and excretory organs (liver 11% RD, kidneys 1% RD)”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/s41467-019-09342-3",
+            "sources": [
+              "“% I.A./organ is lower than 1% for all major organs, except for the kidney”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_5",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q5",
+        "question": "Which somatostatin receptor-targeting radiopharmaceuticals have approval, orphan designation, or registration for neuroendocrine tumour imaging or therapy up to 2025?",
+        "golden_answer": "[111In]In-pentetreotide, [64Cu]Cu-DOTA-TATE, [68Ga]Ga-DOTA-TATE, [68Ga]Ga-DOTA-TOC, [99mTc]Tc-HYNIC-TOC, [177Lu]Lu-DOTA-TATE",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00320-9",
+            "sources": [
+              "\"DA-approval of five SSTR-target-ing radiopharmaceuticals including the imaging agents [111In]In-pentetreotide, [64Cu]Cu-DOTA-TATE, [68Ga]Ga-DOTA-TATE, [68Ga]Ga-DOTA-TOC, and the therapeutic agent [177Lu]Lu-DOTA-TATE\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s13550-019-0516-7",
+            "sources": [
+              "“[68Ga]Ga-DOTA-TOC and [68Ga]Ga-DOTA-TATE are currently being used in clinical settings for the diagnosis of neuroendocrine tumours (NETs).Furthermore, [68Ga]Ga-DOTA-TATE acquired FDA approval as a diagnostic PET radiopharmaceutical for the visualisation of NET lesions (FDA News Release, June 1,2016), following the ‘orphan drug’ designation to [68Ga]Ga-DOTA-TOC by FDA [7], and [68Ga]Ga-DOTA-TOC was approved by European Medicines Agency.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s13550-018-0428-y",
+            "sources": [
+              "“HYNIC-TOC is registered in some European countries.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_6",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q6",
+        "question": "Which mechanistic explanations are proposed in articles published by Guessan et al., Rinne et al. and Vorobyeva et al. for chelator-dependent differences in blood, liver, kidney, spleen, or bone uptake of gallium-68-labeled scaffold proteins?",
+        "golden_answer": "The proposed explanations include differences in local or overall charge of the radiometal-chelator complex; altered interaction with blood proteins caused by free carboxylate groups or chelator density; reduced nonspecific hepatic uptake with more negatively charged complexes; release of gallium-68 from less stable chelates followed by transferrin binding or gallium-hydroxide colloid formation, contributing to blood, liver, spleen, and bone activity; and changes in renal handling that may reflect chelator type, chelator-to-protein ratio, hydrophilicity, protein binding, or overall charge.",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-025-00380-5",
+            "sources": [
+              "“A higher chelator density might affect the overall charge, hydrophilicity, and protein binding properties of the sdAb, potentially reducing renal reabsorption and facilitating faster renal clearance. Moreover, the net charges of the conjugates could also have an impact on their in vivo kinetics”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/s41598-019-54149-3",
+            "sources": [
+              "“presence of free carboxylic groups in [68Ga]Ga-DOTA and [68Ga]Ga-DOTAGA complexes can change the interaction with blood proteins”",
+              "“Release of 68Ga from the chelator could result in trans-chelation to transferrin or the formation of gallium-hydroxide colloids” “the negatively charged 68Ga-DOTAGA complex indeed reduced the hepatic uptake, but did not improve the overall imaging properties”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s41181-025-00347-6",
+            "sources": [
+              "“A part of the released gallium-68 could bind to blood proteins and accumulate in bone resulting in delayed blood clearance and elevated bone uptake”",
+              "“The differences in uptake and retention of activity might be due to the differences in local charge and spatial geometry of the radiometal-chelator complexes”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_7",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q7",
+        "question": "Across the quantitative chelator-comparison tables from the articles published from 2021 to 2024 for copper-64 systems, what numerical profile characterizes a high-performing complex?",
+        "golden_answer": "A high-performing copper-64 complex typically shows radiolabeling efficiency of about ≥95%, serum stability above 95% over 24–48 h, strong challenge stability with >85% intact complex after 24 h in DOTA challenge and >70% after 24 h in cysteine challenge, hydrophilic to moderately hydrophilic behavior with logD7.4 around −3.0 to −2.8, and target binding in the low-nanomolar to low-tens-of-nanomolar range.",
+        "evidence": [
+          {
+            "doi": "10.1186/s41181-024-00243-5",
+            "sources": [
+              "Table 1, “The resulting log D7.4 values were –3.00 for the NODA-GA-derivative [64Cu]Cu-14, –2.11 for CB-TE2A-conjugated [64Cu]Cu-15 and –2.79 for monomeric DiAmSar-complex [64Cu]Cu-16.”",
+              "“All four radioligands exhibited high proteolytic stability (>95%) up to 48 h post-radiolabeling.”",
+              "“Saturation binding yielded moderate affinities toward PD-L1, ranging from 100 to 265 nM.”",
+              "“Real-time radioligand binding provided more promising KD values around 20 nM for [64Cu]Cu-14 and [64Cu]Cu-15.”"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s13550-021-00746-1",
+            "sources": [
+              "Table 2, “under these conditions, the [64Cu]Cu2+ complexes exhibited a noteworthy resistance to ligand-exchange, remaining >85% at the latest time point (24 h).”",
+              "“As reported in Table 2, all the complexes showed relatively high stability as they remained >70% intact after 24 h.”",
+              "“As illustrated in Figure 7, [64Cu][Cu(DO2A2S)] was found to be highly stable in human serum with >99% of intact complex over 24 h.”"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_8",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q8",
+        "question": "What chemical and operational features make fac-[99mTc(CO)3(H2O)3]+ a suitable precursor for radiolabeling proteins and other biomolecules?",
+        "golden_answer": "The relevant features are: one-step aqueous preparation from generator-eluted pertechnetate; labile aqua ligands that are readily replaced during complex formation; easy preparation and ligand substitution in water; small size and inertness of the tricarbonyl core; the ability to form stable complexes with only two to three coordination sites; and compatibility with site-specific labeling strategies such as His-tag coordination.",
+        "evidence": [
+          {
+            "doi": "10.1186/2191-219X-4-14",
+            "sources": [
+              "“The incorporation of a hexahistidine sequence (His-tag) in a recombinant protein can be used to site-specifically radiolabel with 99mTc-tricarbonyl ([99mTc(CO)3]+).”",
+              "“Ideally, radiolabelling would be achieved rapidly, under mild conditions, to a high specific activity and preferably in a simple one-pot kit-based method without the need for subsequent purification steps.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.4c05699",
+            "sources": [
+              "“The +1 oxidation state of these metals can be accessed and stabilized through the synthesis of a [M(CO)3(OH2)3]+ precursor.”",
+              "“The [M(CO)3(OH2)3]+ precursors can be reacted with bifunctional chelators, during which the labile water ligands are replaced to form metal complexes.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1098/rsos.191247",
+            "sources": [
+              "“There are several advantages of using [99mTc]Tc(CO)3 to radiolabel biomolecules—easy preparation, easy substitution of its ligands in water media, smaller size and inertness.”",
+              "“technetium tricarbonyl, [99mTc][Tc(CO)3(H2O)3]+, which only need two to three coordination sites to form a stable complex”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_9",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q9",
+        "question": "What are the pH-dependent distribution pattern of Gd-KEMPPr(3,4-HP)3, and what is DTPA protonation-state distribution for the evaluation Gd-DTPA in seawater?",
+        "golden_answer": "For KEMPPr(3,4-HP)3, H3L predominates from pH 3.4–9.9, and GdL starts forming near pH 3.5 and dominates from pH 4.8. For DTPA in seawater at pH 8.2, speciation is dominated by HL4− and H2L3−, while L5− is minor.",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules30061295",
+            "sources": [
+              "“The species distribution plot in Figure 2 shows the predominance of the neutral H3L species in the pH range 3.4–9.9”",
+              "“the neutral GdL complex begins to form at pH ca 3.5, and becomes prevalent at pH 4.8”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3389/fmars.2018.00111",
+            "sources": [
+              "“only three forms of DTPA are relevant at this pH; about 56.5% is present as the single-protonated species, 39.6% as the double-protonated species, and 3.9% as the deprotonated species”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Complexes_s5_session_10",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Complexes_s5_q10",
+        "question": "Which structural elements, approval status, and clinical role define [68Ga]Ga-PSMA-11 in recurrent prostate cancer imaging?",
+        "golden_answer": "[68Ga]Ga-PSMA-11 is a Glu-Urea-Lys PSMA inhibitor linked through an Ahx spacer to HBED-CC. It is the first and only FDA-approved metal-based PSMA-i radiopharmaceutical for suspected biochemical recurrence and, in recurrent disease, the investigation of choice.",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27092617",
+            "sources": [
+              "“Gallium [68Ga]Ga-PSMA-11, is the first and only metal-based RP including a PSMA-i pharmacophore approved by FDA for patients with PCa and suspected biochemical recurrence [37]. It consists of a Glu-Urea-Lys inhibitor motif conjugated via an aminohexanoic (Ahx) spacer to the high Ga-specific acyclic chelator N,N’-bis[2 -hydroxy-5-(carboxyethyl)benzyl]-ethylene-diamine-N,N-diacetic acid (HBED-CC).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s40644-022-00489-9",
+            "sources": [
+              "“[68Ga]PSMA-11 PET-CT has emerged as an efficient diagnostic tool in PCa management especially in the context of biochemical recurrence, where it has rapidly become the investigation of choice [9–12].”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  }
+]

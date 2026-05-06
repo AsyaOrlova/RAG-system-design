@@ -1,0 +1,1558 @@
+[
+  {
+    "session_id": "Nanozymes_s1_session_1",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q1",
+        "question": "What binding energy was assigned to the Pt⁰ 4f₇/₂ peak in XPS characterization of Au@Pt core-shell nanodendrites synthesized by Bonet-Aleta et al. (2022)?",
+        "golden_answer": "70.87 eV",
+        "evidence": [
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "\"Two clear peaks located at binding energies (BEs) of 70.87 and 74.15 eV are attributed to Pt4f7/2 and Pt4f5/2 of Pt⁰\""
+            ],
+            "modifications": {
+              "constraints": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_2",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q2",
+        "question": "In the 2017 He et al. Scientific Reports study on AuPt alloy nanozymes, does a higher Au content in the AuPt alloy lead to a higher Km for TMB oxidation, indicating lower substrate affinity?",
+        "golden_answer": "a higher Au content leads to a lower Km, indicating higher substrate affinity (and lower reaction rate), not lower affinity.",
+        "evidence": [
+          {
+            "doi": "10.1038/srep40103",
+            "sources": [
+              "\"The AuPt alloy NPs having a higher Au content gave lower Km and Vmax values.\" and \"AuPt alloy NPs oxidase mimetics with a lower Km value were accompanied by lower reaction rates in the oxidation of TMB, indicating the higher affinity of AuPt alloy NPs with substrate than that of Pt NPs.\""
+            ],
+            "modifications": {
+              "negative": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_3",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q3",
+        "question": "What NaOH concentration was used in the hydrothermal synthesis of CeO₂ nanocubes versus nanorods in the Yang et al. (2016) study on facet-dependent redox enzyme-mimicking activities of CeO₂ nanostructures published in Scientific Reports?",
+        "golden_answer": "0.1 mol/L NaOH for nanocubes; 12 mol/L NaOH for nanorods.",
+        "evidence": [
+          {
+            "doi": "10.1038/srep35344",
+            "sources": [
+              "\"20 mL of Ce(NO₃)₃·6H₂O solution (0.1 mol/L) was added dropwise into NaOH solution (0.1 mol/L for nanocubes and 12 mol/L for nanorods).\""
+            ],
+            "modifications": {
+              "constraints": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_4",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q4",
+        "question": "What absorbance value at 652 nm is recorded for the TMB-only control (no catalyst, no H₂O₂) in the UV-Vis spectra shown in the catalytic activity characterization by Fu et al. (2021)?",
+        "golden_answer": "0",
+        "evidence": [
+          {
+            "doi": "10.1016/j.jcis.2021.06.170",
+            "sources": [
+              "Figure 3A"
+            ],
+            "modifications": {
+              "multimodal": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_5",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q5",
+        "question": "What is the half-maximal inhibitory concentration (IC₅₀) of Co@Fe₃O₄ nanozymes against A-498 renal cancer cells reported by Wang et al. in the 2019 RSC Advances cobalt-doped iron oxide nanozyme study?",
+        "golden_answer": "Not reported in this article",
+        "evidence": [
+          {
+            "doi": "10.1039/c8ra05487h",
+            "sources": [
+              "Not reported in this article"
+            ],
+            "modifications": {
+              "negative": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_6",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q6",
+        "question": "According to the kinetic table reported by Cao et al. in RSC Advances (2017) on Ru NP nanozymes, what is the Vmax of Ru NPs for TMB oxidation under HRP-like conditions (with H₂O₂)?",
+        "golden_answer": "4.95 μM min⁻¹",
+        "evidence": [
+          {
+            "doi": "10.1039/c7ra10370k",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_7",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q7",
+        "question": "What detection limit was obtained for glucose in the ZnFe2O4/GOx colorimetric assay?",
+        "golden_answer": "3.0 × 10^-7 mol L^-1",
+        "evidence": [
+          {
+            "doi": "10.1021/ac300939z",
+            "sources": [
+              "“The linear range for glucose was from 1.25 × 10^-6 to 1.875 × 10^-5 mol L^-1 with a detection limit (DL) of 3.0 × 10^-7 mol L^-1.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_8",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q8",
+        "question": "What hydroquinone concentration range defined the linear response of the α-Fe2O3@CoNi-based colorimetric assay specifically under the optimized peroxidase-mimetic TMB/H2O2 sensing conditions?",
+        "golden_answer": "0.50–30 mM",
+        "evidence": [
+          {
+            "doi": "10.1039-d1ra03456a",
+            "sources": [
+              "“A good linear relationship (R² = 0.996) was obtained when plotting the absorbance at 652 nm against the HQ concentration range of 0.50–30 mM.”"
+            ],
+            "modifications": {
+              "constraints": []
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_9",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q9",
+        "question": "What ultralow detection limit was reported for IL-6 in the Pd@Pt nanodendrite-based colorimetric ELISA, expressed in both mass concentration and molar concentration?",
+        "golden_answer": "0.044 pg mL−1 (1.7 fM)",
+        "evidence": [
+          {
+            "doi": "10.3390-chemosensors10090359",
+            "sources": [
+              "“…a high-quality linear dependence … was obtained in the range of 0.05–2 pg mL−1 with an ultralow quantitative limit of detection (LOD) of 0.044 pg mL−1 (1.7 fM)…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s1_session_10",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s1_q10",
+        "question": "What Michaelis constant was reported for TMB oxidation catalyzed by the pristine-surface magnetite nanoparticle hydrosol used in the inkjet-printed bacteria sensing platform?",
+        "golden_answer": "1.22 mmol/L",
+        "evidence": [
+          {
+            "doi": "10.3390/nano10020313",
+            "sources": [
+              "“…the process followed the Michaelis–Menten model with calculated Km 1.22 mmol/L, Vmax 4.39 µmol/s…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_1",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q1",
+        "question": "What drawback is attributed to the stabilizer added during the porous LaNiO3 nanocube synthesis when that same stabilizer is discussed as a metal-NP stabilizer in the Pt nanoparticle study?",
+        "golden_answer": "It may cause cancers.",
+        "evidence": [
+          {
+            "doi": "10.7150/thno.19257",
+            "sources": [
+              "“LaNiO3 nanocubes were synthesized as follows… followed by the adding 0.3 g of PVP.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.0c00147",
+            "sources": [
+              "“However, polyvinylpyrrolidone may cause cancers, and dendrimers are too expensive to be scaled up.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_2",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q2",
+        "question": "What temperature gave the maximum catalytic activity in the Ir nanoparticle study for the same chromogenic substrate that showed a better response than OPD in the V2O5 nanozyme assay reported by Sun et al. (2016)?",
+        "golden_answer": "50 °C",
+        "evidence": [
+          {
+            "doi": "10.3390/s16040584",
+            "sources": [
+              "“The correlations of absorbance intensity with all H2O2 concentrations were obtained at 660 nm for TMB substrate and 450 nm for OPD substrate… The results show that TMB as substrate exhibited a better response.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/d0ra05342b",
+            "sources": [
+              "“Similar to HRP, the catalytic activity of Ir NPs is dependent on the pH, temperature and catalyst dosage… In the range of 20–80 °C, the maximum catalytic activity was obtained under 50 °C.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_3",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q3",
+        "question": "In Davidson et al. (2020), what reaction time was reported for detecting the molecule used as a reductant during Au@Pt nanoparticle synthesis?",
+        "golden_answer": "3 min",
+        "evidence": [
+          {
+            "doi": "10.1016/j.jcis.2021.06.170",
+            "sources": [
+              "“Briefly, 1.0 mL of above Au NP dispersion was diluted with 8 mL of deionized water, followed by addition of the required volume of H2PtCl6·6H2O aqueous solution (20 mM) and 0.1 M of ascorbic acid (AA, AA/Pt4+ = 5).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1016/j.sintl.2020.100031",
+            "sources": [
+              "“Herein, the reported Pd-Pt NCs based colorimetric method achieves a low limit of detection of 0.40 μM in only 3 min of reaction time.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_4",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q4",
+        "question": "What detection limit is reported in the cerium-oxide-nanosheet microfluidic sensor study for the same analyte that is measured colorimetrically down to micromolar concentrations in the Fe3O4@lignin nanozyme assay?",
+        "golden_answer": "20 nM.",
+        "evidence": [
+          {
+            "doi": "10.3390/nano9020210",
+            "sources": [
+              "“Fe3O4@LNPs catalyzed the oxidation of 3,3′,5,5′-tetramethylbenzidine (TMB) in the presence of H2O2 … Under the optimal conditions, Fe3O4@LNPs showed the ability of sensitive colorimetric detection of H2O2 … and the limit of detection was 2 µM.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.9b03252",
+            "sources": [
+              "“The lowest concentration of H2O2 that could be estimated by this microfluidic electrochemical sensor was 20 nM (S/N = 3).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_5",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q5",
+        "question": "Which analyte do you reach if you first identify the one-pot oxidase strategy in the Mn3O4 paper and then move to the Au@Pt GSH paper where the same analyte is sensed through surface poisoning rather than radical scavenging?",
+        "golden_answer": "Glutathione (GSH)",
+        "evidence": [
+          {
+            "doi": "10.1039/C9RA01227C",
+            "sources": [
+              "“Here, we synthesized Mn3O4 microspheres… for rapid colorimetric determination of glutathione (GSH).”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "The system composed by Au@Pt and TMB demonstrates a good linear range between 0.1–1.0 µM to detect GSHlevels…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_6",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q6",
+        "question": "Which coexisting compounds are tested in the cerium-oxide-nanosheet microfluidic sensor paper together with the interferent that is described as negligible in the AuPt alloy HS− sensing study?",
+        "golden_answer": "Uric acid (UA), dopamine (DA), glucose (GLU), and glutathione (GSH).",
+        "evidence": [
+          {
+            "doi": "10.1038/srep40103",
+            "sources": [
+              "“AA, glucose, GSSG, uric acid and glycine showed negligible effects on inhibiting the oxidase-like activity of Au0.4Pt0.6 alloy NPs.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.9b03252",
+            "sources": [
+              "“Interference studies … on addition of 1 mM UA, DA, AA, GLU, GSH and 0.2 mM H2O2.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_7",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q7",
+        "question": "Which analyte emerges if you first identify the chromogen in the porous Au@Pt spike assay and then search the only uploaded paper where that same chromogen is used in a reusable oxidase platform to detect a vitamin antioxidant?",
+        "golden_answer": "Ascorbic acid.",
+        "evidence": [
+          {
+            "doi": "10.1016/j.jcis.2021.06.170",
+            "sources": [
+              "“Finally, the antibody-functionalized Au@Pt NPs were introduced to attach the antigen, which catalyzed TMB oxidationand realized the detection of the target antigen.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano10061015",
+            "sources": [
+              "“In this work, we found that Pt NPs, as synthesized, were reusable and could catalyze 3,3,5,5′-tetramethylbenzidine (TMB) oxidation multiple times in a row… In addition, the method for colorimetric detection of AA was established…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_8",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q8",
+        "question": "Which microbe would you identify if you start from the Fe3O4 bacteria paper and then look for the same validated bacterium in the ZnFe2O4 glucose paper?",
+        "golden_answer": "No such microbe can be identified; the bridge is unanswerable because the ZnFe2O4 paper validates urine glucose detection, not a bacterium.",
+        "evidence": [
+          {
+            "doi": "10.3390/nano10020313",
+            "sources": [
+              "“The performance of the platform was validated against E. coli.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/ac300939z",
+            "sources": [
+              "“Using this method, we detect glucose in urine sample with diabetes from a male volunteer.”"
+            ],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_9",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q9",
+        "question": "What detection-limit value in μM is listed in the cerium-oxide-nanosheet sensor paper for the analyte whose nanomolar level is used to motivate catalytic therapy in the cobalt-doped Fe3O4 study?",
+        "golden_answer": "0.01 μM.",
+        "evidence": [
+          {
+            "doi": "10.1039/C8RA05487H",
+            "sources": [
+              "“effective antitumor activity with the addition of an ultralow dose (10 nM) of H2O2 …”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.9b03252",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s2_session_10",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s2_q10",
+        "question": "Considering only papers published in 2020, which analyte do you reach if you first identify the molecule measured in the reusable Pt oxidase study and then link it to the Ir NP synthesis section where the same molecule is a protecting agent?",
+        "golden_answer": "Ascorbic acid.",
+        "evidence": [
+          {
+            "doi": "10.3390/nano10061015",
+            "sources": [
+              "“A colorimetric detection method was designed using the oxidase-like activity of Pt NPs to detect ascorbic acid in triplicate.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/D0RA05342B",
+            "sources": [
+              "“Synthesis of Ir NPs were carried out by a simple chemical reduction process, in which sodium hexachloroiridate(III) hydrate was used as precursor with ascorbic acid as a protecting agent and sodium borohydride as the reducing agent…”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_1",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q1",
+        "question": "Which analyte is the sulfur-containing biomolecule that, in the Au@Pt nanozyme study, inhibits oxidase-like activity by binding through its thiol group to the noble-metal surface, and in the Ir nanoparticle study is detected because it consumes H2O2 and thereby weakens the TMB-based colorimetric signal?",
+        "golden_answer": "Glutathione (GSH)",
+        "evidence": [
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“The presence of a thiol group (-SH) in the chemical structure of GSH can bind to the Au@Pt nanozyme surface to hamper the activation of O2 and reducing its oxidase-like activity…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/d0ra05342b",
+            "sources": [
+              "“GSH … can consume H2O2 and result in the shallowing color of the Ir NPs-TMB-H2O2 system.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_2",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q2",
+        "question": "Which chromogenic substrate is the molecule that, in the Au@Pt study, is preferred over OPD and is oxidized via activated dissolved O2 with a characteristic absorbance at 652 nm, and in the Ir nanoparticle study is also the reporting substrate but only becomes blue in the presence of H2O2?",
+        "golden_answer": "3,3′,5,5′-Tetramethylbenzidine (TMB)",
+        "evidence": [
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“Figure 2. Au@Pt enzyme-like activity. (a) Reaction scheme of oxidation of TMB into a charge transfer complex (TMBox) with a maximum absorbance at 652 nm … (d) Reaction occurred using OPD as substrate to yield yellow-colored OPDox with a maximum absorbance at 450 nm.” Also: “The nanozyme activity decreased up to a 70% in the absence of O2… The most plausible activation mechanism implies the dissociation into O-adatoms. These O-atoms can subsequently withdraw an H from TMB to further oxidize it.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/d0ra05342b",
+            "sources": [
+              "“Exposure of Ir NPs to a colorless peroxidase substrate 3,3′,5,5′-tetramethylbenzidine (TMB) in the presence of H2O2resulted in the fast oxidation of TMB to a blue product. However, no color change of the TMB substrate was observed only with Ir NPs or H2O2…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_3",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q3",
+        "question": "Which oxidant is described in the AuPt alloy study as the additive that makes TMB oxidation about twice as fast as in water, and in the Ru nanoparticle study as the exogenous co-substrate required for the HRP-like oxidation of OPD and DA?",
+        "golden_answer": "Hydrogen peroxide (H2O2)",
+        "evidence": [
+          {
+            "doi": "10.1038/srep40103",
+            "sources": [
+              "“It is important to note that the oxidation rate of TMB in 0.67 mM H2O2 is twice as fast as when the reaction is run in water.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/c7ra10370k",
+            "sources": [
+              "“The Ru NPs could catalyze the oxidation of the substrates 3,3,5,5-tetramethylbenzidine (TMB), o-phenylenediamine (OPD) and dopamine hydrochloride (DA) by H2O2 to produce the color products in aqueous solution.” Also: “The HRP-like activity of Ru NPs was also investigated by the catalytic oxidation of the HRP substrate OPD in the presence of H2O2,” and “The Ru NPs were then applied as catalyst for the oxidation of DA … by H2O2.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_4",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q4",
+        "question": "Which metal satisfies both conditions: it forms reusable oxidase-like nanoparticles in one paper and PEI-stabilized peroxidase-mimic nanoparticles in another paper?",
+        "golden_answer": "Platinum (Pt)",
+        "evidence": [
+          {
+            "doi": "10.3390/nano10061015",
+            "sources": [
+              "“In this work, we found that Pt NPs, as synthesized, were reusable and could catalyze 3, 3, 5, 5′-tetramethylbenzidine (TMB) oxidation multiple times in a row.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.0c00147",
+            "sources": [
+              "“Herein, we prepared polyethyleneimine-stabilized platinum NPs (Ptn-PEI NPs) for colorimetric detection of glucose… Pt50-PEI NPs-catalyzed oxidation of… TMB… which indicated the peroxidase-like property of Pt50-PEI NPs.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_5",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q5",
+        "question": "Considering only papers published in 2021–2022, which chromogenic substrate is shared by the Au@Pt system used for glutathione sensing and the Au@Pt system used for SARS-CoV-2 spike-protein immunodetection?",
+        "golden_answer": "TMB",
+        "evidence": [
+          {
+            "doi": "10.1016/j.jcis.2021.06.170",
+            "sources": [
+              "“Finally, the antibody-functionalized Au@Pt NPs were introduced to attach the antigen, which catalyzed TMB oxidation and realized the detection of the target antigen.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“we have synthetized a gold-platinum Au@Pt nanoparticle with core-shell configuration exhibiting a remarkable oxidase-like mimicking activity towards the substrates 3,3′,5,5′-tetramethylbenzidine (TMB) and o-phenylenediamine (OPD).”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_6",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q6",
+        "question": "Which nanozyme, if any, satisfies all of the following conditions: catalase-like activity, oxidase-like activity, and validation in a microfluidic electrochemical sensor?",
+        "golden_answer": "No such nanozyme is reported in the articles.",
+        "evidence": [
+          {
+            "doi": "10.1039/D0RA05342B",
+            "sources": [
+              "“Ir NPs possessed intrinsic catalase-like activity…” and “no color change of the TMB substrate was observed only with Ir NPs or H2O2, indicating the intrinsic peroxidase-like activity of Ir NPs.”"
+            ],
+            "modifications": {
+              "negative": [
+                "unanswerable"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/s16040584",
+            "sources": [
+              "“cerium oxide-based nanomaterials with oxidase, catalase and SOD mimetic properties” — this is only a general background statement and does not identify a nanozyme in the uploaded corpus that is also validated in a microfluidic electrochemical sensor."
+            ],
+            "modifications": {
+              "negative": [
+                "unanswerable"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_7",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q7",
+        "question": "Which nanozyme is proposed for catalytic tumor therapy in the acidic lysosomal microenvironment, is reported to have about a 100-fold higher affinity for H2O2 than Fe3O4, and matches the separate observation that peroxidase-like nanozyme activity is dominant under acidic pH?",
+        "golden_answer": "Co@Fe3O4 nanozyme.",
+        "evidence": [
+          {
+            "doi": "10.1039/C8RA05487H",
+            "sources": [
+              "“Co doping makes the Co@Fe3O4 nanozymes exhibit a 50-fold and 100-fold higher affinity to H2O2 than that of the HRP and Fe3O4 nanozymes, respectively… When the Co@Fe3O4 nanozymes… are specifically located in the acidic microenvironment of the lysosomes, they induce apoptosis…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.9b03252",
+            "sources": [
+              "“at acidic pH (pH < 7), the peroxidase catalytic activity is dominant, while at basic pH (pH > 7), the catalase activity is dominant.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_8",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q8",
+        "question": "What overlap interval is shared by the reported linear ranges for ascorbic-acid detection using Pd–Pt nanocubes and for glucose detection using the GOx-coupled porous LaNiO3 cascade assay?",
+        "golden_answer": "10–15 μM.",
+        "evidence": [
+          {
+            "doi": "10.1016/j.sintl.2020.100031",
+            "sources": [
+              "this method has a detection range from 0 to 50 μM and a linear range from 1 to 15 μM”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.7150/thno.19257",
+            "sources": [
+              "“A linear range from 10 μM to 50 μM and a detection limit of 8.16 μM were obtained for glucose detection.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_9",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q9",
+        "question": "Which catalyst satisfies both conditions: (i) in the Fe3O4@lignin kinetic comparison table, it has separate entries for both TMB and H2O2, with a much larger Km for H2O2 than for TMB; and (ii) in the Ru nanoparticle study, it is explicitly used as a comparator whose H2O2 affinity is lower than that of Ru nanoparticles?",
+        "golden_answer": "Fe3O4 nanoparticles.",
+        "evidence": [
+          {
+            "doi": "10.3390/nano9020210",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/C7RA10370K",
+            "sources": [
+              "“The Km value of Ru NPs with H2O2 as the substrate is much lower than that of Ru frames and Fe3O4 NPs, and comparable with Pd nanoplates.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s3_session_10",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s3_q10",
+        "question": "Considering only the MDPI papers, which chromogenic oxidation product satisfies both conditions: (i) in the Fe3O4@lignin kinetic study, its concentration is calculated from absorbance at 652 nm using a molar absorption coefficient of 39,000 M⁻¹ cm⁻¹; and (ii) in the Pd@Pt nanodendrite kinetic study, the same coefficient is used for kinetic calculations at 652 nm?",
+        "golden_answer": "Oxidized TMB (oxTMB).",
+        "evidence": [
+          {
+            "doi": "10.3390/nano9020210",
+            "sources": [
+              "“The concentration of TMB-derived oxidation products was calculated by A = ε × b × C (Beer-Lambert Law), where A is the absorbance value at 652 nm at room temperature and the molar absorption coefficient (ε) is 39,000 M−1 cm−1 [35].”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/chemosensors10090359",
+            "sources": [
+              "“ν = SlopeInitial/(εoxTMB-652 nm × l), where εoxTMB-652 nm is the molar absorption coefficient of oxidized TMB (oxTMB) at 652 nm (εoxTMB-652 nm = 3.9 × 10^4 M−1 cm−1).”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_1",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q1",
+        "question": "Which assay has the lower glucose detection limit: the ZnFe2O4 urine-glucose system or the Pt50-PEI saliva-glucose system?",
+        "golden_answer": "The ZnFe2O4 urine-glucose system",
+        "evidence": [
+          {
+            "doi": "10.1021/ac300939z",
+            "sources": [
+              "“linear range from 1.25 × 10−6 to 1.875 × 10−5 mol L−1 with a detection limit of 3.0 × 10−7 mol L−1”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.0c00147",
+            "sources": [
+              "“linear concentration range from 10 to 5000 μM with a detection limit of 4.2 μM”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_2",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q2",
+        "question": "Which GSH assay is more sensitive: the Mn3O4 oxidase system or the Au@Pt core-shell oxidase system?",
+        "golden_answer": "The Au@Pt core-shell oxidase system.",
+        "evidence": [
+          {
+            "doi": "10.1039/C9RA01227C",
+            "sources": [
+              "“The Mn3O4-TMB system had good linearity with GSH concentration in the range of 5–60 mM, and the limit of detection was 0.889 mM.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“good linear range between 0.1–1.0 µM to detect GSH levels with a limit of detection (LoD) of 34 nM”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_3",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q3",
+        "question": "Which glucose nanozyme reports the lower detection limit: the ZnFe2O4 MNP urine-glucose assay or Por-ZnFe2O4 HSs?",
+        "golden_answer": "The ZnFe2O4 MNP urine-glucose assay.",
+        "evidence": [
+          {
+            "doi": "10.1021/ac300939z",
+            "sources": [
+              "“The linear range for glucose was from 1.25 × 10−6 to 1.875 × 10−5 mol L−1 with a detection limit (DL) of 3.0 × 10−7 mol L−1.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.0c00147",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_4",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q4",
+        "question": "Among papers published in 2020 only, which analyte assay is more sensitive in absolute concentration units: reusable Pt nanoparticles for ascorbic acid or Ir nanoparticles for glucose?",
+        "golden_answer": "Reusable Pt nanoparticles for ascorbic acid.",
+        "evidence": [
+          {
+            "doi": "10.3390/nano10061015",
+            "sources": [
+              "“limits of detection were 131 ± 15, 144 ± 14, and 152 ± 9 nM”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/D0RA05342B",
+            "sources": [
+              "“linear range of 10 μM to 2 mM with a detection limit of 5.8 μM”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_5",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q5",
+        "question": "By how much does OPD outperform TMB in nanozyme colorimetric assays?",
+        "golden_answer": "It does not; the premise is incorrect. In the available studies that directly compare them, TMB is preferred over OPD, so no positive “advantage of OPD over TMB” can be established.",
+        "evidence": [
+          {
+            "doi": "10.3390/s16040584",
+            "sources": [
+              "“The results show that TMB as substrate exhibited a better response. It is supposed that the maximum absorbance peak of the oxidation of OPD is nearly equal to that of V2O5 nanozymes, so the absorbance peak of V2O5 interferes with the H2O2 sensing.”"
+            ],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“The obtained values suggested a better interaction of Au@Pt with TMB. Thus, we further selected TMB as reaction substrate to detect GSH.”"
+            ],
+            "modifications": {
+              "negative": [
+                "incorrect"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_6",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q6",
+        "question": "If you compare only papers using TMB with a 652 nm readout, which pollutant-target assay is more sensitive than the GSH Mn3O4 assay?",
+        "golden_answer": "The α-Fe2O3@CoNi hydroquinone assay.",
+        "evidence": [
+          {
+            "doi": "10.1039/D1RA03456A",
+            "sources": [
+              "the HQ paper gives a “low detection limit (0.16 mM)” with TMB/oxTMB colorimetry"
+            ],
+            "modifications": {
+              "constraints": [
+                "domain"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/C9RA01227C",
+            "sources": [
+              "“The Mn3O4-TMB system… limit of detection was 0.889 mM”"
+            ],
+            "modifications": {
+              "constraints": [
+                "domain"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_7",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q7",
+        "question": "Which study explicitly states that its oxidase-like activity is much lower than its peroxidase/HRP-like activity: the Ru nanoparticle study or the AuPt alloy study?",
+        "golden_answer": "The Ru nanoparticle study.",
+        "evidence": [
+          {
+            "doi": "10.1039/C7RA10370K",
+            "sources": [
+              "“It is also obvious that the oxidase-like activity of Ru NPs was much lower than its HRP-like activity.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/srep40103",
+            "sources": [
+              "The AuPt alloy study instead says “The oxidase-like and peroxidase-like activity of AuPt alloy NPs were found correlate closely with the compositions of Au and Pt.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_8",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q8",
+        "question": "Between two colorimetric cascade assays that monitor A652/653, which reports the lower detection limit for its target analyte: glucose (GOx + LaNiO3) or ascorbic acid (Pd–Pt nanocubes)?",
+        "golden_answer": "The ascorbic acid Pd–Pt nanocube assay.",
+        "evidence": [
+          {
+            "doi": "10.7150/thno.19257",
+            "sources": [
+              "“A linear range from 10 μM to 50 μM and a detection limit of 8.16 μM were obtained for glucose detection.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1016/j.sintl.2020.100031",
+            "sources": [
+              "“The limit of detection … was calculated to be 0.40 μM …”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_9",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q9",
+        "question": "Two iron-oxide-derived systems report Km values for TMB in the peroxidase-like TMB+H2O2 reaction: Co-doped Fe3O4 and Fe3O4@lignin nanoparticles. Which one reports the lower Km(TMB)?",
+        "golden_answer": "Fe3O4@lignin nanoparticles.",
+        "evidence": [
+          {
+            "doi": "10.1039/C8RA05487H",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano9020210",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s4_session_10",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s4_q10",
+        "question": "Which strategy is reported to yield the larger H2O2-affinity improvement relative to bare Fe3O4: cobalt doping or immobilization/association with lignin nanoparticles?",
+        "golden_answer": "Cobalt doping.",
+        "evidence": [
+          {
+            "doi": "10.1039/C8RA05487H",
+            "sources": [
+              "“Co doping makes the Co@Fe3O4 nanozymes exhibit a 100-fold higher affinity to H2O2 than … Fe3O4 nanozymes.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano9020210",
+            "sources": [
+              "“The Km value of the Fe3O4@LNPs with H2O2 was 29 times lower than that of the Fe3O4 NPs with H2O2…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_1",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q1",
+        "question": "Which analytes are detected by monitoring a decrease or suppression of blue oxTMB rather than a fresh increase from baseline?",
+        "golden_answer": "Glutathione (GSH) and hydroquinone (HQ).",
+        "evidence": [
+          {
+            "doi": "10.1039/C9RA01227C",
+            "sources": [
+              "“glutathione (GSH) could selectively suppress the oxidation of TMB, converting blue TMBox to colorless TMB. Based on this phenomenon, the GSH level could be measured by monitoring the decrease of TMBox peak intensity at 652 nm.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/D1RA03456A",
+            "sources": [
+              "“The addition of HQ reduces oxTMB to TMB, which is oxidized to p-benzoquinone.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_2",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q2",
+        "question": "Which non-blood real-sample matrices are explicitly used in GOx-coupled nanozyme glucose assays published between 2012 and 2020?",
+        "golden_answer": "Urine and saliva.",
+        "evidence": [
+          {
+            "doi": "10.1021/ac300939z",
+            "sources": [
+              "“ZnFe2O4 MNPs were used as a colorimetric biosensor for the detection of urine glucose.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1021/acsomega.0c00147",
+            "sources": [
+              "“For example, the concentration of glucose in saliva was tested to be 0.15 mM using our method.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_3",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q3",
+        "question": "Which target analytes are explicitly detected in nanozyme-based water-pollution or environmental-bacteria assays published between 2020 and 2021?",
+        "golden_answer": "Hydroquinone (HQ) and E. coli.",
+        "evidence": [
+          {
+            "doi": "10.1039/D1RA03456A",
+            "sources": [
+              "“In the presence of HQ, the blue oxTMB is reduced to colorless, which allows for colorimetric detection of HQ in water samples.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano10020313",
+            "sources": [
+              "“The performance of the platform was validated against E. coli.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_4",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q4",
+        "question": "Which nanozyme systems for H2O2, glucose, or glutathione sensing published before 2023 explicitly compare TMB with OPD as chromogenic substrates?",
+        "golden_answer": "The V2O5 nanozyme system for H2O2/glucose sensing and the Au@Pt core-shell oxidase nanozyme system for glutathione sensing.",
+        "evidence": [
+          {
+            "doi": "10.3390/s16040584",
+            "sources": [
+              "“It was found that compared with 3,3′,5,5′-tetramethylbenzidine (TMB), the enzyme substrate o-phenylenediamine (OPD) seriously interfered with the H2O2 detection.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“Au@Pt nanoparticle with core-shell configuration exhibiting a remarkable oxidase-like mimicking activity towards the substrates 3,3′,5,5′-tetramethylbenzidine (TMB) and o-phenylenediamine (OPD).”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_5",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q5",
+        "question": "Which Au@Pt bimetallic or core-shell nanozyme systems published before 2023 explicitly assign catalytic roles to Pt in analyte sensing?",
+        "golden_answer": "The porous Au@Pt core-shell nanozyme system for SARS-CoV-2 spike-protein detection and the Au@Pt core-shell oxidase nanozyme system for glutathione sensing.",
+        "evidence": [
+          {
+            "doi": "10.1016/j.jcis.2021.06.170",
+            "sources": [
+              "“Pt growth on Au seeds, producing uniform, monodispersed and porous Au@Pt core–shell NPs… The enhanced catalysis of Au@Pt NPs was ascribed to the porous nanostructure and formed electron-rich Pt shells…”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano12050755",
+            "sources": [
+              "“In order to catalyze the O2 activation, the active sites present on the surface of the metallic nanoparticles must be accessible… the entire core was composed by Au while the surrounding dendrite shell was made of Pt.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_6",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q6",
+        "question": "Which single nanozyme systems, if any, are explicitly described as combining oxidase-, peroxidase-, and catalase-like activities in one material platform in studies published before 2023?",
+        "golden_answer": "None. No single nanozyme system in the provided set is explicitly described as combining all three activities in one material platform.",
+        "evidence": [
+          {
+            "doi": "10.1039/D0RA05342B",
+            "sources": [
+              "“Here we show that iridium nanoparticles (Ir NPs) functionally mimic peroxidase and catalase.”"
+            ],
+            "modifications": {
+              "negative": [
+                "unanswerable"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1039/C9RA01227C",
+            "sources": [
+              "“Here, we synthesized Mn3O4 microspheres which worked as a nanozyme to exhibit outstanding oxidase-like activity”"
+            ],
+            "modifications": {
+              "negative": [
+                "unanswerable"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_7",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q7",
+        "question": "Across the 2017 RSC Advances Ru nanoparticle study and Li et al. (2019), list all chromogenic substrates explicitly used to demonstrate enzyme-like activity.",
+        "golden_answer": "TMB, OPD, dopamine hydrochloride (DA), sodium L-ascorbate (NaA), and in Li et al. (2019) also ABTS and ascorbic acid (AA).",
+        "evidence": [
+          {
+            "doi": "10.1039/C7RA10370K",
+            "sources": [
+              "“The Ru NPs could catalyze the oxidation of the substrates 3,3,5,5-tetramethylbenzidine (TMB), o-phenylenediamine (OPD) and dopamine hydrochloride (DA) by H2O2 to produce the color products in aqueous solution… Ru NPs mimicking ascorbic acid oxidase (AAO) can oxidize NaA under ambient condition…”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12951-019-0487-x",
+            "sources": [
+              "“Tb4O7 NPs can also catalyze the oxidation of ABTS and OPD …” and “We used the oxidation of TMB as a model reaction…” and “we examined the effects of Tb4O7 NPs on ascorbic acid (AA) oxidation in vitro.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_8",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q8",
+        "question": "Which nanozyme systems published between 2016 and 2017 are explicitly framed as structure–activity engineered through either crystal-facet control or alloy-composition tuning?",
+        "golden_answer": "The CeO2 nanocube/nanorod system with facet-dependent activity and the AuPt alloy nanoparticle system with composition-dependent activity.",
+        "evidence": [
+          {
+            "doi": "10.1038/srep35344",
+            "sources": [
+              "“CeO2 nanocubes with exposed {100} facets exhibit a higher peroxidase but lower superoxide dismutase activity than those of the CeO2 nanorods with exposed {110} facets.”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/srep40103",
+            "sources": [
+              "“AuPt alloy nanoparticles (NPs) with varying compositions were prepared…” and “both peroxidase-like and oxidase-like activity of AuPt alloy NPs were highly dependent on the alloy compositions…”"
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_9",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q9",
+        "question": "Aggregate the union of all explicitly tested/mentioned interfering species across (i) the microfluidic CeO2 NS H2O2 sensor interference study, (ii) the Pd–Pt nanocube AA selectivity test, and (iii) the AuPt HS− selectivity discussion.",
+        "golden_answer": "Uric acid (UA), dopamine (DA), ascorbic acid (AA), glucose (GLU), glutathione (GSH), cysteine (Cys), GSSG, and glycine.",
+        "evidence": [
+          {
+            "doi": "10.1021/acsomega.9b03252",
+            "sources": [
+              "“Interference studies of cerium oxide-based lab-on-a-chip device on addition of 1 mM UA, DA, AA, GLU, GSH and 0.2 mM H2O2.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1016/j.sintl.2020.100031",
+            "sources": [
+              "“The interferential substances were prepared by dissolving Na2CO3, CaSO4, K3PO4, dopamine hydrochloride, L-cysteine and D-glucose in DI water to obtain the 1 mM solution of Na⁺, Ca²⁺, K⁺, glucose and the 100 μM solution of dopamine and cysteine, respectively.”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/srep40103",
+            "sources": [
+              "“AA, glucose, GSSG, uric acid and glycine showed negligible effects…” and “cysteine and GSH cause considerable reduction of catalytic activity…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "Nanozymes_s5_session_10",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "Nanozymes_s5_q10",
+        "question": "Across Fe-based nanozyme systems published between 2018 and 2019, which iron-containing catalyst entries are explicitly reported with H2O2 as a substrate, and what Km(H2O2) values are given for each?",
+        "golden_answer": "Co@Fe3O4 — 0.19 mM; Fe3O4 — 56.89 mM; Fe3O4@LNPs — 5.30 mM; Fe3O4 NPs — 154 mM; His-Fe3O4 — 37.99 mM; Ala-Fe3O4 — 226.60 mM; CDs-Fe3O4 — 56.97 mM; GO-Fe3O4 — 305.00 mM.",
+        "evidence": [
+          {
+            "doi": "10.1039/C8RA05487H",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/nano9020210",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  }
+]

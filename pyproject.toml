@@ -2,9 +2,6 @@
 name = "rag-system-design"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "asya orlova",email = "asya-1610@yandex.ru"}
-]
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 dependencies = [
@@ -16,7 +13,9 @@ dependencies = [
     "matplotlib (>=3.9.0,<4.0.0)",
     "optuna (>=4.0.0,<5.0.0)",
     "shap (>=0.46.0,<1.0.0)",
-    "shapiq (>=1.4.0,<2.0.0)"
+    "shapiq (>=1.4.0,<2.0.0)",
+    "plotly (>=6.7.0,<7.0.0)",
+    "nbformat (>=5.10.4,<6.0.0)"
 ]
 
 

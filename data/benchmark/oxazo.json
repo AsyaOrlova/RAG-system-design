@@ -1,0 +1,1778 @@
+[
+  {
+    "session_id": "oxazolidinones_s1_session_1",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q1",
+        "question": "What is the inhibition constant of linezolid for the 30S ribosomal unit?",
+        "golden_answer": "Linezolid does not inhibit 30S ribosomal subunit",
+        "evidence": [
+          {
+            "doi": null,
+            "sources": [],
+            "modifications": {
+              "negative": [
+                "unanswerable"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_2",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q2",
+        "question": "What is the MIC of linezolid against S. aureus ATCC 25923 according to Molecules journal data?",
+        "golden_answer": "2 μg/mL",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27031103",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "negative": [
+                "conflicting"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": [
+              "10.1101/2022.06.27.497815"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_3",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q3",
+        "question": "What is the minimum inhibitory concentration of thiamphenicol for the Enterococcus faecalis ΔlsaA strain expressing the PoxtA AOUC-0915 variant?",
+        "golden_answer": "32-64 µg/mL",
+        "evidence": [
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_4",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q4",
+        "question": "What amino acid residues are present in the penultimate position of the nascent peptide chain when mitochondrial ribosomes stall in the presence of chloramphenicol and linezolid?",
+        "golden_answer": "alanine, serine, or threonine",
+        "evidence": [
+          {
+            "doi": "10.1101/2024.08.21.609012",
+            "sources": [
+              "\"CHL and LZD lead to mitoribosome stalling primarily when there is an alanine, serine, or threonine in the penultimate position of the nascent peptide chain.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_5",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q5",
+        "question": "What is the observed coupling constant for the anomeric proton in an alpha-glycosyl triflate with a 2,3-oxazolidinone protecting group?",
+        "golden_answer": "2.1 Hz",
+        "evidence": [
+          {
+            "doi": "10.3762/bjoc.8.52",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_6",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q6",
+        "question": "What specific nucleotide mutation in the 23S rRNA gene is associated with linezolid resistance in enterococci?",
+        "golden_answer": "G2658T",
+        "evidence": [
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"Only one strain had the G2658 T mutation of target 235 rRNA gene.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_7",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q7",
+        "question": "In the study of Ziwei Hu, what is the inhibitory concentration (MIC) of linezolid against the S. aureus strain ATCC 25923?",
+        "golden_answer": "6.25 μM",
+        "evidence": [
+          {
+            "doi": "10.1101/2022.06.27.497815",
+            "sources": [
+              "Table 5"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "source"
+              ],
+              "negative": [
+                "conflicting"
+              ]
+            },
+            "contrast_doi": [
+              "10.3390/molecules27031103"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_8",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q8",
+        "question": "What phase of clinical trials was compound S587 in at the beginning of 2023?",
+        "golden_answer": "in phase 1 clinical trials",
+        "evidence": [
+          {
+            "doi": "10.1101/2023.01.10.523519",
+            "sources": [
+              "\"Indeed, two next-generation diarylquinoline (DARQ) drugs with more potent activity than bedaquiline are now in phase 1 clinical trials, TBAJ-587 (S587) and TBAJ-876 (S876)\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ],
+              "negative": [
+                "conflicting"
+              ]
+            },
+            "contrast_doi": [
+              "10.1128/aac.01562-23"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_9",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q9",
+        "question": "At what temperature is the standard strain of Mycobacterium abscessus ATCC 19977 cultured on solid Lowenstein-Jensen medium according to the study of Morroni et al. in 2017?",
+        "golden_answer": "37°C",
+        "evidence": [
+          {
+            "doi": "10.3389/fcimb.2023.1225341",
+            "sources": [
+              "\"The standard strain of M. abscessus ATCC 19977 was cultured on solid Lowenstein-Jensen medium at 37°C for 4-6 days.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source",
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s1_session_10",
+    "scenario_type": "Direct Fact Retrieval",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s1_q10",
+        "question": "According to the data available for 2026, what antibiotic's injections are cheaper: linezolid or tedizolid?",
+        "golden_answer": "Tedizolid with 298 chinese yuan average daily cost",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S551561",
+            "sources": [
+              "Table 8"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_1",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q1",
+        "question": "What is the 50S ribosomal subunit inhibition constant of antibiotic that has a MIC of 2 μg/mL against Staphylococcus aureus according to Molecules journal data?",
+        "golden_answer": "182.26 μM",
+        "evidence": [
+          {
+            "doi": "10.3390/ph16040516",
+            "sources": [
+              "Table 4"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules27031103",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "negative": [
+                "conflicting"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": [
+              "10.1101/2022.06.27.497815"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_2",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q2",
+        "question": "For the oxazolidinone antibiotic that, according to structural studies by Tsai et al., has its C5 acetamide group stabilized by an interaction with ribosomal nucleotide A2062 in the presence of a nascent peptide, what is the minimum inhibitory concentration (MIC) range for Enterococcus faecalis when expressing the PoxtA EF9F6 resistance protein?",
+        "golden_answer": "2-4 µg/mL",
+        "evidence": [
+          {
+            "doi": "10.1101/2021.08.10.455846",
+            "sources": [
+              "\"In this conformation, the exocyclic amine of A2062 is within H- bonding distance of the acetamide carbonyl of LZD/RZD (2.7 A/3.3 A), which likely explains why we observe improved density for the C5 group in the stalled complexes (Fig. 3a,b). This interaction has not been observed in existing structures of oxazolidinone- bound vacant ribosomes due to the alternative orientation of A2062.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_3",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q3",
+        "question": "What is the MIC against Mycobacterium tuberculosis for the oxazolidinone antibiotic whose Phase III clinical trials showed an incidence of thrombocytopenia of 10.8% at the test-of-cure visit (days 11–13)?",
+        "golden_answer": "0.25 μg/mL",
+        "evidence": [
+          {
+            "doi": "10.1007/s40121-025-01256-6",
+            "sources": [
+              "\"For drug- sensitive M. tuberculosis isolates from nine patients, the",
+              "MIC90 values of CZD and LZD were 0.5 and 0.25 μg/mL respectively;\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"The most prominent difference was seen in the incidence of thrombocytopenia (defined as platelets\\150,000 cells/mm3), with 3.7% versus 5.6% (P = 0.585) at 7–9 days, and 4.9% versus 10.8% (P = 0.0003) at 11–13 days for tedizolid and linezolid, respectively. \""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_4",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q4",
+        "question": "In the treatment of acute bacterial skin and skin structure infections described by Rybak and Roberts, what was the non-inferiority margin (95% Confidence Interval) for the early clinical response of the 6-day course of the oxazolidinone that maintains its in vitro potency against isolates harboring the cfr methyltransferase gene, when compared to a 10-day course of linezolid?",
+        "golden_answer": "-2.0 to 6.5",
+        "evidence": [
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"Of particular significance, minimum inhibitory concentrations of tedizolid appear to be largely unaffected by the chloramphenicol florfenicol resistance (cfr) gene, which has been implicated in a number of published linezolid-resistant organism outbreaks.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"Tedizolid met the criteria for non-inferiority in both trials, with similar early clinical response in the pooled ITT population of 81.6% for tedizolid and 79.4% for linezolid (95% CI -2.0 to 6.5) .\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_5",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q5",
+        "question": "What is the treatment duration cutoff associated with an increased risk of severe anemia for the oxazolidinone antibiotic that received a score of 18 points in the 'Safety' dimension of the health technology assessment published in Drug Design, Development and Therapy in 2026?",
+        "golden_answer": "7 days",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S551561",
+            "sources": [
+              "Table 11"
+            ],
+            "modifications": {
+              "constraints": [
+                "source",
+                "temporal"
+              ],
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.2147/DDDT.S576881",
+            "sources": [
+              "\"The cutoff for treatment duration for severe anemia was 7 days (AUC: 0.82, 95% CI: 0.74-0.89, sensitivity: 0.76, specificity: 0.85).\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_6",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q6",
+        "question": "What is the name of the gene that encodes a methyltransferase modifying the 23S rRNA, against which tedizolid with an MIC90 of 0.5 μg/ml against S. aureus has been shown to retain antimicrobial activity in the study of Zurenko et al.?",
+        "golden_answer": "the cfr gene",
+        "evidence": [
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"The cfr gene encodes a methyltransferase that modifies the 23S rRNA at position A2503, which confers resistance to phenicols, lincosamide, oxazolidinones, pleuromutilin, and streptogramin A (PhLOPSA phenotype) [9].\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12941-014-0046-0",
+            "sources": [
+              "\"The minimum inhibitory concentrations required to inhibit the growth of 90% of organisms (MIC 90 values) were 0.5 and 2 μg/mL or less for tedizolid and linezolid, respectively.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_7",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q7",
+        "question": "What is the minimum inhibitory concentration (MIC) against Mycobacterium abscessus for the oxazolidinone antibiotic that is known to cause severe adverse effects such as reversible myelosuppression and irreversible neuropathy?",
+        "golden_answer": "8 μg/mL",
+        "evidence": [
+          {
+            "doi": "10.3389/fcimb.2023.1225341",
+            "sources": [
+              "\"The MICs of AZM, LZD and MRX- I were determined according to their effects on growth of the M. abscessus standard strain in zebrafish. The MIC of MRX-I for inhibition of growth of the M. abscessus standard strain was 16 μg/mL and the MICs of AZM and LZD were 0.5 μg/mL and 8 μg/mL respectively.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.12793/tcp.2024.32.e18",
+            "sources": [
+              "\"However, the primary issues related to the clinical use of linezolid are its significant adverse effects, such as reversible myelosuppression, irreversible optic neuropathy, and peripheral neuropathy [4].\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_8",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q8",
+        "question": "Was the specific oxazolidinone resistance gene that is described as one of the main mechanisms of linezolid resistance in Staphylococcus according to the study in a tertiary care hospital detected in any florfenicol-resistant enterococci from Swiss cattle?",
+        "golden_answer": "No",
+        "evidence": [
+          {
+            "doi": "10.3389/fmicb.2023.1150070",
+            "sources": [
+              "\"The cfr gene was not detected in any of the isolates.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "theme"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.21276/ijcmr.2019.6.9.14",
+            "sources": [
+              "The acquisition of 23S rRNA methyltransferase gene 'cfr' can also provide resistance by modification of A2503 in domain V of the 23S rRNA.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "theme"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_9",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q9",
+        "question": "What is the geometric mean MIC against Mycobacterium tuberculosis of t he novel oxazolidinone that resulted in a mean plasma \nAUC 0−24h of 179 µg·h/ml when dosed at 100 mg/kg in a mouse model of tuberculosis, according to the study of Nuermberger et al.?",
+        "golden_answer": "3.175 µg/ml",
+        "evidence": [
+          {
+            "doi": "10.1101/2023.01.10.523519",
+            "sources": [
+              "\"The geometric mean MICs of linezolid and TBI-223 were 1 and 3.175 µg/ml, respectively.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2023.01.10.523519",
+            "sources": [
+              "\"At the 100 mg/kg daily dose tested in these experiments, the single dose mean plasma",
+              "AUC 0−24h values for linezolid and TBI-223 are 131 and 179 µg·h/ml, respectively.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s2_session_10",
+    "scenario_type": "Multi-hop",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s2_q10",
+        "question": "What is the relative enthalpic binding affinity, expressed to the nearest tenth of a kJ/mol, for the oxazolidinone analogue that was later developed into the prodrug Torezolid, whose phosphate disodium salt form was synthesized to improve its solubility?",
+        "golden_answer": "-27.9 kJ/mol",
+        "evidence": [
+          {
+            "doi": "10.3762/bjoc.12.45",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3762/bjoc.12.45",
+            "sources": [
+              "\"Candidate 7 represents the active form of the prodrug torezolid, the phosphate disodium salt, which was synthetized in order to improve the solubility of its parent drug.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_1",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q1",
+        "question": "Which antibiotic has an inhibition constant of 182.26 μM for the ribosome and an MIC of 2 μg/mL against Staphylococcus aureus according to Molecules journal data?",
+        "golden_answer": "Linezolid",
+        "evidence": [
+          {
+            "doi": "10.3390/ph16040516",
+            "sources": [
+              "Table 4"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules27031103",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "negative": [
+                "conflicting"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": [
+              "10.1101/2022.06.27.497815"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_2",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q2",
+        "question": "Which ribosomal protection protein has an antibiotic resistance domain located >15 Å from the binding sites of linezolid and chloramphenicol and contains two glutamine residues in the α1 helix that insert into the minor groove of the P-site tRNA acceptor arm?",
+        "golden_answer": "PoxtA",
+        "evidence": [
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "\"At its closest point, the ARD of PoxtA is still located >15 Å from the linezolid and chloramphenicol binding sites, suggesting that drug release is elicited indirectly.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "\"In particular, two glutamine residues, Gln275 and Gln279, located at the distal end of the a-helix a1 of the ARD insert into the minor groove of the acceptor arm where hydrogen bond interactions can form with the C3-G70 base-pair (Fig. 3C).\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_3",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q3",
+        "question": "Which oxazolidinone antibiotic has its C5 acetamide group stabilized by an interaction with ribosomal nucleotide A2062 in the presence of a nascent peptide (as per structural studies by Tsai et al.) and exhibits an MIC range of 2-4 µg/mL for Enterococcus faecalis expressing the PoxtA EF9F6 resistance protein?",
+        "golden_answer": "Linezolid",
+        "evidence": [
+          {
+            "doi": "10.1101/2021.08.10.455846",
+            "sources": [
+              "\"In this conformation, the exocyclic amine of A2062 is within H- bonding distance of the acetamide carbonyl of LZD/RZD (2.7 A/3.3 A), which likely explains why we observe improved density for the C5 group in the stalled complexes (Fig. 3a,b). This interaction has not been observed in existing structures of oxazolidinone- bound vacant ribosomes due to the alternative orientation of A2062.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_4",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q4",
+        "question": "Which oxazolidinone antibiotic, with a Phase III clinical trial incidence of thrombocytopenia of 10.8% at the test-of-cure visit (days 11–13), demonstrates an MIC of 0.25 μg/mL against Mycobacterium tuberculosis?",
+        "golden_answer": "Linezolid",
+        "evidence": [
+          {
+            "doi": "10.1007/s40121-025-01256-6",
+            "sources": [
+              "\"For drug- sensitive M. tuberculosis isolates from nine patients, the",
+              "MIC90 values of CZD and LZD were 0.5 and 0.25 μg/mL respectively;\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"The most prominent difference was seen in the incidence of thrombocytopenia (defined as platelets\\150,000 cells/mm3), with 3.7% versus 5.6% (P = 0.585) at 7–9 days, and 4.9% versus 10.8% (P = 0.0003) at 11–13 days for tedizolid and linezolid, respectively. \""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_5",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q5",
+        "question": "Which oxazolidinone antibiotic received a score of 18 points in the 'Safety' dimension of a 2026 health technology assessment and has a treatment duration cutoff of 7 days associated with an increased risk of severe anemia?",
+        "golden_answer": "Linezolid",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S551561",
+            "sources": [
+              "Table 11"
+            ],
+            "modifications": {
+              "constraints": [
+                "source",
+                "temporal"
+              ],
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.2147/DDDT.S576881",
+            "sources": [
+              "\"The cutoff for treatment duration for severe anemia was 7 days (AUC: 0.82, 95% CI: 0.74-0.89, sensitivity: 0.76, specificity: 0.85).\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_6",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q6",
+        "question": "Which bacterium has 99.4% calculated genetic relatedness between strain 1202_13E004 and strain 19677, and also has a G2658T nucleotide mutation in the 23S rRNA gene that is associated with linezolid resistance?",
+        "golden_answer": "Enterococci",
+        "evidence": [
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"In addition, strain 19677 recovered from Guangdong was closely related (99.4%) to strain 1202_13E004 recovered from Beijing.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"Only one strain had the G2658 T mutation of target 235 rRNA gene.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_7",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q7",
+        "question": "Which gene, encoding a 23S rRNA methyltransferase, is the one against which tedizolid (with an MIC90 of 0.5 μg/ml against S. aureus) retains its antimicrobial activity in the Zurenko et al. study?",
+        "golden_answer": "the cfr gene",
+        "evidence": [
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"The cfr gene encodes a methyltransferase that modifies the 23S rRNA at position A2503, which confers resistance to phenicols, lincosamide, oxazolidinones, pleuromutilin, and streptogramin A (PhLOPSA phenotype) [9].\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12941-014-0046-0",
+            "sources": [
+              "\"The minimum inhibitory concentrations required to inhibit the growth of 90% of organisms (MIC 90 values) were 0.5 and 2 μg/mL or less for tedizolid and linezolid, respectively.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_8",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q8",
+        "question": "Which oxazolidinone antibiotic was investigated in a 2023 two-way crossover study by Gao et al. with a 2-day washout period, and has an apparent volume of distribution (Vd/F) of 26.74 ± 30.45 L for its test formulation?",
+        "golden_answer": "Delpazolid",
+        "evidence": [
+          {
+            "doi": "10.12793/tcp.2024.32.e18",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.12793/tcp.2024.32.e18",
+            "sources": [
+              "\"A randomized, open-label, single-dose, two-way crossover study was conducted. The participants received a single oral dose of delpazolid 400 mg (test or reference) in each period... The wash-out period was two days between the two periods. Twenty-four participants completed the study as planned.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal",
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_9",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q9",
+        "question": "What is the specific oxazolidinone resistance gene that was NOT detected in any florfenicol-resistant enterococci from Swiss cattle, but is described as one of the main mechanisms of linezolid resistance in Staphylococcus according to the study in a tertiary care hospital?",
+        "golden_answer": "the cfr gene",
+        "evidence": [
+          {
+            "doi": "10.3389/fmicb.2023.1150070",
+            "sources": [
+              "\"The cfr gene was not detected in any of the isolates.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "theme"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.21276/ijcmr.2019.6.9.14",
+            "sources": [
+              "The acquisition of 23S rRNA methyltransferase gene 'cfr' can also provide resistance by modification of A2503 in domain V of the 23S rRNA.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "theme"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s3_session_10",
+    "scenario_type": "Conditional Query",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s3_q10",
+        "question": "What is the novel oxazolidinone that has a geometric mean MIC of 3.175 µg/ml against Mycobacterium tuberculosis and when dosed at 100 mg/kg in a mouse model of tuberculosis, resulted in a mean plasma \nAUC 0−24h of 179 µg·h/ml according to the study of Nuermberger et al.?",
+        "golden_answer": "TBI-223",
+        "evidence": [
+          {
+            "doi": "10.1101/2023.01.10.523519",
+            "sources": [
+              "\"The geometric mean MICs of linezolid and TBI-223 were 1 and 3.175 µg/ml, respectively.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2023.01.10.523519",
+            "sources": [
+              "\"At the 100 mg/kg daily dose tested in these experiments, the single dose mean plasma",
+              "AUC 0−24h values for linezolid and TBI-223 are 131 and 179 µg·h/ml, respectively.\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_1",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q1",
+        "question": "Compare the reporting rate of serotonin syndrome as a serious adverse event in spontaneous reporting systems AND a Phase III clinical trial incidence of thrombocytopenia at the test-of-cure visit (days 11–13) for linezolid",
+        "golden_answer": "The incidence of thrombocytopenia is 10.8% which is higher than the rate of serotonin syndrome (3.70%)",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S551561",
+            "sources": [
+              "\"Data from VigiAccess and FAERS indicated that serious adverse events with reporting rates exceeding 1% included peripheral neuropathy (4.76%), lactic acidosis (4.03%), serotonin syndrome (3.70%), and myelosuppression (2.42%)."
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"The most prominent difference was seen in the incidence of thrombocytopenia (defined as platelets\\150,000 cells/mm3), with 3.7% versus 5.6% (P = 0.585) at 7–9 days, and 4.9% versus 10.8% (P = 0.0003) at 11–13 days for tedizolid and linezolid, respectively. \""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_2",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q2",
+        "question": "Compare the binding energy of linezolid against the 50S ribosomal unit and the change in binding energy when linezolid's chlorine atom is replaced with bromine",
+        "golden_answer": "The binding energy of linezolid is −5.41 kcal/mol. When chlorine atom is replaced with bromin the Binding energy increases by 83.5 kJ/mol",
+        "evidence": [
+          {
+            "doi": "10.3390/ph16040516",
+            "sources": [
+              "Table 4"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3762/bjoc.12.45",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_3",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q3",
+        "question": "Compare the effect of ATP and CoQ10 and vitamin B6 and TPP on  linezolid-induced decrease in paw withdrawal thresholds",
+        "golden_answer": "ATP and CoQ10 failed to significantly improve this effect but Co-treatment with pyridoxine (vitamin B6) and, more effectively, thiamine pyrophosphate (TPP) significantly attenuated the linezolid-induced decrease in paw withdrawal thresholds.",
+        "evidence": [
+          {
+            "doi": "10.3390/ph19020341",
+            "sources": [
+              "\"In contrast, co-administration of ATP or CoQ10 did not result in a significant improvement in paw withdrawal thresholds when compared with the linezolid-only group.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/ph19020341",
+            "sources": [
+              "\"Co-treatment with pyridoxine or TPP significantly attenuated the linezolid-induced decrease in paw withdrawal thresholds...\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_4",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q4",
+        "question": "Compare the treatment duration cutoff associated with an increased risk of severe anemia for linezolid and a frequency of tedizolid when administered daily for the treatment of acute bacterial skin and skin structure infections",
+        "golden_answer": "the treatment duration cutoff associated with an increased risk of severe anemia for linezolid is 7 days while frequency of tedizolid when administered daily for the treatment of acute bacterial skin and skin structure infections is 6 days",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S576881",
+            "sources": [
+              "\"The cutoff for treatment duration for severe anemia was 7 days (AUC: 0.82, 95% CI: 0.74-0.89, sensitivity: 0.76, specificity: 0.85).\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12941-014-0046-0",
+            "sources": [
+              "\"The efficacy of tedizolid phosphate 200 mg once daily for 6 days was shown to be noninferior to linezolid 600 mg twice daily for 10 days\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_5",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q5",
+        "question": "Compare the distance that separates the binding sites of linezolid and chloramphenicol and ARD domain AND the distance between the alanine C atom and the plane of the B-ring in the CH-π interaction of the linezolid-stalled ribosome complex",
+        "golden_answer": "The distance separates the binding sites of linezolid and chloramphenicol and ARD domain is >15 Å while the distance between the alanine C atom and the plane of the B-ring in the CH-π interaction of the linezolid-stalled ribosome complex is lower and equals 3.6 Å",
+        "evidence": [
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "\"At its closest point, the ARD of PoxtA is still located >15 Å from the linezolid and chloramphenicol binding sites, suggesting that drug release is elicited indirectly.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2021.08.10.455846",
+            "sources": [
+              "\"In the stalled complex, the alanine’s side chain methyl group engages in a CH-π interaction with the aryl B-ring of the oxazolidinone (3.6 Å and 3 .9 Å between C atom and 2 plane of the B-ring for LZD-SRC and RZD-SRC, respectively\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_6",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q6",
+        "question": "Compare the MIC of vancomycin against Streptococcus pneumoniae ATCC49619 and  the MIC of linezolid against S. aureus ATCC 25923 according to Molecules journal data",
+        "golden_answer": "It is the same and equals 2 μg/mL",
+        "evidence": [
+          {
+            "doi": "10.3390/molecules27031103",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ],
+              "negative": [
+                "conflicting"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": [
+              "10.1101/2022.06.27.497815"
+            ]
+          },
+          {
+            "doi": "10.3389/fchem.2022.949813",
+            "sources": [
+              "Table 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_7",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q7",
+        "question": "How is chemical shift of the methyl group attached to nitrogen in the 1H-NMR spectrum of the hydrazide levofloxacin derivative compared to the shift of  the singlet peak at the furthest downfield position In the 1H-NMR spectrum of the acid chloride levofloxacin derivative",
+        "golden_answer": "The shift of  the methyl group attached to nitrogen in the 1H-NMR spectrum of the hydrazide levofloxacin derivative is 2.21 ppm, while the shift of  the singlet peak at the furthest downfield position In the 1H-NMR spectrum of the acid chloride levofloxacin derivative is 9 ppm",
+        "evidence": [
+          {
+            "doi": "10.30526/37.1.3240",
+            "sources": [
+              "Table 4"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.30526/37.1.3240",
+            "sources": [
+              "Figure 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_8",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q8",
+        "question": "Compare the in vitro activity of contezolid (MRX-I) against Mycobacterium abscessus with the in vitro activity of the novel oxazolidinone analogue sy142 against Mycobacterium abscessus",
+        "golden_answer": "the Minimum Inhibitory Concentration (MIC) of MRX-I against the standard strain of M. abscessus (ATCC 19977) was 16 μg/mL, the MIC range of sy142 against clinical isolates of M. abscessus was 8–64 μg/mL. The comparison of these values suggests that Contezolid (MRX-I) may be more potent against M. abscessus than sy142.",
+        "evidence": [
+          {
+            "doi": "10.3389/fcimb.2023.1225341",
+            "sources": [
+              "\"The MIC of MRX-I for inhibition of growth of the M.",
+              "abscessus standard strain was 16 mg/mL...\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.7883/yoken.JJID.2014.498",
+            "sources": [
+              "Table 2"
+            ],
+            "modifications": {
+              "multimodal": [
+                "table"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_9",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q9",
+        "question": "Compare and contrast the role and significance of \"oxazolidinone\" as discussed in the studies of Li et al. (Frontiers in Pharmacology, 2023) and Bauder et al. (Open Journal of Chemistry, 2022)",
+        "golden_answer": "In the study of Li et al. oxazolidinone is discussed as a pharmacologically active compound. Here, it represents a class of synthetic antibiotics with a specific 2-oxazolidinone nucleus that exhibits antibacterial activity. On the contrast, Bauder et al. discuss oxazolidinone as a chiral auxiliary (specifically Evans oxazolidinone) used in organic synthesis. Here, it is not an end-product with biological activity but rather a tool for asymmetric synthesis.et al.",
+        "evidence": [
+          {
+            "doi": "10.3389/fphar.2023.1157437",
+            "sources": [
+              "\"Oxazolidinones are a class of synthetic antibiotics with a chemical structure characterized by a basic 2- oxazolidinone nucleus...\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal",
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.17352/ojc.000028",
+            "sources": [
+              "\"We have reported new optically pure calixarenyl derivatives in which their lower rims were substituted with Evans oxazolidinone and/or pyranose moieties. The introduction of the latter substituents reduced the symmetry of the macrocycle...\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal",
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s4_session_10",
+    "scenario_type": "Comparison",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s4_q10",
+        "question": "Compare the reagents used to convert the benzyl carbamate intermediate to the (R)-5-(bromomethyl) oxazolidinone derivative AND in the final step to form the N-acetylated oxazolidinone in the  general synthetic strategy of linezolid and eperezolid published by Siddaraj et al.",
+        "golden_answer": "The reagents  used to convert the benzyl carbamate intermediate to the (R)-5-(bromomethyl) oxazolidinone derivative are (R)-2-(bromomethyl) oxirane, cesium carbonate, and acetonitrile, while Sodium iodide (NaI) along with cesium carbonate and acetamide was used in the final step to form the N-acetylated oxazolidinone",
+        "evidence": [
+          {
+            "doi": "10.5155/eurjchem.9.4.353-359.1783",
+            "sources": [
+              "\"Benzyl (3-fluoro-4-morpholinophenyl) carbamate (5 g, 0.015 mol) was dissolved in dry acetonitrile (100 mL), added cesium carbonate (5.91 g, 0.018 mol), (R)-2-(bromomethyl) oxirane (2.16 g, 0.016 mol)\""
+            ],
+            "modifications": {
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.5155/eurjchem.9.4.353-359.1783",
+            "sources": [
+              "Scheme 1"
+            ],
+            "modifications": {
+              "multimodal": [
+                "image"
+              ],
+              "constraints": [
+                "source"
+              ]
+            },
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_1",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q1",
+        "question": "What severe adverse effects of oxazolidinones are described in literature?",
+        "golden_answer": "Serious adverse effects of oxazolidinones include hematological toxicities such as thrombocytopenia, anemia, and myelosuppression, as well as neurological and metabolic issues like optic neuropathy, peripheral neuropathy, lactic acidosis, bone marrow suppression and serotonin syndrome. Furthermore, some agents are associated with irreversible adverse drug reactions, specifically vision impairment and vision loss.",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S551561",
+            "sources": [
+              "\"Common serious adverse reactions, such as hematological toxicity including thrombocytopenia and anemia, also occurred in the 1%–10% frequency range.\"",
+              "\"Data from VigiAccess and FAERS showed that serious adverse events with reporting frequencies over 1% included peripheral neuropathy (4.76%), lactic acidosis (4.03%), serotonin syndrome (3.70%), and myelosuppression (2.42%).\"",
+              "\"Both linezolid and tedizolid... are associated with irreversible ADRs such as vision impairment and vision loss.\"",
+              "\"Common adverse events for tedizolid (frequency 1%–10%) included nausea (8%), headache (6%), diarrhea (4%), vomiting (3%), and dizziness (2%).\"",
+              "\"The frequencies of hematological toxicity such as thrombocytopenia (2.3%) and anemia (3.1%), as well as neuropathy (1.2%) for tedizolid were comparable to those of the comparator drug linezolid.",
+              "\"Only one drug-related serious adverse event was reported... with a frequency of 0.28% (range 0.1%–1%), and no drug-related thrombocytopenia (0%) was observed\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"Major adverse effects, such as myelosuppression, optic neuropathy, and peripheral neuropathy, significantly restrict the utility of LZD\".",
+              "\"The LZD-containing regimen was suspected of leading to bone marrow suppression and lactic acidosis\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.21203/rs.3.rs-7809956/v1",
+            "sources": [
+              "\"However, the use of LNZ is often associated with significant side effects, including serotonin syndrome, hyperlactatemia, and myelosuppression.\"",
+              "\"In particular, myelosuppression (most frequently thrombocytopenia) limits its use in hematologic patients, making it a less favorable choice in this population.\"",
+              "\"...where the risk of drug induced cytopenias is a major concern and treatment options are often limited by hematological toxicity.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_2",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q2",
+        "question": "Against which bacteria are oxazolidinones MICs reported in the literature before 2020?",
+        "golden_answer": "methicillin-resistant Staphylococcus aureus,  linezolid-resistant enterococci strains,  methicillin-susceptible Staphylococcus aureus, vancomycin-resistant enterococci, vancomycin susceptible enterococci, M. abscessus, M. avium, M. chelonae, M. fortuitum, M. kansasii, and M. intracellulare, S. aureus, Staphylococcal species (Includes isolates of S. capitis (28), S. caprae (4),\nS. cohnii (2), S. epidermidis (405), S. haemolyticus (52), S. hominis (56), S. intermedius (7), S. lugdunensis (47), S. pasteuri (1), S. pettenkoferi (1), S. saprophyticus (28), S. schleiferi\n(6), S. simulans (14), S. warneri (12), S. xylosus (2), and unspeciated coagulase-negative Staphylococcus spp. (9).), Enterococcus spp., Streptococcus spp., Streptococcus anginosus group (Includes isolates of S. anginosus, S. intermedius, and S. constellatus.)",
+        "evidence": [
+          {
+            "doi": "10.3762/bjoc.12.45",
+            "sources": [
+              "\"Minimal Inhibition Concentration values expressed in mg/L for",
+              "selected methicillin-resistant Staphylococcus aureus bacterial strains",
+              "(MRSA).\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"None of 16 linezolid-resistant enterococci strains",
+              "contained cfr gene. Only one strain had the G2658 T",
+              "mutation in 23S rRNA gene with linezolid MIC of",
+              "16 mg/L.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"MIC50 50% minimum inhibitory concentration, MIC90",
+              "90% minimum inhibitory concentration, MRSA",
+              "methicillin-resistant Staphylococcus aureus, MSSA",
+              "methicillin-susceptible Staphylococcus aureus, VRE",
+              "vancomycin-resistant enterococci, VSE vancomycinsusceptible",
+              "enterococci",
+              "a MIC90 1 and 2 mg/L for S. epidermidis and other",
+              "coagulase-negative Staphylococcus spp., respectively\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.7883/yoken.JJID.2014.498",
+            "sources": [
+              "\"The isolates tested",
+              "herein were M. abscessus (21 isolates), M. avium complex",
+              "(31 isolates), M. chelonae (11 isolates), M. fortuitum",
+              "(24 isolates), M. kansasii (26 isolates), and M. intracellulare",
+              "(17 isolates).\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12941-014-0046-0",
+            "sources": [
+              "\"S. aureus (n = 7187), staphylococci",
+              "other than S. aureus (n = 674), Enterococcus spp (n = 1241),",
+              "and Streptococcus spp (n = 1600).\"",
+              "\"aAn MIC value of 0.25 was the lowest MIC value tested for linezolid. Linezolid results should be read as ≤0.25 μg/ml.bIncludes isolates of S. capitis (28), S. caprae (4),",
+              "S. cohnii (2), S. epidermidis (405), S. haemolyticus (52), S. hominis (56), S. intermedius (7), S. lugdunensis (47), S. pasteuri (1), S. pettenkoferi (1), S. saprophyticus (28), S. schleiferi",
+              "(6), S. simulans (14), S. warneri (12), S. xylosus (2), and unspeciated coagulase-negative Staphylococcus spp. (9).",
+              "cIncludes isolates of S. anginosus, S. intermedius, and S. constellatus.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_3",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q3",
+        "question": "In what years were studies with reported MICs of oxazolidinones against M. tuberculosis published?",
+        "golden_answer": "2023, 2025",
+        "evidence": [
+          {
+            "doi": "10.1101/2023.01.10.523519",
+            "sources": [
+              "\"M. tuberculosis H37Rv was used to infect mice in these studies. The MICs of",
+              "bedaquiline, S587, S876 and pretomanid against this strain were previously described\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-025-01256-6",
+            "sources": [
+              "\"To date, only one study reported an elevated",
+              "MIC of CZD over M. tuberculosis clinical",
+              "isolates...\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1128/aac.01562-23",
+            "sources": [
+              "\"... polystyrene tubes and drug concentrations in doubling dilutions was used to determine the MICs against the M. tuberculosis H37Rv strain used to infect mice\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_4",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q4",
+        "question": "What severe adverse effects of oxazolidinones are described in literature after 2024?",
+        "golden_answer": "Serious adverse effects of oxazolidinones include hematological toxicities such as thrombocytopenia, anemia, and myelosuppression, as well as neurological and metabolic issues like optic neuropathy, peripheral neuropathy, lactic acidosis, bone marrow suppression and serotonin syndrome. Furthermore, some agents are associated with irreversible adverse drug reactions, specifically vision impairment and vision loss.",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S551561",
+            "sources": [
+              "\"Common serious adverse reactions, such as hematological toxicity including thrombocytopenia and anemia, also occurred in the 1%–10% frequency range.\"",
+              "\"Data from VigiAccess and FAERS showed that serious adverse events with reporting frequencies over 1% included peripheral neuropathy (4.76%), lactic acidosis (4.03%), serotonin syndrome (3.70%), and myelosuppression (2.42%).\"",
+              "\"Both linezolid and tedizolid... are associated with irreversible ADRs such as vision impairment and vision loss.\"",
+              "\"Common adverse events for tedizolid (frequency 1%–10%) included nausea (8%), headache (6%), diarrhea (4%), vomiting (3%), and dizziness (2%).\"",
+              "\"The frequencies of hematological toxicity such as thrombocytopenia (2.3%) and anemia (3.1%), as well as neuropathy (1.2%) for tedizolid were comparable to those of the comparator drug linezolid.",
+              "\"Only one drug-related serious adverse event was reported... with a frequency of 0.28% (range 0.1%–1%), and no drug-related thrombocytopenia (0%) was observed\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.21203/rs.3.rs-7809956/v1",
+            "sources": [
+              "\"However, the use of LNZ is often associated with significant side effects, including serotonin syndrome, hyperlactatemia, and myelosuppression.\"",
+              "\"In particular, myelosuppression (most frequently thrombocytopenia) limits its use in hematologic patients, making it a less favorable choice in this population.\"",
+              "\"...where the risk of drug induced cytopenias is a major concern and treatment options are often limited by hematological toxicity.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_5",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q5",
+        "question": "Against which staphylococci are oxazolidinones MICs reported in the literature before 2020?",
+        "golden_answer": "methicillin-resistant Staphylococcus aureus, methicillin-susceptible Staphylococcus aureus,  isolates of S. capitis (28), S. caprae (4),\nS. cohnii (2), S. epidermidis (405), S. haemolyticus (52), S. hominis (56), S. intermedius (7), S. lugdunensis (47), S. pasteuri (1), S. pettenkoferi (1), S. saprophyticus (28), S. schleiferi\n(6), S. simulans (14), S. warneri (12), S. xylosus (2)",
+        "evidence": [
+          {
+            "doi": "10.3762/bjoc.12.45",
+            "sources": [
+              "\"Minimal Inhibition Concentration values expressed in mg/L for",
+              "selected methicillin-resistant Staphylococcus aureus bacterial strains",
+              "(MRSA).\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1007/s40121-015-0060-3",
+            "sources": [
+              "\"MIC50 50% minimum inhibitory concentration, MIC90",
+              "90% minimum inhibitory concentration, MRSA",
+              "methicillin-resistant Staphylococcus aureus, MSSA",
+              "methicillin-susceptible Staphylococcus aureus, VRE",
+              "vancomycin-resistant enterococci, VSE vancomycinsusceptible",
+              "enterococci",
+              "a MIC90 1 and 2 mg/L for S. epidermidis and other",
+              "coagulase-negative Staphylococcus spp., respectively\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1186/s12941-014-0046-0",
+            "sources": [
+              "\"S. aureus (n = 7187), staphylococci",
+              "other than S. aureus (n = 674), Enterococcus spp (n = 1241),",
+              "and Streptococcus spp (n = 1600).\"",
+              "\"aAn MIC value of 0.25 was the lowest MIC value tested for linezolid. Linezolid results should be read as ≤0.25 μg/ml.bIncludes isolates of S. capitis (28), S. caprae (4),",
+              "S. cohnii (2), S. epidermidis (405), S. haemolyticus (52), S. hominis (56), S. intermedius (7), S. lugdunensis (47), S. pasteuri (1), S. pettenkoferi (1), S. saprophyticus (28), S. schleiferi",
+              "(6), S. simulans (14), S. warneri (12), S. xylosus (2), and unspeciated coagulase-negative Staphylococcus spp. (9).",
+              "cIncludes isolates of S. anginosus, S. intermedius, and S. constellatus.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_6",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q6",
+        "question": "What liquid chromatography methods are available for the analysis of oxazolidinones and what are their purposes?",
+        "golden_answer": "Reverse-Phase High-Performance Liquid Chromatography (RP-HPLC) with UV Detection - This method is used primarily for the quality control of pharmaceutical formulations, specifically for detecting oxazolidinone as a process-related impurity in other drugs (like Ritonavir and Lopinavir). Liquid Chromatography-Tandem Mass Spectrometry (LC-MS/MS) - This method is utilized for Therapeutic Drug Monitoring (TDM), where high sensitivity is required to measure multiple oxazolidinone antimicrobials simultaneously in complex biological matrices.",
+        "evidence": [
+          {
+            "doi": "10.2147/DDDT.S547979",
+            "sources": [
+              "\"This study aimed to establish a liquid chromatography-tandem mass spectrometry (LC-MS/MS) method to simultaneously quantify",
+              "multiple oxazolidinone antimicrobials, including linezolid, tedizolid, and contezolid, for therapeutic drug monitoring (TDM) applications\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.14445/23939133/IJAC-V9I1P102",
+            "sources": [
+              "\"A highly sensitive method for the determination of oxazolidinone impurity in Ritonavir tablet formulations using RP-HPLC has been presented in the present paper\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_7",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q7",
+        "question": "Discribe resistance mechanisms of oxazolidinones are discussed in literature published after 2020",
+        "golden_answer": "Linezolid resistance arises mainly from ribosomal target alterations, including 23S rRNA methylation by Cfr, mutations in domain V of 23S rRNA (e.g., G2576U, G2447U), and changes in ribosomal proteins L3 and L4 that reduce drug binding.\nIt also involves ribosome protection mechanisms, where ABC-F proteins such as PoxtA and OptrA bind the ribosome and perturb P-site tRNA and nascent chain conformation to disrupt the antibiotic binding site.\nAdditionally, resistance can spread via mobile genetic elements encoding methyltransferases and be enhanced by efflux pumps (e.g., LmrS and ABC transporters), with efflux having a stronger impact in Gram-negative bacteria due to the outer membrane barrier.",
+        "evidence": [
+          {
+            "doi": "10.1101/2025.10.24.684387",
+            "sources": [
+              "\"These ABC-F family proteins are located in the cytosol, where they bind directly to ribosomes and modulate their function, instead of transporting molecules across membranes\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2021.06.18.448924",
+            "sources": [
+              "\"...we postulate that PoxtA/OptrA confer resistance to oxazolidinones and phenicols indirectly by perturbing the P-site tRNA and thereby altering the conformation of the attached nascent chain to disrupt the drug binding site\"."
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2021.08.10.455846",
+            "sources": [
+              "\"A prevalent resistance mechanism to LZD... involves methylation of rRNA by the Cfr enzyme, which adds a methyl group at the C8 atom of A2503 ($m^8A2503$) in 23S rRNA.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1101/2022.06.27.497815",
+            "sources": [
+              "\"The major mechanisms of resistance include various mutations in domain V of 23S rRNA and ribosomal proteins L3 (rplC) and L4 (rplD)...\"",
+              "\"In addition, RNA methyltransferases encoded on various mobile elements were found to contribute to linezolid resistance.\"",
+              "\"...mutations at distal nucleotides that do not interact with linezolid directly, in particular, G2576U and G2447U, confer significant resistance.\"",
+              "\"The only clear non-ribosomal mechanism of resistance in Gram-positive bacteria is related to mutations leading to overproduction of efflux pumps, specifically the LmrS pump in S. aureus and ABC transporter genes in Streptococcus pneumoniae.\"",
+              "\"The contribution of efflux is more significant in Gram-negative bacteria due to its synergistic interactions with the low permeability barrier of the outer membrane.\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_8",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q8",
+        "question": "What resistance mechanisms of oxazolidinones are described in literature published before 2020?",
+        "golden_answer": "Linezolid resistance involves target-site modification, particularly mutations in 23S rRNA, as well as acquisition of the cfr gene, which mediates cross-resistance to phenicols and oxazolidinones.\nIt also includes protein-mediated ribosome protection via OptrA or PoxtA, with the optrA gene often showing variability that influences resistance levels.\nImportantly, these mechanisms are frequently plasmid-mediated and transferable, and can co-occur with other resistance genes like cfr, facilitating their spread and combined impact.",
+        "evidence": [
+          {
+            "doi": "10.1186/s12866-019-1537-0",
+            "sources": [
+              "\"The resistance to linezolid by gram-positive bacteria can be achieved by target-modified 23S rRNA mutations [5], acquiring exogenous chloramphenicol-florfenicol resistance (cfr) [6], optrA [7] or poxtA [8].\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3389/fmicb.2017.01631",
+            "sources": [
+              "“A novel gene, optrA, that confers transferable resistance to oxazolidinones and phenicols…”",
+              "“the frequent location of the optrA gene on conjugative plasmids makes the OptrA-mediated linezolid resistance transferable, an obvious cause for concern…”",
+              "“A distinctive feature of the novel oxazolidinone-phenicol resistance gene optrA is a variability yielding an encoded OptrA protein… which is variable in turn.”",
+              "“co-location of the oxazolidinone resistance genes optrA and cfr on a multiresistance plasmid…”"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_9",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q9",
+        "question": "What types of oxazolidinone derivatives have been synthesized and reported in the literature published before 2023?",
+        "golden_answer": "3-(Pyridine-3-yl)-2-oxazolidinone derivatives, 3-(3-Pyridyl)-oxazolidinone-5-methyl Ester Derivatives, glycosylated oxazolidinones",
+        "evidence": [
+          {
+            "doi": "10.3389/fchem.2022.949813",
+            "sources": [
+              "\"Synthesis and Biological Evaluation of",
+              "3-(Pyridine-3-yl)-2-Oxazolidinone",
+              "Derivatives as Antibacterial Agents\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/molecules27031103",
+            "sources": [
+              "\"Synthesis, Antibacterial and Anthelmintic Activity of Novel",
+              "3-(3-Pyridyl)-oxazolidinone-5-methyl Ester Derivatives\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3762/bjoc.8.52",
+            "sources": [
+              "\"\"Electrochemical generation of 2,3-oxazolidinone glycosyl triflates as an intermediate for stereoselective glycosylation"
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "session_id": "oxazolidinones_s5_session_10",
+    "scenario_type": "Aggregation",
+    "turns": [
+      {
+        "question_id": "oxazolidinones_s5_q10",
+        "question": "What types of oxazolidinone derivatives have been synthesized and reported in the literature published in 2023 and after?",
+        "golden_answer": "Oxazolidinone derivatives from levofloxacin, Linezolid-based oxazolidinones, bicyclic oxazolidinones",
+        "evidence": [
+          {
+            "doi": "10.30526/37.1.3240",
+            "sources": [
+              "\"Modification, Characterization of New Thiazolidinone and Oxazolidinone",
+              "Derived from Levofloxacin and Evaluation of Anti-oxidant\""
+            ],
+            "modifications": {
+              "constraints": [
+                "temporal"
+              ]
+            },
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.1038/s41467-025-56681-5",
+            "sources": [
+              "\"Catalytic transformation of carbon dioxide into seven-membered heterocycles and their domino transformation into bicyclic oxazolidinones\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          },
+          {
+            "doi": "10.3390/ph16040516",
+            "sources": [
+              "\"Antibacterial Properties and Computational Insights of Potent",
+              "Novel Linezolid-Based Oxazolidinones\""
+            ],
+            "modifications": {},
+            "contrast_doi": []
+          }
+        ]
+      }
+    ]
+  }
+]
