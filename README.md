@@ -95,7 +95,28 @@ Outputs are saved to `results/<dataset_name>/hp_tuning/`, including:
 - `top_3_tuned_models_metrics.csv`
 - `top_3_tuned_target_metrics.csv`
 
-### 5. SHAP-IQ network plots
+### 5. Evaluate saved models
+
+Evaluate a saved tuned model on the `test.csv` split of a processed dataset:
+
+```bash
+poetry run python src/ml/evaluate.py \
+  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
+  -d data/processed/oxazo
+```
+
+If `best_tuned_model.pkl` has a sibling `best_tuned_model_runs/` directory,
+the script evaluates all run models and summarizes their metrics. You can also
+pass a directory with `.pkl` models directly via `--model-path`.
+
+Outputs are saved to `results/<dataset_name>/evaluation/`, including:
+
+- `saved_model_test_<dataset_name>_metrics.csv`
+- `saved_model_test_<dataset_name>_target_metrics.csv`
+- `saved_model_test_<dataset_name>_model_runs.csv`
+- `saved_model_test_<dataset_name>_target_model_runs.csv`
+
+### 6. SHAP-IQ network plots
 
 Draw native SHAP-IQ network plots from a saved tuned model. By default, the
 script plots the mean across all target metrics and saves order-1 and order-2
@@ -118,3 +139,8 @@ poetry run python src/feature_importance/plot_shapiq_network_plots.py \
 
 Outputs are saved to `results/<dataset_name>/shapiq_network_plots/`, including
 `order_1_importance_<target>.csv` and `network_plot_<target>_order_<order>.svg`.
+
+## Optimization
+
+After surrogate models training, you can proceed to surrogate-based RAG parameter optimization.  See
+  [optimization/README.md](optimization/README.md).
