@@ -1,5 +1,10 @@
 # Machine Learning-Driven RAG System Design
 
+This repository contains the code and data workflow for the ML-driven RAG
+system design project prepared for submission to NeurIPS 2026.
+
+<img src="data/main.svg" alt="RAG System Design placeholder" width="720">
+
 ## Project Structure:
 - data/: Input and processed data files
 - src/: Source code scripts for ML pipeline
