@@ -1,4 +1,4 @@
-# Optimization Pipeline
+﻿# Optimization Pipeline
 
 This folder contains the surrogate-model optimization workflow for discrete RAG
 parameters. The optimizer uses a saved surrogate `.pkl` model to predict target
@@ -19,7 +19,7 @@ Optimize the default objective metrics (`golden_doi_recall` and
 
 ```bash
 poetry run python optimization/optimize.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
   --target-dataset oxazo \
   -n 100
 ```
@@ -28,7 +28,7 @@ Choose metrics explicitly:
 
 ```bash
 poetry run python optimization/optimize.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
   --target-dataset oxazo \
   --metrics golden_doi_recall scientific_fact_recall rouge_l_recall \
   --metric-weights 0.5 0.3 0.2 \
@@ -39,7 +39,7 @@ Run multi-objective optimization and store Pareto-front representatives:
 
 ```bash
 poetry run python optimization/optimize.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
   --target-dataset oxazo \
   --metrics golden_doi_recall scientific_fact_recall \
   --multi-objective \
@@ -59,7 +59,7 @@ thresholds for support metrics:
 
 ```bash
 poetry run python optimization/optimize.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
   --target-dataset oxazo \
   --filter-best-metrics \
   -n 200
@@ -119,3 +119,4 @@ The optimizer currently covers:
 - `llm_model`
 
 `chunk_overlap` is derived as `25%` of `chunk_size`.
+

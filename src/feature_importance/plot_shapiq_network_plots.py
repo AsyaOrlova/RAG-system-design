@@ -1,4 +1,5 @@
 import argparse
+import copy
 import sys
 from pathlib import Path
 
@@ -23,9 +24,6 @@ from feature_importance.interpretability_utils import (
     sanitize_name,
     unwrap_pipeline,
 )
-from feature_importance.shapiq_feature_interactions import (
-    mean_interaction_values,
-)
 
 
 POSITIVE_COLOR = "#ff004f"
@@ -43,6 +41,34 @@ FEATURE_NAME_ABBREVIATIONS = {
 
 EXCLUDED_ANALYSIS_FEATURES = {"chunk_overlap"}
 FULL_FEATURE_NAMES = {"chunk-size", "dense-k", "sparse-k"}
+
+
+def mean_interaction_values(interaction_values_list):
+    """Aggregate shapiq InteractionValues objects with an arithmetic mean."""
+    if not interaction_values_list:
+        raise ValueError("Expected at least one InteractionValues object to aggregate.")
+
+    result = copy.deepcopy(interaction_values_list[0])
+    result.values = np.mean(
+        [
+            np.asarray(interaction_values.values)
+            for interaction_values in interaction_values_list
+        ],
+        axis=0,
+    )
+
+    if hasattr(result, "baseline_value"):
+        result.baseline_value = float(
+            np.mean(
+                [
+                    interaction_values.baseline_value
+                    for interaction_values in interaction_values_list
+                    if hasattr(interaction_values, "baseline_value")
+                ]
+            )
+        )
+
+    return result
 
 
 def parse_args():

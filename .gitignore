@@ -22,6 +22,7 @@ htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
+notebooks/
 
 # Environment files
 .env
@@ -34,11 +35,15 @@ desktop.ini
 
 # Custom
 data/db/*/*.csv
+data/opt_results/
 data/processed/*
 !data/processed/.gitkeep
+data/rag_results/*_with_pca.csv
+data/rag_results/all_datasets_with_pca.csv
 
 
-src/utils/*
+src/utils/
+
 results/*
 !results/.gitkeep
 

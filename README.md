@@ -3,18 +3,30 @@
 ## Project Structure:
 - data/: Input and processed data files
 - src/: Source code scripts for ML pipeline
-- optimization/: Source code scripts for optimization pipeline
+- optimization/: Source code scripts for optimization pipeline. See
+  [optimization/README.md](optimization/README.md).
 - results/: Evaluation results and metrics
 
 ## Installation
 
 ```bash
 poetry install
+poetry run python -m nltk.downloader punkt punkt_tab
 poetry run python --version
 ```
 
 Use `poetry run python ...` for all scripts so they run inside the project virtual
 environment with the dependencies from `pyproject.toml`.
+
+Corpus-level feature generation also requires the scispaCy model packages used
+by `src/domain_features/build_db_summary.py`:
+
+```bash
+poetry run pip install \
+  https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz \
+  https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bionlp13cg_md-0.5.4.tar.gz \
+  https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz
+```
 
 ## Running ML pipelines
 
@@ -56,10 +68,11 @@ it writes to `data/processed/<dataset_name>/`.
 
 ### 3. Train baseline models
 
-Train and evaluate baseline models (XGBoost, CatBoost, LightGBM, RandomForest, ExtraTrees) on one processed dataset:
+Train and evaluate baseline models (XGBoost, CatBoost, LightGBM, RandomForest,
+ExtraTrees) on one processed dataset:
 
 ```bash
-poetry run python src/ml/train_models.py data/processed/oxazo
+poetry run python src/ml/train_models.py data/processed/oxazo_no_summary
 ```
 
 Outputs are saved to `results/<dataset_name>/train_models/model_selection_metrics.csv`.
@@ -71,7 +84,9 @@ share of the second dataset train split, from +0% to +100% in 10% steps, and
 plot target-level R2 on the second dataset test split:
 
 ```bash
-poetry run python src/ml/run_lightgbm_dataset_mix_sweep.py data/processed/complexes data/processed/oxazo
+poetry run python src/ml/run_lightgbm_dataset_mix_sweep.py \
+  data/processed/complexes_no_summary \
+  data/processed/oxazo_no_summary
 ```
 
 Outputs are saved to
@@ -86,7 +101,7 @@ full `test.csv`.
 Tune the top baseline models selected by `train_models.py`.
 
 ```bash
-poetry run python src/ml/hyperparameter_tuning.py -d data/processed/oxazo
+poetry run python src/ml/hyperparameter_tuning.py -d data/processed/oxazo_no_summary
 ```
 
 Outputs are saved to `results/<dataset_name>/hp_tuning/`, including:
@@ -101,8 +116,8 @@ Evaluate a saved tuned model on the `test.csv` split of a processed dataset:
 
 ```bash
 poetry run python src/ml/evaluate.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
-  -d data/processed/oxazo
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
+  -d data/processed/oxazo_no_summary
 ```
 
 If `best_tuned_model.pkl` has a sibling `best_tuned_model_runs/` directory,
@@ -124,16 +139,16 @@ network plots:
 
 ```bash
 poetry run python src/feature_importance/plot_shapiq_network_plots.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
-  -d data/processed/oxazo
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
+  -d data/processed/oxazo_no_summary
 ```
 
 To plot across selected target metrics, pass `--targets`:
 
 ```bash
 poetry run python src/feature_importance/plot_shapiq_network_plots.py \
-  -m results/oxazo/hp_tuning/best_tuned_model.pkl \
-  -d data/processed/oxazo \
+  -m results/oxazo_no_summary/hp_tuning/best_tuned_model.pkl \
+  -d data/processed/oxazo_no_summary \
   --targets rouge_l_recall cosine_similarity golden_doi_mrr
 ```
 
@@ -142,5 +157,5 @@ Outputs are saved to `results/<dataset_name>/shapiq_network_plots/`, including
 
 ## Optimization
 
-After surrogate models training, you can proceed to surrogate-based RAG parameter optimization.  See
-  [optimization/README.md](optimization/README.md).
+After surrogate model training, you can proceed to surrogate-based RAG parameter
+optimization. See [optimization/README.md](optimization/README.md).

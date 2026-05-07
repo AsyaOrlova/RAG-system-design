@@ -19,7 +19,7 @@ from sklearn.metrics import silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DB_DIR = PROJECT_ROOT / "data" / "db"
 SUMMARY_PATH = DATA_DB_DIR / "summary.csv"
 RANDOM_SEED = 42
