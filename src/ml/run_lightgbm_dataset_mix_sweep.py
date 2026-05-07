@@ -43,6 +43,14 @@ TUNING_TARGETS = [
 ]
 
 TARGET_R2_TUNING_THRESHOLD = 0.8
+PASTEL_COLORS = [
+    "#8fb9d9",
+    "#f2a7a0",
+    "#a8d5ba",
+    "#d7b5e8",
+    "#f4c98b",
+    "#b7c7e8",
+]
 
 
 def parse_args():
@@ -79,15 +87,28 @@ def parse_args():
         ),
     )
     parser.add_argument(
+        "--tune-hyperparameters",
+        action="store_true",
+        help=(
+            "Run GridSearchCV for one selected LightGBM mix after the sweep. "
+            "Disabled by default."
+        ),
+    )
+    parser.add_argument(
         "--tune-full-mix-only",
         action="store_true",
         help=(
             "Tune LightGBM hyperparameters only for the model trained on "
             "100%% of the first dataset plus 100%% of the second dataset. "
-            "When set, the R2 threshold-based tuning selection is skipped."
+            "Requires --tune-hyperparameters. When set, the R2 threshold-based "
+            "tuning selection is skipped."
         ),
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.tune_full_mix_only and not args.tune_hyperparameters:
+        parser.error("--tune-full-mix-only requires --tune-hyperparameters")
+
+    return args
 
 
 def sample_rows(data, row_count, random_state):
@@ -279,10 +300,19 @@ def resolve_tuning_percent(args, target_metrics_df):
     return threshold_percent, "threshold"
 
 
+def get_dataset_label(dataset_name, names):
+    """Return a short dataset label from a processed dataset directory name."""
+    for key, label in names.items():
+        if dataset_name == key or dataset_name.startswith(f"{key}_"):
+            return label
+
+    return dataset_name
+
+
 def plot_r2_by_mix(target_metrics_df, first_name, second_name, output_path):
     """Plot target-level R2 over dataset composition."""
     plt.style.use("default")
-    fig, ax = plt.subplots(figsize=(10, 7))
+    fig, ax = plt.subplots(figsize=(5, 4))
 
     plot_df = target_metrics_df[target_metrics_df["target"].isin(PLOT_TARGETS)].copy()
     if plot_df.empty:
@@ -293,9 +323,11 @@ def plot_r2_by_mix(target_metrics_df, first_name, second_name, output_path):
     x_positions = list(range(len(x_values)))
     x_position_by_value = dict(zip(x_values, x_positions))
 
-    names = {"complexes": "MC", "nanozymes": "NZ", "oxazo": "OA"}
+    names = {"complexes": "MC", "nano": "NZ", "nanozymes": "NZ", "oxazo": "OA"}
 
     x_labels = [f"{value}%" for value in x_values]
+
+    target_colors = dict(zip(sorted(plot_df["target"].unique()), PASTEL_COLORS))
 
     for target, target_points in plot_df.groupby("target", sort=True):
         target_points = target_points.sort_values("second_percent")
@@ -305,18 +337,53 @@ def plot_r2_by_mix(target_metrics_df, first_name, second_name, output_path):
             marker="o",
             linewidth=2,
             markersize=5,
+            color=target_colors[target],
             label=target,
         )
 
-    ax.set_title(
-        f"full {first_name} train plus sampled {second_name} train (LightGBM)"
-    )
-    ax.set_xlabel("Added train share")
-    ax.set_ylabel("R2")
+    threshold_percent = find_first_threshold_mix(plot_df)
+    y_lower = min(0.0, plot_df["r2"].min() - 0.05)
+    y_upper = max(1.0, plot_df["r2"].max() + 0.05)
+
+    first_label = get_dataset_label(first_name, names)
+    second_label = get_dataset_label(second_name, names)
+    ax.set_title(f"{first_label}\N{RIGHTWARDS ARROW}{second_label}")
+    ax.set_xlabel("Target domain augmentation")
+    ax.set_ylabel(r"$R^2$")
     ax.grid(True, alpha=0.3)
     ax.set_xticks(x_positions, x_labels)
     ax.set_xlim(-0.2, len(x_positions) - 0.8 if len(x_positions) > 1 else 0.2)
-    ax.yaxis.set_major_locator(MultipleLocator(0.1))
+    ax.set_ylim(y_lower, y_upper)
+    # ax.yaxis.set_major_locator(MultipleLocator(0.1))
+
+    if threshold_percent is not None:
+        threshold_x = x_position_by_value[threshold_percent]
+        ax.hlines(
+            TARGET_R2_TUNING_THRESHOLD,
+            xmin=x_positions[0],
+            xmax=threshold_x,
+            colors="#6f6f6f",
+            linestyles="--",
+            linewidth=1.4,
+            alpha=0.8,
+        )
+        ax.vlines(
+            threshold_x,
+            ymin=y_lower,
+            ymax=TARGET_R2_TUNING_THRESHOLD,
+            colors="#6f6f6f",
+            linestyles="--",
+            linewidth=1.4,
+            alpha=0.8,
+        )
+        ax.scatter(
+            threshold_x,
+            TARGET_R2_TUNING_THRESHOLD,
+            color="#6f6f6f",
+            s=32,
+            zorder=5,
+        )
+
     ax.legend(
         title="Target",
         loc="lower right",
@@ -423,66 +490,71 @@ def main():
     metrics_df.to_csv(metrics_path, index=False)
     target_metrics_df.to_csv(target_metrics_path, index=False)
 
-    tuning_percent, tuning_mode = resolve_tuning_percent(args, target_metrics_df)
-    tuning_summary_path = output_dir / f"lightgbm_{tuning_mode}_tuned_model_metrics.csv"
-    tuning_target_metrics_path = (
-        output_dir / f"lightgbm_{tuning_mode}_tuned_target_metrics.csv"
-    )
-    if tuning_percent is None:
-        print(
-            "No dataset mix reached "
-            f"R2 >= {TARGET_R2_TUNING_THRESHOLD} for all threshold targets; "
-            "skipping LightGBM hyperparameter tuning."
+    tuning_percent = None
+    tuning_mode = None
+    tuning_summary_path = None
+    tuning_target_metrics_path = None
+    if args.tune_hyperparameters:
+        tuning_percent, tuning_mode = resolve_tuning_percent(args, target_metrics_df)
+        tuning_summary_path = output_dir / f"lightgbm_{tuning_mode}_tuned_model_metrics.csv"
+        tuning_target_metrics_path = (
+            output_dir / f"lightgbm_{tuning_mode}_tuned_target_metrics.csv"
         )
-    else:
-        tuned_run = run_data_by_percent[tuning_percent]
-        run_metadata = tuned_run["run_metadata"].copy()
-        run_name = run_metadata["run_name"]
-
-        if tuning_mode == "full_mix":
-            print(f"Tuning LightGBM for full 100% + 100% mix {run_name}...")
-        else:
+        if tuning_percent is None:
             print(
-                "Tuning LightGBM for threshold mix "
-                f"{run_name} "
-                f"(all selected target R2 >= {TARGET_R2_TUNING_THRESHOLD})..."
+                "No dataset mix reached "
+                f"R2 >= {TARGET_R2_TUNING_THRESHOLD} for all threshold targets; "
+                "skipping LightGBM hyperparameter tuning."
             )
-        search = tune_lightgbm_model(
-            tuned_run["x_train"],
-            tuned_run["y_train"],
-            random_state=run_metadata["random_state"],
-        )
-        tuned_model_path = save_tuned_model(
-            search,
-            output_dir,
-            run_name,
-            run_metadata,
-            feature_names=tuned_run["x_train"].columns.tolist(),
-            tuning_mode=tuning_mode,
-        )
-        tuned_metrics = evaluate_model(
-            search.best_estimator_,
-            tuned_run["x_test"],
-            tuned_run["y_test"],
-        )
-        tuned_target_metrics = metrics_by_target(tuned_metrics)
-        tuned_target_metrics.insert(0, "model_path", str(tuned_model_path))
-        tuned_target_metrics = add_run_columns(tuned_target_metrics, run_metadata)
-        tuned_summary = pd.DataFrame(
-            [
-                build_tuning_summary_row(
-                    search,
-                    tuned_metrics,
-                    tuned_target_metrics,
-                    tuned_model_path,
-                    run_metadata,
-                    tuning_mode,
-                )
-            ]
-        )
+        else:
+            tuned_run = run_data_by_percent[tuning_percent]
+            run_metadata = tuned_run["run_metadata"].copy()
+            run_name = run_metadata["run_name"]
 
-        tuned_summary.to_csv(tuning_summary_path, index=False)
-        tuned_target_metrics.to_csv(tuning_target_metrics_path, index=False)
+            if tuning_mode == "full_mix":
+                print(f"Tuning LightGBM for full 100% + 100% mix {run_name}...")
+            else:
+                print(
+                    "Tuning LightGBM for threshold mix "
+                    f"{run_name} "
+                    f"(all selected target R2 >= {TARGET_R2_TUNING_THRESHOLD})..."
+                )
+            search = tune_lightgbm_model(
+                tuned_run["x_train"],
+                tuned_run["y_train"],
+                random_state=run_metadata["random_state"],
+            )
+            tuned_model_path = save_tuned_model(
+                search,
+                output_dir,
+                run_name,
+                run_metadata,
+                feature_names=tuned_run["x_train"].columns.tolist(),
+                tuning_mode=tuning_mode,
+            )
+            tuned_metrics = evaluate_model(
+                search.best_estimator_,
+                tuned_run["x_test"],
+                tuned_run["y_test"],
+            )
+            tuned_target_metrics = metrics_by_target(tuned_metrics)
+            tuned_target_metrics.insert(0, "model_path", str(tuned_model_path))
+            tuned_target_metrics = add_run_columns(tuned_target_metrics, run_metadata)
+            tuned_summary = pd.DataFrame(
+                [
+                    build_tuning_summary_row(
+                        search,
+                        tuned_metrics,
+                        tuned_target_metrics,
+                        tuned_model_path,
+                        run_metadata,
+                        tuning_mode,
+                    )
+                ]
+            )
+
+            tuned_summary.to_csv(tuning_summary_path, index=False)
+            tuned_target_metrics.to_csv(tuning_target_metrics_path, index=False)
 
     plot_r2_by_mix(target_metrics_df, first_name, second_name, plot_path)
 

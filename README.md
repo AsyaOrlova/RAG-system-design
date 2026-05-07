@@ -101,6 +101,15 @@ For each point, the first dataset is used fully and the second dataset share is
 sampled from its `train.csv`. Evaluation always uses only the second dataset's
 full `test.csv`.
 
+Hyperparameter tuning for a selected LightGBM mix is optional:
+
+```bash
+poetry run python src/ml/run_lightgbm_dataset_mix_sweep.py \
+  data/processed/complexes_no_summary \
+  data/processed/oxazo_no_summary \
+  --tune-hyperparameters
+```
+
 ### 4. Hyperparameter tuning
 
 Tune the top baseline models selected by `train_models.py`.
