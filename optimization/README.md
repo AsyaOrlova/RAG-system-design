@@ -12,10 +12,6 @@ configuration and experiment metadata.
 - Dataset summary features from `data/db/summary.csv` by default.
 - A parameter-space JSON from `optimization/parameter_spaces/`.
 
-If `--parameter-space` is omitted, `optimize.py` first looks for
-`optimization/parameter_spaces/parameter_space_<target_dataset>.json`, then
-falls back to `parameter_space_default.json`.
-
 ## Run Optimization
 
 Optimize the default objective metrics (`golden_doi_recall` and
