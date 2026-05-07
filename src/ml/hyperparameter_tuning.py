@@ -4,9 +4,7 @@ import pickle
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import GridSearchCV, KFold
 from sklearn.multioutput import MultiOutputRegressor
 
@@ -27,31 +25,9 @@ from ml.train_models import (
 from ml.constants import TRAIN_MODELS_RANDOM_STATE
 
 
-class OptunaSearchResult:
-    """Small adapter with the same fields used from GridSearchCV."""
-
-    def __init__(self, best_estimator, best_params, best_score, study):
-        self.best_estimator_ = best_estimator
-        self.best_params_ = best_params
-        self.best_score_ = best_score
-        self.study = study
-
-
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Tune hyperparameters for top-3 baseline models."
-    )
-    parser.add_argument(
-        "--method",
-        choices=["grid", "optuna"],
-        default="grid",
-        help="Hyperparameter optimization method.",
-    )
-    parser.add_argument(
-        "--n-trials",
-        type=int,
-        default=40,
-        help="Number of Optuna trials per model. Used only with --method optuna.",
+        description="Tune hyperparameters for top baseline models with grid search."
     )
     parser.add_argument(
         "--top-n",
@@ -293,93 +269,6 @@ def get_param_grid(model_name):
     return param_grids[model_name]
 
 
-def suggest_optuna_params(trial, model_name):
-    """Suggest hyperparameters for one Optuna trial."""
-    if model_name == "CatBoost":
-        return {
-            "model__iterations": trial.suggest_int(
-                "model__iterations", 250, 600, step=50
-            ),
-            "model__learning_rate": trial.suggest_float(
-                "model__learning_rate", 0.02, 0.08, log=True
-            ),
-            "model__depth": trial.suggest_categorical(
-                "model__depth", [3, 4, 6, 8]
-            ),
-            "model__l2_leaf_reg": trial.suggest_float(
-                "model__l2_leaf_reg", 1.0, 3.0
-            ),
-        }
-
-    if model_name == "XGBoost":
-        return {
-            "model__estimator__n_estimators": trial.suggest_int(
-                "model__estimator__n_estimators", 250, 600, step=50
-            ),
-            "model__estimator__learning_rate": trial.suggest_float(
-                "model__estimator__learning_rate", 0.02, 0.08, log=True
-            ),
-            "model__estimator__max_depth": trial.suggest_categorical(
-                "model__estimator__max_depth", [2, 3, 4, 6]
-            ),
-            "model__estimator__subsample": trial.suggest_float(
-                "model__estimator__subsample", 0.85, 1.0
-            ),
-        }
-
-    if model_name == "LightGBM":
-        return {
-            "model__estimator__n_estimators": trial.suggest_int(
-                "model__estimator__n_estimators", 250, 600, step=50
-            ),
-            "model__estimator__learning_rate": trial.suggest_float(
-                "model__estimator__learning_rate", 0.02, 0.08, log=True
-            ),
-            "model__estimator__num_leaves": trial.suggest_categorical(
-                "model__estimator__num_leaves", [7, 15, 31, 63]
-            ),
-            "model__estimator__min_child_samples": trial.suggest_int(
-                "model__estimator__min_child_samples", 10, 20
-            ),
-        }
-
-    if model_name == "ExtraTrees":
-        max_depth = trial.suggest_categorical(
-            "model__max_depth", [None, 8, 16, 24]
-        )
-        return {
-            "model__n_estimators": trial.suggest_int(
-                "model__n_estimators", 300, 800, step=100
-            ),
-            "model__max_depth": max_depth,
-            "model__min_samples_leaf": trial.suggest_int(
-                "model__min_samples_leaf", 1, 2
-            ),
-            "model__max_features": trial.suggest_categorical(
-                "model__max_features", ["sqrt", 1.0]
-            ),
-        }
-
-    if model_name == "RandomForest":
-        max_depth = trial.suggest_categorical(
-            "model__max_depth", [None, 8, 16, 24]
-        )
-        return {
-            "model__n_estimators": trial.suggest_int(
-                "model__n_estimators", 300, 800, step=100
-            ),
-            "model__max_depth": max_depth,
-            "model__min_samples_leaf": trial.suggest_int(
-                "model__min_samples_leaf", 1, 2
-            ),
-            "model__max_features": trial.suggest_categorical(
-                "model__max_features", ["sqrt", 1.0]
-            ),
-        }
-
-    raise ValueError(f"Unsupported model for tuning: {model_name}")
-
-
 def tune_model_grid(estimator, param_grid, x_train, y_train):
     """Run cross-validated grid search and refit the best estimator."""
     cv = KFold(n_splits=3, shuffle=True, random_state=TRAIN_MODELS_RANDOM_STATE)
@@ -397,108 +286,21 @@ def tune_model_grid(estimator, param_grid, x_train, y_train):
     return search
 
 
-def tune_model_optuna(
+def tune_model(
     model_name,
     x_train,
     y_train,
     numeric_features,
     categorical_features,
-    n_trials
 ):
-    """Run Optuna optimization and refit the best estimator."""
-    import optuna
-
-    cv = KFold(n_splits=3, shuffle=True, random_state=TRAIN_MODELS_RANDOM_STATE)
-
-    def objective(trial):
-        params = suggest_optuna_params(trial, model_name)
-        fold_scores = []
-
-        for train_index, valid_index in cv.split(x_train):
-            estimator = build_estimator(
-                model_name,
-                numeric_features,
-                categorical_features,
-                params=params,
-            )
-            x_train_fold = x_train.iloc[train_index]
-            y_train_fold = y_train.iloc[train_index]
-            x_valid_fold = x_train.iloc[valid_index]
-            y_valid_fold = y_train.iloc[valid_index]
-
-            estimator.fit(x_train_fold, y_train_fold)
-            predictions = estimator.predict(x_valid_fold)
-            rmse = np.sqrt(
-                mean_squared_error(y_valid_fold, predictions)
-            )
-            fold_scores.append(rmse)
-            trial.report(float(np.mean(fold_scores)), step=len(fold_scores))
-
-            if trial.should_prune():
-                raise optuna.TrialPruned()
-
-        return float(np.mean(fold_scores))
-
-    sampler = optuna.samplers.TPESampler(seed=TRAIN_MODELS_RANDOM_STATE)
-    pruner = optuna.pruners.MedianPruner(
-        n_warmup_steps=1,
-    )
-    study = optuna.create_study(
-        direction="minimize",
-        sampler=sampler,
-        pruner=pruner,
-    )
-    study.optimize(
-        objective,
-        n_trials=n_trials,
-    )
-
-    best_estimator = build_estimator(
+    """Tune one model with GridSearchCV."""
+    estimator = build_estimator(
         model_name,
         numeric_features,
         categorical_features,
-        params=study.best_params,
     )
-    best_estimator.fit(x_train, y_train)
-
-    return OptunaSearchResult(
-        best_estimator=best_estimator,
-        best_params=study.best_params,
-        best_score=-float(study.best_value),
-        study=study,
-    )
-
-
-def tune_model(
-    model_name,
-    method,
-    x_train,
-    y_train,
-    numeric_features,
-    categorical_features,
-    n_trials,
-):
-    """Tune one model with GridSearchCV or Optuna."""
-    if method == "grid":
-        estimator = build_estimator(
-            model_name,
-            numeric_features,
-            categorical_features,
-        )
-        param_grid = get_param_grid(model_name)
-        return tune_model_grid(estimator, param_grid, x_train, y_train)
-
-    if method == "optuna":
-        return tune_model_optuna(
-            model_name=model_name,
-            x_train=x_train,
-            y_train=y_train,
-            numeric_features=numeric_features,
-            categorical_features=categorical_features,
-            n_trials=n_trials
-        )
-
-    raise ValueError(f"Unsupported tuning method: {method}")
+    param_grid = get_param_grid(model_name)
+    return tune_model_grid(estimator, param_grid, x_train, y_train)
 
 
 def metrics_by_target(metrics):
@@ -775,15 +577,13 @@ def main():
     target_metrics_frames = []
 
     for model_name in top_model_names:
-        print(f"\nTuning model: {model_name} with {args.method}")
+        print(f"\nTuning model: {model_name} with grid search")
         search = tune_model(
             model_name=model_name,
-            method=args.method,
             x_train=x_train,
             y_train=y_train,
             numeric_features=numeric_features,
             categorical_features=categorical_features,
-            n_trials=args.n_trials,
         )
         train_metrics = evaluate_model(search.best_estimator_, x_train, y_train)
         test_metrics = evaluate_model(search.best_estimator_, x_test, y_test)
@@ -817,7 +617,7 @@ def main():
     summary_df = pd.DataFrame(
         [
             {
-                "method": args.method,
+                "method": "grid",
                 "model": result["model"],
                 "best_cv_rmse": result["best_cv_rmse"],
                 "train_rmse": result["train_metrics"]["rmse"],

@@ -38,6 +38,10 @@ data/processed/*
 !data/processed/.gitkeep
 
 
+src/utils/*
+results/*
+!results/.gitkeep
+
 
 optimization/experiments/*
 optimization/experiments_filtered/*

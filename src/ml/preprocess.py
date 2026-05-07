@@ -9,8 +9,8 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 from ml.constants import (
     DROP_COLUMNS,
     PREPROCESS_RESULTS_DIR,
+    SUMMARY_FEATURES_PATH,
     SUMMARY_METADATA_COLUMNS,
-    SUMMARY_PATH,
     TARGET_COLUMNS,
 )
 
@@ -39,7 +39,7 @@ def clean_data(data):
     return cleaned
 
 
-def load_summary_features(dataset_name, summary_path=SUMMARY_PATH):
+def load_summary_features(dataset_name, summary_path=SUMMARY_FEATURES_PATH):
     """Load dataset-level summary feature values for one dataset."""
     summary_path = Path(summary_path)
     if not summary_path.exists():
@@ -110,12 +110,13 @@ def preprocess_data(
     dataset_name=None,
     test_size=0.2,
     random_state=42,
-    include_summary_features=True,
+    include_summary_features=False,
+    summary_path=SUMMARY_FEATURES_PATH,
 ):
     """Run the full preprocessing pipeline and return split datasets."""
     cleaned = clean_data(data)
     if include_summary_features and dataset_name:
-        summary_features = load_summary_features(dataset_name)
+        summary_features = load_summary_features(dataset_name, summary_path)
         cleaned = add_summary_features(cleaned, summary_features)
 
     features, targets = split_features_targets(cleaned)
@@ -172,10 +173,19 @@ def parse_args():
     parser.add_argument(
         "--summary-features",
         action=argparse.BooleanOptionalAction,
-        default=True,
+        default=False,
         help=(
-            "Add dataset-level summary features from summary.csv. "
-            "Use --no-summary-features to skip them."
+            f"Add dataset-level summary features from {SUMMARY_FEATURES_PATH}. "
+            "Disabled by default."
+        ),
+    )
+    parser.add_argument(
+        "--summary-path",
+        type=Path,
+        default=SUMMARY_FEATURES_PATH,
+        help=(
+            "Path to the dataset-level summary features CSV. "
+            "Used only when --summary-features is enabled."
         ),
     )
     args = parser.parse_args()
@@ -195,6 +205,7 @@ def main():
         data,
         dataset_name=dataset_name,
         include_summary_features=args.summary_features,
+        summary_path=args.summary_path,
     )
     output_dir = get_output_dir(args.input_path, args.summary_features)
     save_processed_data(x_train, x_test, y_train, y_test, output_dir)

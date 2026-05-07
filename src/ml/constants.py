@@ -7,6 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PREPROCESS_RESULTS_DIR = PROJECT_ROOT / "data" / "processed"
 ML_RESULTS_DIR = PROJECT_ROOT / "results"
 SUMMARY_PATH = PROJECT_ROOT / "data" / "db" / "summary.csv"
+SUMMARY_FEATURES_PATH = PROJECT_ROOT / "data" / "db" / "PCA_features.csv"
 MODEL_SELECTION_METRICS_PATH = ML_RESULTS_DIR / "train_models" / "model_selection_metrics.csv"
 
 ##### columns
