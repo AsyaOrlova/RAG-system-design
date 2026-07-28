@@ -106,8 +106,8 @@ We performed a qualitative expert inspection of some inetersting QA examples whe
 
 | # | Question (short) | Ground Truth | Baseline RAG | Optimized RAG | Result |
 |---|------------------|--------------|--------------|---------------|--------|
-| 1 | MIC of tedizolid against *M. tuberculosis* | **0.25 μg/mL** | **0.5 mg/L** ❌ Incorrect value | **0.25 mg/L** ✅ Correct value (unit mismatch) | Optimized RAG retrieved the correct MIC, whereas the baseline returned an incorrect value. |
-| 2 | Tedizolid non-inferiority 95% CI | **−2.0 to 6.5** | **−10% to 10%** ❌ Incorrect confidence interval | **95% CI −2.0 to 6.5** ✅ Correct | Optimized RAG identified the correct confidence interval; the baseline confused it with the study design criterion. |
-| 3 | Oxazolidinone in Gao et al. (2023) crossover study | **Delpazolid** | **Contezolid** ❌ | **Delpazolid** ✅ | Optimized RAG correctly identified the investigated compound, while the baseline confused it with another oxazolidinone. |
-| 4 | Antibiotic with Ki = 182.26 μM and MIC = 2 μg/mL | **Linezolid** | Could not identify the antibiotic ❌ | **Contezolid** ❌ | Neither system produced the correct answer. The optimized configuration retrieved a plausible antibiotic that is quite close to linezolid. |
-| 5 | Compare MIC values of vancomycin and linezolid | **Both are 2 μg/mL** | Vancomycin **>256 μg/mL** ❌ | Vancomycin **1 μg/mL**, linezolid **2 μg/mL** ❌ | Both systems failed. The optimized configuration retrieved a closer value for vancomycin. |
+| 1 | MIC of tedizolid against *M. tuberculosis* | **0.25 μg/mL** | **0.5 mg/L** | **0.25 mg/L** | Optimized RAG retrieved the correct MIC, whereas the baseline returned an incorrect value. |
+| 2 | Tedizolid non-inferiority 95% CI | **−2.0 to 6.5** | **−10% to 10%** | **95% CI −2.0 to 6.5** | Optimized RAG identified the correct confidence interval; the baseline confused it with the study design criterion. |
+| 3 | Oxazolidinone in Gao et al. (2023) crossover study | **Delpazolid** | **Contezolid**  | **Delpazolid** | Optimized RAG correctly identified the investigated compound, while the baseline confused it with another oxazolidinone. |
+| 4 | Antibiotic with Ki = 182.26 μM and MIC = 2 μg/mL | **Linezolid** | Could not identify the antibiotic  | **Contezolid**  | Neither system produced the correct answer. The optimized configuration retrieved a plausible antibiotic that is quite close to linezolid. |
+| 5 | Compare MIC values of vancomycin and linezolid | **Both are 2 μg/mL** | Vancomycin **>256 μg/mL**  | Vancomycin **1 μg/mL**, linezolid **2 μg/mL**  | Both systems failed. The optimized configuration retrieved a closer value for vancomycin. |
